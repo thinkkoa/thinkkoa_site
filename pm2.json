@@ -4,8 +4,8 @@
   "apps": [{
     "name": "thinkkoa_site",
     "script": "index.js",
-    "cwd": "thinkkoa_site/",
-    "max_memory_restart": "1G",
+    "cwd": "/acs/data",
+    "max_memory_restart": "512M",
     "autorestart": true,
     "node_args": "",
     "args": [],
