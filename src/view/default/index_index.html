@@ -1,0 +1,101 @@
+<%- include('header.html')%>
+    <!-- <div class="hd-tips">ThinkKoa 震撼发布。</div> -->
+    <div class="banarea" style="background-image:url(/img/banbg.jpg)">
+        <div class="wrap">
+            <h1 class="slogan">A lightweight, scalable web framework, based on koa.</h1>
+            <h3 class="slogan-desc">Use the full ES6/7 features to develop Node.js applications.</h3>
+            <a href="/doc/index.jhtml" class="btn-link">Getting Started</a>
+        </div>
+    </div>
+    <div class="banbot">
+        <div class="wrap">
+            <p>Check out the latest developments in the <a href="https://github.com/thinkkoa/thinkkoa" class="blue">GitHub repo</a></p>
+            <div class="share">
+
+                <a target="_blank" href="https://github.com/thinkkoa/thinkkoa">
+                    <img height="20" src="https://img.shields.io/github/stars/thinkkoa/thinkkoa.svg?style=flat-square&label=Star" alt="github star">
+                </a>
+                <a target="_blank" href="https://badge.fury.io/js/thinkkoa">
+                    <img height="20" src="https://badge.fury.io/js/thinkkoa.svg" alt="npm version">
+                </a>
+                <a target="_blank" href="https://travis-ci.org/thinkkoa/thinkkoa">
+                    <img height="20" src="https://travis-ci.org/thinkkoa/thinkkoa.svg?branch=master" alt="Build Status">
+                </a>
+                <a target="_blank" href="https://david-dm.org/thinkkoa/thinkkoa">
+                    <img height="20" src="https://david-dm.org/thinkkoa/thinkkoa/status.svg" alt="dependencies Status">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="flinfo">
+        <div class="wrap">
+            <div class="tit">
+                <h3>使用 ES6/7 特性开发项目</h3>
+            </div>
+            <!--     <p class="tips">借助 Babel 编译，可以大胆的在项目使用 ES6/7 语法。</p> -->
+            <pre><code class="lang-js hljs javascript"><span class="hljs-comment">//user controller, controller/user.js</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">think</span>.<span class="hljs-title">controller</span>.<span class="hljs-title">base</span> </span>{
+  <span class="hljs-comment">//login action</span>
+  <span class="hljs-keyword">async</span> loginAction(){
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.isGet()){
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.display();
+    }
+    <span class="hljs-comment">//database query</span>
+    <span class="hljs-keyword">let</span> data = <span class="hljs-keyword">this</span>.post();
+    <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> <span class="hljs-keyword">think</span>.model(<span class="hljs-string">'user'</span>, {}).where({name: data.name}).find();
+    <span class="hljs-keyword">if</span>(!result){
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.fail(<span class="hljs-string">'login fail'</span>);
+    }
+    <span class="hljs-comment">//set userInfo to session</span>
+    <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.session(<span class="hljs-string">'userInfo'</span>, result);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.success();
+  }
+}
+</code></pre>
+        </div>
+    </div>
+    <div class="flfet">
+        <div class="wrap">
+            <div class="tit2">
+                <h3>FEATURES</h3>
+            </div>
+            <!--       <p class="tips">Make Async Easy Based On ES6</p> -->
+            <ul class="fetlist">
+                <li>
+                    <i class="icon-fet1"></i>
+                    <p><strong>支持 ES6/7 特性</strong>可以直接在项目里使用 ES6/7（Generator Function, Class, Async & Await）等特性，借助 Babel 编译，可稳定运行在
+                        Node.js 环境上。</p>
+                </li>
+                <li>
+                    <i class="icon-fet2"></i>
+                    <p><strong>支持丰富的数据库</strong>支持 Mysql、PostgreSQL、MongoDB 等常见的数据库，提供了很多简单易用、高度封装的方法。<br>(注: 依赖ThinkOR模块及think_model中间件)</p>
+                </li>
+                <li>
+                    <i class="icon-fet3"></i>
+                    <p><strong>Koa/Express Middleware</strong>框架可以兼容Express以及Koa的海量中间件引入使用，避免重复造轮子。</p>
+                </li>
+                <li>
+                    <i class="icon-fet4"></i>
+                    <p><strong>REST API</strong>通过灵活的路由配置，可以很方便的支持Restful风格API。也可以根据接口定制，隐藏部分数据和进行权限控制。</p>
+                </li>
+                <li>
+                    <i class="icon-fet5"></i>
+                    <p><strong>约定优于配置</strong>更贴近于团队开发者的约定及配置，提升编程体验。</p>
+                </li>
+                <li>
+                    <i class="icon-fet6"></i>
+                    <p><strong>Koa上下文</strong>基于Koa2的薄封装，易于使用但不改变原有特性和用法，支持Koa上下文及函数。</p>
+                </li>
+                <li>
+                    <i class="icon-fet7"></i>
+                    <p><strong>自动更新</strong>开发模式下，文件修改后自动重启 Node.js 服务。</p>
+                </li>
+                <li>
+                    <i class="icon-fet8"></i>
+                    <p><strong>命令行工具</strong>ThinkKoa提供命令行工具thinkkoa_cli，更敏捷快速的开发方式。</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+<%- include('footer.html')%>

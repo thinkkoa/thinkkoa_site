@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ThinkKoa - A lightweight, scalable web framework, based on koa.</title>
+<meta name="renderer" content="webkit">
+<meta name="format-detection" content="telephone=no">
+<meta name="referrer" content="always">
+<meta content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+<link rel="apple-touch-icon" href="/img/favicon.png">
+<meta name="keywords" content="ThinkKoa, Node.js, Koa, MVC, Restful, Generator Function, ES6, ES7, Promise">
+<meta name="description" content="ThinkKoa - 轻量级高性能敏捷开发Node.js框架,支持ES6/7全新特性,支持Koa、Express中间件。">
+<link href="/module/bootstrap/css/bootstrap.css" rel="stylesheet" data-ls="css_bootstrap" />
+<link href="/css/index.css" rel="stylesheet" data-ls="css_index" />
+</head>
+<body>
+<div class="header">
+  <div class="wrap clearfix">
+        <div class="logo"><a href="/" title="ThinkKoa"></a></div>
+        <div class="headr">
+            <ul class="nav">
+                <li <%if(currentNav === 'doc'){%>class="current"<%}%>><a href="/doc/index.jhtml">文档</a></li>
+                <li <%if(currentNav === 'demo'){%>class="current"<%}%>><a href="/case.jhtml">案例</a></li>
+                <li <%if(currentNav === 'changelog'){%>class="current"<%}%>><a href="/changelog.jhtml">更新日志</a></li>
+                <li <%if(currentNav === 'plugin'){%>class="current"<%}%>><a href="/plugin.jhtml">插件</a></li>
+                <!-- <li class="donate"><a href="/donate.html">捐赠</a></li> -->
+            </ul>
+        </div>
+    </div>
+</div>

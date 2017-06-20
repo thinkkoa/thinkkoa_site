@@ -1,0 +1,5 @@
+.vscode
+app
+cache
+logs
+node_modules
