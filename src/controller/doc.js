@@ -34,7 +34,7 @@ export default class extends base {
      * @return {} []
    */
     async getSideBar() {
-        let key = `sidebar`;
+        let key = think.md5('sidebar');
         let data = await think.cache(key);
         if (!data) {
             let filePath = `${think.root_path}/doc/sidebar.json`;
@@ -81,12 +81,13 @@ export default class extends base {
      * @return {Promise}          []
    */
     async getMarkedContent(filePath) {
-        let markedContent = await think.cache(filePath);
+        let key = think.md5('filePath');
+        let markedContent = await think.cache(key);
         if (markedContent) {
             return markedContent;
         }
         markedContent = this.markdownToHtml(filePath);
-        think.cache(filePath, markedContent);
+        think.cache(key, markedContent);
         return markedContent;
     }
 
