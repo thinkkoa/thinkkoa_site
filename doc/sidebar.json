@@ -11,7 +11,7 @@
       "配置": "config",
       "路由": "route",
       "控制器": "controller",
-      "中间件": "controller"
+      "中间件": "middleware"
     },
     "Middleware": {
       "介绍": "middleware"
