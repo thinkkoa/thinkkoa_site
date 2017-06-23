@@ -3,7 +3,6 @@
  * @return
  */
 import fs from 'fs';
-import path from 'path';
 import child_process from 'child_process';
 import highlight from 'highlight.js';
 import marked from 'marked';
@@ -76,6 +75,25 @@ export default class extends base {
     }
 
     /**
+   * search action
+   * @return {} []
+   */
+    async searchAction() {
+        this.assign('currentNav', 'doc');
+        await this.getSideBar();
+
+        let keyword = this.get('keyword').trim();
+        this.assign('keyword', keyword);
+        if (!keyword) {
+            return this.display();
+        }
+
+        let result = await this.getSearchResult(keyword);
+        this.assign('searchResult', result);
+        return this.display();
+    }
+
+    /**
      * get parsed markdown content
      * @param  {String} filePath []
      * @return {Promise}          []
@@ -126,11 +144,55 @@ export default class extends base {
         });
 
         let highlightContent = markedContent.replace(/<pre><code\s*(?:class="lang-(\w+)")?>([\s\S]+?)<\/code><\/pre>/mg, (a, language, text) => {
-            text = text.replace(/&#39;/g, '\'').replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/\&quot;/g, '"').replace(/\&amp;/g, "&");
+            text = text.replace(/&#39;/g, '\'').replace(/&gt;/g, '>').replace(/&lt;/g, '<').replace(/\&quot;/g, '"').replace(/\&amp;/g, '&');
             var result = highlight.highlightAuto(text, language ? [language] : undefined);
             return `<pre><code class="hljs lang-${result.language}">${result.value}</code></pre>`;
         });
 
         return highlightContent;
     }
+
+    /**
+   * get search result
+   * @param  {String} keyword []
+   * @return {}         []
+   */
+    async getSearchResult(keyword) {
+        let cmd = `grep '${keyword}' -ri *.md`;
+        let fn = think.promisify(child_process.exec, child_process);
+        let options = {
+            cwd: think.ROOT_PATH + `/doc/`
+        };
+        //ignore command error
+        let result = await fn(cmd, options).catch(err => '');
+
+        let data = {};
+        result = result.split('\n').filter(item => {
+            return item;
+        }).map(item => {
+            let pos = item.indexOf(':');
+            let filename = item.substr(0, pos);
+            if (!(filename in data)) {
+                data[filename] = { filename: filename, text: [] };
+            }
+            let text = item.substr(pos + 1);
+            text = think.escapeHtml(text).replace(new RegExp(keyword, 'ig'), a => {
+                return `<span style="color:#c7254e">${a}</span>`;
+            });
+            data[filename].text.push(text);
+        });
+        data = Object.keys(data).map(item => {
+            let itemData = data[item];
+            let filePath = `${think.ROOT_PATH}/doc/${itemData.filename}`;
+            let content = fs.readFileSync(filePath, 'utf8').trim();
+            content.replace(/#+([^\n]+)/, (a, c) => {
+                itemData.title = c;
+            });
+            return itemData;
+        }).sort((a, b) => {
+            return a.text.length < b.text.length ? 1 : -1;
+        });
+        return data;
+    }
+
 }
