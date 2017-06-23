@@ -32,14 +32,3 @@
     </div>
 </div>
 <%- include('footer.html')%>
-<script>
-(function(){
-  var docDirectiry = document.getElementById('docDirectiry');
-  var directoryList = document.getElementById('directoryList');
-  var isShow = false;
-  docDirectiry.addEventListener('touchstart', function(){
-    directoryList.style.display = isShow ? 'none' : 'block';
-    isShow = !isShow;
-  })
-}());
-</script>
