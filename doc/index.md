@@ -1,10 +1,8 @@
 ## 介绍
 
-ThinkKoa 是轻量级高性能敏捷开发Node.js框架,支持ES6/7全新特性,支持Koa、Express中间件。
+ThinkKoa 轻量级高性能敏捷开发Node.js框架,支持ES6/7全新特性,支持Koa、Express中间件。
 
-ThinkKoa是对Koa2进行了薄封装,保持了ThinkNode相似的用法,仅需少许改动即可升级。相对于ThinkNode,它更加轻量级,扩展性和性能也更好。
-
-使用 ES6/7 特性来开发项目可以大大提高开发效率，是趋势所在。并且新版的 Node.js 对 ES6 特性也有了较好的支持，即使有些特性还没有支持，也可以借助 [Babel](http://babeljs.io/) 编译来支持。
+ThinkKoa是对Koa2进行了薄封装。既扩展了Koa的功能,能够迅速的进行Web开发;又保持了原有的API和风格。
 
 
 ### 特性
