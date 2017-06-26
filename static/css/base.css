@@ -473,19 +473,19 @@ table > tfoot > tr > td {
           background-size:100% 100%;
         }
          .boxContent3:hover{
-             background: rgba(0, 0, 0, .4) center no-repeat;
+             background: rgba(0, 0, 0, .8) center no-repeat;
              background-image: url(/img/yunheer.png) ;
          }
            .boxContent2:hover{
-             background: rgba(0, 0, 0, .4) center no-repeat;
+             background: rgba(0, 0, 0, .8) center no-repeat;
              background-image: url(/img/yunheer.png) ;
          }
            .boxContent:hover{
-             background: rgba(0, 0, 0, .4) center no-repeat;
+             background: rgba(0, 0, 0, .8) center no-repeat;
              background-image: url(/img/saleer.png) ;
          }
            .boxContent4:hover{
-             background: rgba(0, 0, 0, .4) center no-repeat;
+             background: rgba(0, 0, 0, .8) center no-repeat;
              background-image: url(/img/yunheer.png) ;
          }
         
