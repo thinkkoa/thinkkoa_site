@@ -12,6 +12,7 @@ export default class extends base {
     }
     //控制器默认方法
     indexAction () {
+        this.set('currentNav', 'index');
         return this.render();
     }
 }
