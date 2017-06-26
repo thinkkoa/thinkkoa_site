@@ -13,8 +13,12 @@
     },
     "扩展功能": {
       "服务类": "service",
-      "函数库": "funclib",
+      "Cache": "cache",
+      "Session": "session",
+      "View": "view",
       "ORM": "orm",
+      "i18n": "i18n",
+      "Restful": "restful",
       "开发中间件": "dev_middleware"
     },
     "常见问题": {
