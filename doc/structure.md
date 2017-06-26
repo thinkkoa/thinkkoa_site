@@ -27,7 +27,7 @@
 
     └──view　　　　　　　    //应用模板目录
 
-├── static　　　　　　       //应用静态资源目录css、js、img等
+├── static　　　　　　       //网站根目录,如果使用nginx请将root指向此目录
 
     └──css　　　　　　　     //应用静态资源目录css
 

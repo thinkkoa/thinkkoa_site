@@ -161,7 +161,7 @@ export default class extends base {
         let cmd = `grep '${keyword}' -ri *.md`;
         let fn = think.promisify(child_process.exec, child_process);
         let options = {
-            cwd: think.ROOT_PATH + `/doc/`
+            cwd: think.root_path + `/doc/`
         };
         //ignore command error
         let result = await fn(cmd, options).catch(err => '');
