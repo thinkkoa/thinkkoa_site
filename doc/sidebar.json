@@ -15,8 +15,7 @@
       "服务类": "service",
       "函数库": "funclib",
       "ORM": "orm",
-      "koa/express中间件": "koa_middleware",
-      "开发ThinkKoa中间件": "dev_middleware"
+      "开发中间件": "dev_middleware"
     },
     "常见问题": {
       "ES6/7开发项目": "next",
@@ -25,12 +24,14 @@
       "输出文件或图片": "out_file",
       "修改默认中间件配置": "default_middleware",
       "跨模块调用": "call",
+      "禁止访问功能": "deny",
       "并行处理": "parallel",
       "错误处理": "error",
       "线上部署": "deploy",
       "升级指南": "update"
     },
     "API": {
+      "ctx": "ctx",
       "think": "think",
       "think.base": "think_base",
       "controller": "think_controller"
