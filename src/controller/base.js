@@ -13,9 +13,7 @@ export default class extends think.controller.base {
     __before() {
         this.set({
             title: 'ThinkKoa - A lightweight, scalable web framework, based on koa.',
-            currentNav: '',
-            hasBootstrap: false,
-            hasVersion: false
+            currentNav: ''
         });
     }
 }

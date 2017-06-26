@@ -17,7 +17,7 @@ export default class extends base {
     }
     //控制器默认方法
     async indexAction() {
-        this.assign('currentNav', 'doc');
+        this.set('currentNav', 'doc');
         await this.getSideBar();
 
         try {
@@ -41,7 +41,7 @@ export default class extends base {
             data = JSON.parse(content);
             think.cache(key, data);
         }
-        this.assign('sidebar', data);
+        this.set('sidebar', data);
     }
 
     /**
@@ -67,10 +67,10 @@ export default class extends base {
         let titleReg = /<h2(?:[^<>]*)>([^<>]+)<\/h2>/;
         let match = markedContent.match(titleReg);
         if (match) {
-            this.assign('title', `${match[1]} - ThinkKoa文档`);
+            this.set('title', `${match[1]} - ThinkKoa文档`);
         }
-        this.assign('markedContent', markedContent);
-        this.assign('doc', doc);
+        this.set('markedContent', markedContent);
+        this.set('doc', doc);
         return null;
     }
 
@@ -79,17 +79,17 @@ export default class extends base {
    * @return {} []
    */
     async searchAction() {
-        this.assign('currentNav', 'doc');
+        this.set('currentNav', 'doc');
         await this.getSideBar();
 
         let keyword = this.get('keyword').trim();
-        this.assign('keyword', keyword);
+        this.set('keyword', keyword);
         if (!keyword) {
             return this.display();
         }
 
         let result = await this.getSearchResult(keyword);
-        this.assign('searchResult', result);
+        this.set('searchResult', result);
         return this.display();
     }
 
