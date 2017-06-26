@@ -17,11 +17,15 @@ export default class extends base {
     }
     //控制器默认方法
     async indexAction() {
+        let doc = this.get('doc') || 'index';
         this.set('currentNav', 'doc');
+        if (doc === 'plugin') {
+            this.set('currentNav', 'plugin');
+        }
         await this.getSideBar();
 
         try {
-            await this.getDoc();
+            await this.getDoc(doc);
             return this.render();
         } catch (err) {
             return this.http.throw(404, err);
@@ -48,9 +52,7 @@ export default class extends base {
      * get doc content
      * @return {} []
   */
-    async getDoc() {
-        let doc = this.get('doc') || 'index';
-
+    async getDoc(doc) {
         let markedContent;
         let filePath = `${think.root_path}/doc/${doc}.md`;
         let htmlPath = filePath.replace('.md', '.html');
@@ -99,7 +101,7 @@ export default class extends base {
      * @return {Promise}          []
    */
     async getMarkedContent(filePath) {
-        let key = think.md5('filePath');
+        let key = think.md5(filePath);
         let markedContent = think.app_debug ? null : await think.cache(key);
         if (markedContent) {
             return markedContent;
@@ -161,7 +163,7 @@ export default class extends base {
         let cmd = `grep '${keyword}' -ri *.md`;
         let fn = think.promisify(child_process.exec, child_process);
         let options = {
-            cwd: think.ROOT_PATH + `/doc/`
+            cwd: think.root_path + `/doc/`
         };
         //ignore command error
         let result = await fn(cmd, options).catch(err => '');

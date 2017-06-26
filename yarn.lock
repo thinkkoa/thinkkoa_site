@@ -2912,8 +2912,8 @@ think_controller@^1.x.x:
     think_lib "^1.x.x"
 
 think_error@^1.x.x:
-  version "1.0.3"
-  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.0.3.tgz#53f0ae582001a143531874f13f6edd5884b10b7a"
+  version "1.0.4"
+  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.0.4.tgz#8e2549791353adcd73f2d77ac9362562c9ca9fb5"
   dependencies:
     think_lib "^1.x.x"
 

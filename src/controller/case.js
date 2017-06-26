@@ -2,8 +2,9 @@
  * Controller
  * @return
  */
+import base from './base';
 
-export default class extends think.controller.base {
+export default class extends base {
     //构造方法
     init(http){
         //调用父类构造方法
@@ -12,6 +13,6 @@ export default class extends think.controller.base {
     
     //控制器默认方法
     indexAction () {
-        return this.ok('success');
+        return this.render();
     }
 }
