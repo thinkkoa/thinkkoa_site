@@ -49,7 +49,7 @@ export default class extends think.controller.base {
 #### 支持多种项目结构和多种项目环境
 ThinkKoa默认支持单模块模式，适合简单快速的项目。业务复杂的项目，可以开启多模块支持，功能划分更加清晰。ThinkKoa支持Nginx代理以及pm2部署，适合对稳定性和效率有要求的生产环境。
 #### 支持Koa/Express中间件
-通过简单的require导出，ThinkKoa可以很好的支持Koa中间件(包括Koa1及Koa2)。还提供了think.useExp()来使用Express的中间件。大大提升了框架的扩展性及开源模块利用率。
+通过简单的引入机制，ThinkKoa可以很好的支持Koa中间件(包括Koa1及Koa2)。还提供了think.useExp()来使用Express的中间件。大大提升了框架的扩展性及开源模块利用率。
 
 #### 支持灵活的自定义路由
 ThinkKoa除默认的单模块模式(controller/action)及多模块模式(module/controller/action）路由规则以外，还支持用户定制路由。
@@ -63,7 +63,14 @@ ThinkKoa除默认的单模块模式(controller/action)及多模块模式(module/
  thinkkoa | 1.2.10 | 20.12ms |  56.08ms | 1.25k | 1.75k | 4979.79 | 1.14MB | 149921 | 0
  thinkjs | 2.2.18 | 43.06ms | 108.78ms | 583.31 | 0.87k | 2319.06 | 448.42KB | 69776 | 0
  sails | 0.12 | 83.24ms | 283.96ms | 306.42 | 505.00 | 1204.45 | 601.58KB | 36225 | 0
- laravel | 5.2.15 (php7) | 93.01ms | 672.31s | 261.44 | 694.00 | 1198.23 | 335.75KB | 20987 | 4
+ laravel | 5.2.15 (php7) | 93.01ms | 472.31ms | 261.44 | 694.00 | 1198.23 | 335.75KB | 20987 | 4
  laravel | 5.2.15 (php5) | 390.06ms | 1.23s | 91.24 | 276.00 | 287.07 | 110.57KB | 7648 | 32
- 
- 从表中测试数据可以看到，ThinkKoa性能略次于Koa2以及Express。但ThinkKoa默认加载了logger、error、payload、router、http、static、controller等常用的中间件，可以大大加快开发速度，并且结构和规范合理，适合开发大的项目。
+ ```
+ 注：
+ 1、表中测试koa、express均未加载中间件
+ 2、测试环境 Mac Pro，wrk -t4 -c100 -d30s http://127.0.0.1:3000
+ 3、取10次测试平均值
+ ```
+
+ 从表中测试数据可以看到，ThinkKoa性能略次于Koa2以及Express，但差距不大。
+ ThinkKoa默认加载了logger、error、payload、router、http、static、controller等常用的中间件，可以大大加快开发速度，并且结构和规范合理，适合开发大的项目。

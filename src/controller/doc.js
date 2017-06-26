@@ -34,7 +34,7 @@ export default class extends base {
    */
     async getSideBar() {
         let key = think.md5('sidebar');
-        let data = await think.cache(key);
+        let data = think.app_debug ? null : await think.cache(key);
         if (!data) {
             let filePath = `${think.root_path}/doc/sidebar.json`;
             let content = fs.readFileSync(filePath);
@@ -100,7 +100,7 @@ export default class extends base {
    */
     async getMarkedContent(filePath) {
         let key = think.md5('filePath');
-        let markedContent = await think.cache(key);
+        let markedContent = think.app_debug ? null : await think.cache(key);
         if (markedContent) {
             return markedContent;
         }
@@ -183,7 +183,7 @@ export default class extends base {
         });
         data = Object.keys(data).map(item => {
             let itemData = data[item];
-            let filePath = `${think.ROOT_PATH}/doc/${itemData.filename}`;
+            let filePath = `${think.root_path}/doc/${itemData.filename}`;
             let content = fs.readFileSync(filePath, 'utf8').trim();
             content.replace(/#+([^\n]+)/, (a, c) => {
                 itemData.title = c;
