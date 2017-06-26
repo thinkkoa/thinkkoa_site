@@ -111,8 +111,15 @@ _before_index(){
 空操作是指系统在找不到请求的操作方法的时候，会定位到空操作方法执行，利用这个机制，可以实现错误页面和一些 url 的优化。
 默认空操作对应的方法名为 ，可以通过下面的配置修改：
 
+项目中间件配置 config/middleware.js:
+
 ```js
-empty_method: '__empty', //当找不到方法时调用此方法，这个方法存在时才有效
+config: { //中间件配置
+    ...,
+    controller: {
+        empty_action: '__empty', //空方法,如果访问控制器中不存在的方法,默认调用
+    }
+}
 ```
 
 空操作对应的方法:
@@ -123,8 +130,39 @@ __empty(){
     return this.json('can\'t find action');
 }
 ```
-
 如果控制器下没有空操作对应的方法，那么访问一个不存在的 url 时则会报错。
+
+
+### '私有'方法
+ThinkKoa默认仅暴露带 `Action`后缀的控制器方法给URL访问，如果控制器内方法名不包含此后缀，该方法无法被URL直接访问。
+
+```js
+module.exports = class extends think.controller.base {
+
+    init(http) {
+        super.init(http);
+    }
+
+    test() { //不包含后缀，无法被URL直接访问
+        ...
+    }
+}
+```
+该后缀在中间件配置中可以自行修改：
+
+项目中间件配置 config/middleware.js:
+
+```js
+config: { //中间件配置
+    ...,
+    controller: {
+        action_suffix: 'Action', //方法后缀,带后缀的方法为公共方法
+    }
+}
+```
+
+*注意：此处的'私有'跟面向对象编程中的'私有'概念不同，不能混为一谈。*
+
 
 ### 属性及方法
 见文档章节[API/controller](/doc/index/doc/think_controller.jhtml)
