@@ -32,6 +32,7 @@ export default class extends base {
         }
     }
 
+
     /**
      * get sidebar json
      * @return {} []
@@ -41,6 +42,7 @@ export default class extends base {
         let data = think.app_debug ? null : await think.cache(key);
         if (!data) {
             let filePath = `${think.root_path}/doc/sidebar.json`;
+            think.chmod(filePath, 755);
             let content = fs.readFileSync(filePath);
             data = JSON.parse(content);
             think.cache(key, data);
