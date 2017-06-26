@@ -129,6 +129,7 @@ export default class extends base {
      * @return {} []
     */
     markdownToHtml(filePath) {
+        think.chmod(filePath, 755);
         let content = fs.readFileSync(filePath, 'utf8');
 
         let tocContent = marked(markToc(content)).replace(/<a\s+href="#([^\"]+)">([^<>]+)<\/a>/g, (a, b, c) => {
