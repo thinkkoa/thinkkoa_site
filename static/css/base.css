@@ -7,10 +7,8 @@
 .circle{ right:none; left:-9px;top:18px; width:16px; height:16px; background-position: 0 -32px;}
 /* header */
  .header { position:relative;height:76px;background: #ffffff; border-bottom:1px solid #dfdfdf; box-shadow: 0 1px 2px rgba(0,0,0,0.1)}
-.logo {float:left;width:146px;height: 55px;margin-top:4px;}
-.logo a{
-      display: block;
-  }
+.logo {float:left;width:146px;height: 55px;margin-top:10px;}
+.logo a{display: block;background: url(../img/logo.png) no-repeat; width: 147px;height: 55px;}
 .headr {float:right;margin-top: 20px;}
 .nav { display:inline-block; *display:inline;*zoom:1; height:40px; line-height:40px; vertical-align:middle;margin-right: 20px;}
 .nav li{ float:left; margin:0 15px;}
@@ -34,18 +32,7 @@ a.versel{ position:relative; display:inline-block;width:65px; height:38px; line-
 .ft-copy{ padding:20px 0;border-top:1px solid #345; font-size:14px; color:#556677; text-align:center;}
 /*banarea*/
 .banarea{ height:560px; overflow: hidden;background: no-repeat center bottom; text-align:left;}
-.slogan{
-    width: 319px;
-    line-height: 45px;
-    font-size: 45px;
-    color: #fff;
-    text-align: left;
-    font-weight: normal;
-    font-family: arial;
-    padding-top: 70px;
-    padding-bottom: 10px;
-    -webkit-font-smoothing: antialiased;
-}
+.slogan{width:600px;line-height:50px;font-size: 45px;color: #fff;text-align: left;font-weight: normal;font-family: arial;padding-top: 160px;padding-bottom: 10px;-webkit-font-smoothing: antialiased;}
 .slogan-desc{color: #dedede;font-size: 24px;-webkit-font-smoothing: antialiased;text-align: left;}
 .banimg{ margin:90px 0 50px;width: 780px;height: 115px;}
 .btn-link{position: relative; display:inline-block; width:260px; height:48px; line-height:48px; border-radius:24px; background:#008CF9; font-size:24px; color:#eee; text-align:center;margin-top: 60px;-webkit-font-smoothing:antialiased;overflow: hidden;}
@@ -53,7 +40,7 @@ a.versel{ position:relative; display:inline-block;width:65px; height:38px; line-
 .btn-link:hover{color: #fff}
 .btn-link:hover:after{width: 100%}
 
-.banbot{ height:58px; line-height:58px; background:#99d;}
+.banbot{ height:58px; line-height:58px; background:#08193a;}
 .banbot .wrap{ position:relative;}
 .banbot p{ font-size:16px; color:#fff;}
 .share{ position:absolute;right:0;top:5px;}
@@ -454,14 +441,54 @@ table > tfoot > tr > td {
         cursor: pointer;
         transition: all .4s;
         overflow: hidden;
+        border:1px solid #dfdfdf;
     }
-      .caseContainer  .boxContent {
-            height: 280px;
-            background: pink;
+     
+     .boxContent {     
+           height: 280px;
+            cursor: pointer;  
+            cursor: pointer;
+            background:url(/img/sale.png);
+            background-size:100% 100%;
         }
-         .boxContent:hover{
-             background: green;
+     .boxContent2 {
+           height: 280px;
+            cursor: pointer;
+            cursor: pointer;
+            background:url(/img/data_exhibit.png);
+            background-size:100% 100%;
+        }
+     .boxContent3 {
+           height: 280px;
+            cursor: pointer;
+            cursor: pointer;
+           background:url(/img/juke.png);
+           background-size:100% 100%;
+        }
+     .boxContent4 {
+           height: 280px;
+            cursor: pointer;
+            cursor: pointer;
+          background:url(/img/yunhe.png);
+          background-size:100% 100%;
+        }
+         .boxContent3:hover{
+             background: rgba(0, 0, 0, .4) center no-repeat;
+             background-image: url(/img/yunheer.png) ;
          }
+           .boxContent2:hover{
+             background: rgba(0, 0, 0, .4) center no-repeat;
+             background-image: url(/img/yunheer.png) ;
+         }
+           .boxContent:hover{
+             background: rgba(0, 0, 0, .4) center no-repeat;
+             background-image: url(/img/saleer.png) ;
+         }
+           .boxContent4:hover{
+             background: rgba(0, 0, 0, .4) center no-repeat;
+             background-image: url(/img/yunheer.png) ;
+         }
+        
     .caseContainer    .boxTitle {
             height: 25px;
             color: #666;
@@ -491,6 +518,7 @@ table > tfoot > tr > td {
 
 .clear {
     clear: both;
+    height: 65px;
 }
 .share a{
     display:  inline-block;
