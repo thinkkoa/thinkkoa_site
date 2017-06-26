@@ -1,9 +1,9 @@
 <%- include('header.html')%>
     <!-- <div class="hd-tips">ThinkKoa 震撼发布。</div> -->
-    <div class="banarea" style="background-image:url(/img/banbg.jpg)">
+    <div class="banarea" style="background:url(/img/banbgImg_.jpeg) center no-repeat;background-size:90% 100%;background-color:#05121a;">
         <div class="wrap">
             <h1 class="slogan">A lightweight, scalable web framework, based on koa.</h1>
-            <h3 class="slogan-desc">Use the full ES6/7 features to develop Node.js applications.</h3>
+            <h3 class="slogan-desc">Use the full ES6/7 features </br>to develop Node.js applications.</h3>
             <a href="/doc/index.jhtml" class="btn-link">Getting Started</a>
         </div>
     </div>
@@ -31,28 +31,36 @@
     <div class="flinfo">
         <div class="wrap">
             <div class="tit">
-                <h3>使用 ES6/7 特性开发项目</h3>
+                <h3 style="color:#999">使用 ES6/7 特性开发项目</h3>
             </div>
-            <!--     <p class="tips">借助 Babel 编译，可以大胆的在项目使用 ES6/7 语法。</p> -->
-            <pre><code class="lang-js hljs javascript"><span class="hljs-comment">//user controller, controller/user.js</span>
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">think</span>.<span class="hljs-title">controller</span>.<span class="hljs-title">base</span> </span>{
-  <span class="hljs-comment">//login action</span>
-  <span class="hljs-keyword">async</span> loginAction(){
-    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.isGet()){
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.display();
-    }
-    <span class="hljs-comment">//database query</span>
-    <span class="hljs-keyword">let</span> data = <span class="hljs-keyword">this</span>.post();
-    <span class="hljs-keyword">let</span> result = <span class="hljs-keyword">await</span> <span class="hljs-keyword">think</span>.model(<span class="hljs-string">'user'</span>, {}).where({name: data.name}).find();
-    <span class="hljs-keyword">if</span>(!result){
-      <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.fail(<span class="hljs-string">'login fail'</span>);
-    }
-    <span class="hljs-comment">//set userInfo to session</span>
-    <span class="hljs-keyword">await</span> <span class="hljs-keyword">this</span>.session(<span class="hljs-string">'userInfo'</span>, result);
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.success();
-  }
-}
-</code></pre>
+            <div class="code">
+                <div class="code-top">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                </div>
+              <div class="codeContent" stye="position:relative">
+                     <span style="color:#999;position:absolute;left:18px;top:40px;font-size: 16px;">//user controller, controller/user.js</span>
+                     <span style="color:#4883cd;position:absolute;left:18px;top:68px;font-size: 16px;">export default class extends</span> 
+                     <span style="color:#AA3731;position:absolute;left:245px;top:68px;font-size: 16px;">think.controller.base</span><span style="color:#666;position:absolute;left:395px;top:68px;margin-left: 15px;font-size: 18px;">{</span>
+                     <span style="color:#999;position:absolute;left:40px;top:96px;font-size: 18px;">//login action</span>
+                     <span style="position:absolute;left:40px;top:122px;font-size: 18px;"><span style="color:#7a3e9d">async&nbsp;&nbsp;</span><span style="color:#AA3731">loginAction</span><span style="color:#999"> ( ) </span><span style="color:#000">{</span></span>
+                     <span style="position:absolute;left:60px;top:150px;font-size: 18px;"><span style="color:#4883cd">if </span><span>(</span><span style="color:#ab6526">this</span><span style="color:#666">.</span><span style="color:#AA3731">isGet </span><span style="color:#000"> ( ) ) {</span></span>
+                     <span style="position:absolute;left:80px;top:178px;font-size: 18px;"><span style="color:#4883cd">return </span><span style="color:#ab6526" > this</span><span style="color:#666">.</span><span style="color:#AA3731">display </span><span style="color:#000"> ( )  ;</span></span>
+                     <span style="position:absolute;left:80px;top:206px;font-size: 18px;color:black">}</span>
+                     <span style="position:absolute;left:80px;top:234px;font-size: 18px;color:#999">// database&nbsp;&nbsp;query</span>
+                     <span style="position:absolute;left:80px;top:262px;font-size: 18px;"><span style="color:#7a3e9d">let&nbsp;data </span><span style="color:#999"> = </span><span style="color:#ab6526" > this</span><span style="color:#666">.</span><span style="color:#AA3731">post </span><span style="color:#000"> ( )  ;</span></span>
+                     <span style="position:absolute;left:80px;top:290px;font-size: 18px;"><span style="color:#7a3e9d">let&nbsp;result </span><span style="color:#999"> = </span><span style="color:#4883cd">await </span><span style="color:#7a3e9d">think</span><span style="color:#666">.</span><span style="color:#AA3731">model </span><span style="color:#000"> ( '</span><span style="color:#448c27">user</span><span style="color:black">' , {})</span><span style="color:#666">.</span><span style="color:#AA3731">where</span><span>({</span><span style="color:#448c23">name</span><span style="color:#666">:</span><span style="color:#7a3e9d">&nbsp;data</span><span style="color:666"></span><span style="color:#7a3e9d">name</span><span style="color:black">})</span><span style="color:#666">.</span><span style="color:#AA3731">find</span><span style="color:black">( ) ;</span></span>
+                     <span style="position:absolute;left:60px;top:318px;font-size: 18px;"><span style="color:#4883cd">if </span><span>(</span><span style="color:#666">! </span><span style="color:#7a3e9d">result</span><span style="color:#000"> ) {</span></span>
+                     <span style="position:absolute;left:80px;top:346px;font-size: 18px;"><span style="color:#4883cd">return </span><span style="color:#ab6526" > this</span><span style="color:#666">.</span><span style="color:#AA3731">fail</span><span style="color:#000"> ( '</span><span style="color:#448c27">login &nbsp; fail</span><span>')  ;</span></span>                     
+                     <span style="position:absolute;left:60px;top:374px;font-size: 18px;"><span style="color:black">}</span></span>
+                     <span style="position:absolute;left:80px;top:402px;font-size: 18px;color:#999">// set userInfo to session</span>                     
+                     <span style="position:absolute;left:80px;top:430px;font-size: 18px;color:#999"><span style="color:#4883cd">await </span><span style="color:#ab6526" > this</span><span style="color:#666">.</span><span style="color:#AA3731">session</span><span style="color:#000"> ( '</span><span style="color:#448c27">userInfo</span><span>' ,</span><span style="color:#7a3e9d"> result</span><span>)  ;</span></span>                     
+                     <span style="position:absolute;left:80px;top:458px;font-size: 18px;"><span style="color:#4883cd">return </span><span style="color:#ab6526" > this</span><span style="color:#666">.</span><span style="color:#AA3731">success</span><span style="color:#000"> ( )  ;</span></span>                     
+                     <span style="position:absolute;left:40px;top:486px;font-size: 18px;color:black">}</span>
+                     <span style="position:absolute;left:18px;top:514px;font-size: 18px;color:black">}</span>
+                </div>
+            </div>
         </div>
     </div>
     <div class="flfet">
@@ -62,7 +70,7 @@
             </div>
             <!--       <p class="tips">Make Async Easy Based On ES6</p> -->
             <ul class="fetlist">
-                <li>
+                <!--<li>
                     <i class="icon-fet1"></i>
                     <p><strong>支持 ES6/7 特性</strong>可以直接在项目里使用 ES6/7（Generator Function, Class, Async & Await）等特性，借助 Babel 编译，可稳定运行在
                         Node.js 环境上。</p>
@@ -94,8 +102,57 @@
                 <li>
                     <i class="icon-fet8"></i>
                     <p><strong>命令行工具</strong>ThinkKoa提供命令行工具thinkkoa_cli，更敏捷快速的开发方式。</p>
-                </li>
+                </li>-->
+             
+                    <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">支持 ES6/7 特性</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet1"></i>
+                        <p>可以直接在项目里使用 ES6/7（Generator Function, Class, Async & Await）等特性，借助 Babel 编译，可稳定运行在 Node.js 环境上。
+                        </p>
+                    </li>
+                      <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">支持丰富的数据库</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet2"></i>
+                        <p>支持 Mysql、PostgreSQL、MongoDB 等常见的数据库，提供了很多简单易用、高度封装的方法。
+(注: 依赖ThinkOR模块及think_model中间件)</p>
+                    </li>
+                 <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">Koa/Express Middleware</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet3"></i>
+                        <p>框架可以兼容Express以及Koa的海量中间件引入使用，避免重复造轮子。
+                        </p>
+                    </li>
+                 <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">REST API</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet4"></i>
+                        <p>通过灵活的路由配置，可以很方便的支持Restful风格API。也可以根据接口定制，隐藏部分数据和进行权限控制。
+                        </p>
+                    </li>
+                 <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">约定优于配置</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet5"></i>
+                        <p>更贴近于团队开发者的约定及配置，提升编程体验。
+                        </p>
+                    </li>
+                 <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">Koa上下文</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet6"></i>
+                        <p>基于Koa2的薄封装，易于使用但不改变原有特性和用法，支持Koa上下文及函数。
+                        </p>
+                    </li>
+                 <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">自动更新</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet7"></i>
+                        <p>开发模式下，文件修改后自动重启 Node.js 服务。
+                        </p>
+                    </li>
+                 <li class="col_1_of_3 span_1_of_3">
+                        <h3 style="font-size:18px;">命令行工具</h3>
+                        <i style="width: 25% ; margin: 18px auto; display:block;" class="icon-fet8"></i>
+                        <p>ThinkKoa提供命令行工具thinkkoa_cli，更敏捷快速的开发方式。
+                        </p>
+                    </li>
             </ul>
         </div>
     </div>
-<%- include('footer.html')%>
+    <%- include('footer.html')%>
