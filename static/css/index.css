@@ -70,8 +70,23 @@ a.versel{ position:relative; display:inline-block;width:65px; height:38px; line-
 .flfet .tips{ padding-bottom:25px; font-size:30px; border-bottom:1px solid #345;}
 /*feture list*/
 .fetlist{ overflow:hidden;*zoom:1;}
-.fetlist li{ width:48%; float:left; margin:25px 0;margin-right: 2%;height:90px;letter-spacing: 0.5px;}
-.fetlist i{display:inline-block; float:left; width:70px; height:70px; margin-right:25px; background:url(../img/iconfet.png) no-repeat 0 0;}
+.fetlist li{ 
+    width:25%; 
+    float:left;
+    width: 25%;
+    margin: 0 0 5.6%;
+    text-align: center;
+    margin-top: 15px;
+    }
+   .fetlist li p    { 
+       width: 95%;
+       margin: 0 auto;
+       font-size: 0.85em;
+    padding: 0.5em 0;
+    color: #999;
+    line-height: 1.8em;
+    }
+.fetlist i{display:inline-block; width:70px; height:70px; margin-right:25px; background:url(../img/iconfet.png) no-repeat 0 0;}
 i.icon-fet2{ background-position:-70px 0}
 i.icon-fet3{ background-position: 0 -70px;}
 i.icon-fet4{ background-position: -70px -70px;}
@@ -79,7 +94,7 @@ i.icon-fet5{ background-position:0 -140px;}
 i.icon-fet6{ background-position:-70px -140px;}
 i.icon-fet7{ background-position:0 -210px}
 i.icon-fet8{ background-position:-70px -210px;}
-.fetlist p{overflow:hidden; font-size:14px; color:#556677; text-align:left;}
+.fetlist p{overflow:hidden; font-size:14px; color:#556677; text-align:center;}
 .fetlist strong{ display:block; margin-bottom:10px; font-size:18px; color:#7B8B9A;}
 /*fluser*/
 .fluser{padding:90px 0 135px;background-color:#fff;}
@@ -425,3 +440,58 @@ table > tfoot > tr > td {
        .codeContent span{
             font: 16px "微软雅黑"
        }
+/*case页面·样式*/
+.caseContainer {
+    width: 1024px;
+    margin: 0 auto;
+    font-family: '微软雅黑';
+}
+   .caseContainer .box {
+        float: left;
+        width: 460px;
+        height: 350px;
+        margin-top: 35px;
+        cursor: pointer;
+        transition: all .4s;
+        overflow: hidden;
+    }
+      .caseContainer  .boxContent {
+            height: 280px;
+            background: pink;
+        }
+         .boxContent:hover{
+             background: green;
+         }
+    .caseContainer    .boxTitle {
+            height: 25px;
+            color: #666;
+            background: #fff;
+            text-align: center;
+            line-height: 25px;
+            margin: 0;
+        }
+    
+   .caseContainer .box:nth-child(2n) {
+        margin-left: 104px;
+    }
+  .caseContainer  .box:nth-child(1),
+ .caseContainer   .box:nth-child(2) {
+        margin-top: 60px;
+    }
+  .caseContainer  .box:nth-child(5),
+  .caseContainer  .box:nth-child(6) {
+        margin-bottom: 60px;
+    }
+ .caseContainer   .box:hover {
+        -webkit-box-shadow: 0 0 16px rgba(0, 0, 0, .5);
+        -moz-box-shadow: 0 0 16px rgba(0, 0, 0, .5);
+        box-shadow: 0 0 16px rgba(0, 0, 0, .5);
+    }
+
+
+.clear {
+    clear: both;
+}
+.share a{
+    display:  inline-block;
+}
