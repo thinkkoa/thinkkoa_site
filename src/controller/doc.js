@@ -99,7 +99,7 @@ export default class extends base {
      * @return {Promise}          []
    */
     async getMarkedContent(filePath) {
-        let key = think.md5('filePath');
+        let key = think.md5(filePath);
         let markedContent = think.app_debug ? null : await think.cache(key);
         if (markedContent) {
             return markedContent;
