@@ -23,6 +23,7 @@
       "开发时修改代码生效": "debug",
       "修改服务监听端口": "edit_port",
       "输出文件或图片": "out_file",
+      "修改框架默认中间件配置": "default_middleware",
       "跨模块调用": "call",
       "并行处理": "parallel",
       "错误处理": "error",
