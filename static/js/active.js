@@ -115,7 +115,7 @@ var $, jQuery;
                 $("html, body").animate({scrollTop: 0}, "slow");
             });
 
-            $("a[href^='#']").on('click', function ($) {
+            $("a[href='#']").on('click', function ($) {
                 $.preventDefault();
             });
 
