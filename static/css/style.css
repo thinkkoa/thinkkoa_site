@@ -252,7 +252,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Microsoft YaHei', sans-serif, helvetica, Tahoma, Arial;
   font-size: 15px;
   font-weight: 400;
   line-height: 26px; }
