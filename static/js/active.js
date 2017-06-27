@@ -155,7 +155,7 @@ var $, jQuery;
                     opacity: 1
                 });
             }, {
-                offset: '90%'
+                offset: '100%'
             });
 
             $('.a_fl').css('opacity','0');
