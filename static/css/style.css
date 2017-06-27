@@ -1148,7 +1148,8 @@ header ul.menu > li > a {
  *****************************************
 */
 .service_area .container {
-  border-top: 1px solid #d9e3ed; }
+  /*border-top: 1px solid #d9e3ed; */
+}
   .service_area .container .service_col {
     margin-top: 45px; }
     .service_area .container .service_col .single_service {
