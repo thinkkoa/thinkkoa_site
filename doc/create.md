@@ -1,6 +1,6 @@
 ## 创建项目
 
-ThinkKoa需要 Node.js 的版本 &gt;=4.0.0，可以通过 node -v 命令查看当前 node 的版本。如果未安装 node 或者版本过低，请到 [Node.js](http://nodejs.org/) 官网进行安装或升级。
+ThinkKoa需要 Node.js 的版本 &gt;=6.0.0，可以通过 node -v 命令查看当前 node 的版本。如果未安装 node 或者版本过低，请到 [Node.js](http://nodejs.org/) 官网进行安装或升级。
 
 使用 ThinkKoa 时，假设你已经有了 Node.js 开发相关的经验。
 

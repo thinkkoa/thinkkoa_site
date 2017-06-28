@@ -37,6 +37,8 @@
       "ctx": "ctx",
       "think": "think",
       "think.base": "think_base",
-      "controller": "think_controller"
+      "think.controller": "think_controller",
+      "think.model": "think_model",
+      "think.service": "think_service"
     }
   }
