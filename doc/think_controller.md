@@ -27,7 +27,7 @@ export default class extends think.controller.base {
         如果传入的是类文件路径，则自动加载该类文件
         如果name值为false，返回 think.controller.base
 * http ctx对象的别名
-        如果config值为undefined,则返回该类而非实例
+        如果值为undefined,则返回该类而非实例
 
 返回控制器类：
 ```js
