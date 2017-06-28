@@ -22,6 +22,9 @@ export default class extends base {
         if (doc === 'plugin') {
             this.set('currentNav', 'plugin');
         }
+        if (doc === 'changelog') {
+            this.set('currentNav', 'changelog');
+        }
         await this.getSideBar();
 
         try {
