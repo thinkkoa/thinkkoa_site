@@ -63,7 +63,7 @@ config: { //中间件配置
 ```
 
 ### 单次执行
-中间件的执行机制为只要挂载运行，每次request请求都会执行该中间件。在项目开发中，自定义的中间件中的功能仅需要运行一次，并不需要每次都执行。那么我们可以按照下面方式注入到启动事件队列内运行：
+中间件的执行机制为只要挂载运行，每次request请求都会执行该中间件。在项目开发中，如果自定义的中间件中的功能仅需要运行一次，并不需要每次都执行。那么我们可以按照下面方式注入到启动事件队列内运行：
 
 src/middleware/custom.js
 
@@ -86,7 +86,7 @@ module.exports = function (options) {
 
 ### 使用koa中间件
 
-ThinkKoa支持使用koa的中间件：
+ThinkKoa支持使用koa的中间件（包括koa1.x及2.x的中间件）：
 
 src/middleware/passport.js
 
@@ -116,7 +116,7 @@ src/middleware/passport.js
 ```js
 const passport =  require('express-passport');
 module.exports = function (options) {
-    return think.useExp(passport);
+    return think.parseExpMiddleware(passport);
 };
 
 ```
