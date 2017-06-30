@@ -102,13 +102,7 @@ ctx.header('Content-Type', 'text/plain');
 
 ```
 
-### ctx.types
-
-`ThinkKoa扩展` `think_http中间件`
-
-获取ctx.headers.content-type属性。
-
-### ctx.type([contentType, encoding])
+### ctx.types([contentType, encoding])
 
 `ThinkKoa扩展` `think_http中间件`
 
@@ -473,7 +467,7 @@ koa 使用 `http-assert` 实现断言.
 * ctx.message=
 * ctx.length=
 * ctx.length
-* <del>ctx.type<del>
+* ctx.type
 * <del>ctx.types<del>
 * ctx.headerSent
 * ctx.redirect()
