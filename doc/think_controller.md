@@ -1,9 +1,9 @@
 ## think.controller
 
-think.controller 是ThinkKoa中非常重要的一个对象。所有的控制器都必须继承 `think.controller.base`
+think.controller 是ThinkKoa中非常重要的一个对象。
 
 ### think.controller.base
-ThinkKoa控制器基类。所有的控制器都必须继承 `think.controller.base`
+ThinkKoa控制器基类。所有的控制器都必须继承 `think.controller.base`或它的子类
 
 ```js
 export default class extends think.controller.base {
