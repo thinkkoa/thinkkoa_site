@@ -2966,8 +2966,8 @@ think_view@^1.x.x:
     think_lib "^1.x.x"
 
 thinkkoa@^1.x.x:
-  version "1.3.0"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.3.0.tgz#a3d0eccd7f05e187f9a6b824fa3506065d94f57f"
+  version "1.4.0"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.0.tgz#8fefe0849f9d624efc3885c527fae22febb0b7a2"
   dependencies:
     babel-runtime "6.23.0"
     bluebird "3.5.0"

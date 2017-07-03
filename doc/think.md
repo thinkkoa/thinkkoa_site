@@ -45,6 +45,12 @@ ThinkKoa框架版本
 ### think.app
 Koa实例对象
 
+### think.server
+http.Server实例对象
+
+### think.loader
+loader类，框架自动加载类。
+
 ### think.use(fn)
 运行koa中间件。等同于 `new koa().use(fn)`;
 
