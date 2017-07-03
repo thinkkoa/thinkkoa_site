@@ -10,6 +10,13 @@
 
 ## 更新日志
 
+### 1.4.0
+* 调整router中间件执行顺序，置于自定义中间件之后。给自定义中间件更大的定制空间。
+* 将框架加载功能移入loader类
+* 将server相关功能移入server类，方便扩展。
+* 调整think.controller.base到lib.js内赋值，避免某些情况下的赋值错误。
+* 修复结构调整后的单元测试用例。
+
 ### 1.3.0
 * 增加单元测试用例
 * 修复ctx属性命名冲突导致的`Cannot set property type of #<Object> which has only a getter`错误
