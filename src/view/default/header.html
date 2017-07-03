@@ -12,7 +12,7 @@
     <meta name="keywords" content="ThinkKoa, Node.js, Koa, MVC, Restful, Generator Function, ES6, ES7, Promise">
     <meta name="description" content="ThinkKoa - 轻量级高性能敏捷开发Node.js框架,支持ES6/7全新特性,支持Koa、Express中间件。">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ThinkKoa - A lightweight, scalable web framework, based on koa.</title>
+    <title><%=title%></title>
 
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap -->
@@ -73,6 +73,8 @@
                                         <%}%>><a href="/doc/index/doc/plugin.jhtml">插件</a></li>
                                     <li <%if(currentNav==='changelog' ){%>class="current-menu-item"
                                         <%}%>><a href="/doc/index/doc/changelog.jhtml">更新日志</a></li>
+                                    <li <%if(currentNav==='orm' ){%>class="current-menu-item"
+                                        <%}%>><a href="/orm/index.jhtml">ThinkORM</a></li>
                                     <!-- <li><a href="#">Versions</a>
                                     <ul class="sub-menu">
                                         <li><a href="index.html">Home Creative</a></li>
