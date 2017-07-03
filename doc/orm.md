@@ -108,4 +108,4 @@ let info = await think.model('user', {}).find();
 更多的操作语法请查看ThinkORM文档。
 
 ### ThinkORM文档
-在线文档地址：[ThinkORM](https://www.gitbook.com/book/richenlin/thinkorm-doc/)
+在线文档地址：[ThinkORM](/orm/index.jhtml)
