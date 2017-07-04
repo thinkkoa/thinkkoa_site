@@ -46,14 +46,26 @@ export default class extends think.controller.base {
 * [ECMAScript 7 Features](https://github.com/hemanth/es7-features)
 * [ECMAScript 7 compatibility table](http://kangax.github.io/compat-table/es7/)
 
+
+
 #### 支持多种项目结构和多种项目环境
+
 ThinkKoa默认支持单模块模式，适合简单快速的项目。业务复杂的项目，可以开启多模块支持，功能划分更加清晰。ThinkKoa支持Nginx代理以及pm2部署，适合对稳定性和效率有要求的生产环境。
+
+
 #### 支持Koa/Express中间件
+
 通过简单的引入机制，ThinkKoa可以很好的支持Koa中间件(包括Koa1及Koa2)。还提供了think.useExp()来使用Express的中间件。大大提升了框架的扩展性及开源模块利用率。
 
+
+
 #### 支持灵活的自定义路由
+
 ThinkKoa除默认的单模块模式(controller/action)及多模块模式(module/controller/action）路由规则以外，还支持用户定制路由。
 在项目中增加路由文件配置即可灵活的支持Restful等各种自定义路由。
+
+
+
 ### 性能测试
 
   框架  | 版本 |   Thread Stats Avg  | Thread Stats Max   |  Req/Sec Avg |  Req/Sec Max  |  Requests/sec  |  Transfer/sec  |  Total Rquests  |  timeout
