@@ -1,11 +1,8 @@
 ## 介绍
 
-
-[![npm version](https://badge.fury.io/js/thinkorm.svg)](https://badge.fury.io/js/thinkorm)
-[![Build Status](https://travis-ci.org/thinkkoa/thinkorm.svg?branch=master)](https://travis-ci.org/thinkkoa/thinkorm)
-[![Dependency Status](https://david-dm.org/thinkkoa/thinkorm.svg)](https://david-dm.org/thinkkoa/thinkorm)
-
 A flexible, lightweight and powerful Object-Relational Mapper for Node.js.
+
+[Git Repo](https://github.com/thinkkoa/thinkorm)
 
 ## 特性
 
@@ -27,6 +24,12 @@ A flexible, lightweight and powerful Object-Relational Mapper for Node.js.
 8. 支持 _before，_after等多种魔术方法
 
 9. 支持数据库集群,支持读写分离(mysql, postgresql)
+
+## 安装
+
+```bash
+npm install thinkorm --save
+```
 
 ## 计划
 
