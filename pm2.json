@@ -5,8 +5,11 @@
     "name": "thinkkoa_site",
     "script": "index.js",
     "cwd": "/acs/data",
-    "max_memory_restart": "512M",
+    "max_memory_restart": "300M",
+    "instances"  : 3,
+    "exec_mode"  : "cluster",
     "autorestart": true,
+    "max_restarts": 10,
     "node_args": "",
     "args": [],
     "env": {
