@@ -12,8 +12,11 @@ pm2.json
       "name": "node",
       "script": "index.js",
       "cwd": "/acs/data",
-      "max_memory_restart": "1G",
+      "max_memory_restart": "300M",
+      "instances"  : 2,
+      "exec_mode"  : "cluster",
       "autorestart": true,
+      "max_restarts": 10,
       "node_args": "",
       "args": [],
       "env": {
