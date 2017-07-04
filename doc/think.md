@@ -52,7 +52,7 @@ http.Server实例对象
 loader类，框架自动加载类。
 
 ### think.use(fn)
-运行koa中间件。等同于 `new koa().use(fn)`;
+运行koa中间件。支持Generator Function;支持koa1.x及2.x中间件
 
 ```js
 const passport = require('koa-passport');

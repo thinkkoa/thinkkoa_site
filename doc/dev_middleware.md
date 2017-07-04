@@ -22,6 +22,7 @@ ThinkKoa团队欢迎用户贡献自己开发的中间件。具体的开发规范
 
 ### 开发
 
+#### 代码格式
 中间件代码模板格式： 
 
 ```js
@@ -49,12 +50,45 @@ module.exports = function(options) {
 }
 ```
 
+#### 扩展规范
+
+* 1、处理request及response的相关功能函数扩展，设置为ctx的属性，例如：
+
+```js
+const lib = require('think_lib');
+//ctx.test is getter
+lib.define(ctx, 'test', function(arg) {
+	...
+});
+
+ctx.test = 111; //Error Cannot set property test of #<Object> which has only a getter
+
+//ctx.aaa is writable
+lib.define(ctx, 'aaa', function(arg){
+	...
+}, 1);
+ctx.aaa = 222; 
+console.log(ctx.aaa); //222
+```
+* 2、其他通用功能函数扩展，设置为think的属性，例如： 
+
+```js
+const lib = require('think_lib');
+//think.test is getter
+lib.define(think, 'test', function(arg) {
+	...
+});
+```
+* 3、在扩展功能的时候，不管是ctx还是think都不要重载已有的属性；且扩展属性或函数名不能以`_`开头命名。具体属性列表见API
+
 ### 单元测试
 在 test/index.js 文件书写相关的单元测试，测试框架使用 mocha， 需要配置下面的命令进行单元测试并输出结果：
 
 ```bash
 npm run test-cov
 ```
+
+可以参考我们已经发布的中间件源码(github)进行具体的中间件开发: [中间件列表](/doc/index/doc/plugin.jhtml#middlewares)
 
 ### 说明文档
 
