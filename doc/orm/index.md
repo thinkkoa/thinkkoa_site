@@ -45,7 +45,7 @@ mongodb join查询
 
 ## 文档
 
-[http://www.thinkkoa.org/orm/](http://www.thinkkoa.org/orm/index.jhtml/)
+[http://www.thinkkoa.org/orm/](http://www.thinkkoa.org/orm/index.jhtml)
 
 ## 贡献者
 
