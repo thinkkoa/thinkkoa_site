@@ -1,6 +1,6 @@
 ## View
 
-视图中间件`think_view`目前仅支持 ejs模板引擎，后续会不断扩展支持其他模板引擎。也欢迎用户自行扩展，然后给我们发pull。
+视图中间件`think_view`目前支持 ejs、pug 模板引擎，后续会不断扩展支持其他模板引擎。也欢迎用户自行扩展，然后给我们发pull。
 
 ### 安装
 
@@ -23,7 +23,7 @@ config: { //中间件配置
     ...,
     view: {
         view_path: think.app_path + '/view', //模板目录
-        engine_type: 'ejs', //模版引擎名称
+        engine_type: 'ejs', //模版引擎名称 ejs, pug
         engine_config: { cache: true }, //模版引擎配置
         content_type: 'text/html', //模版输出类型
         file_suffix: '.html', //模版文件名后缀
