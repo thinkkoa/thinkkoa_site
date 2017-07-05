@@ -613,8 +613,8 @@ babel-polyfill@^6.23.0:
     regenerator-runtime "^0.10.0"
 
 babel-preset-env@^1.5.1:
-  version "1.5.2"
-  resolved "http://r.cnpmjs.org/babel-preset-env/download/babel-preset-env-1.5.2.tgz#cd4ae90a6e94b709f97374b33e5f8b983556adef"
+  version "1.6.0"
+  resolved "http://r.cnpmjs.org/babel-preset-env/download/babel-preset-env-1.6.0.tgz#2de1c782a780a0a5d605d199c957596da43c44e4"
   dependencies:
     babel-plugin-check-es2015-constants "^6.22.0"
     babel-plugin-syntax-trailing-function-commas "^6.22.0"
@@ -950,13 +950,7 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@*, debug@^2.1.1, debug@^2.2.0:
-  version "2.6.8"
-  resolved "http://r.cnpmjs.org/debug/download/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
-  dependencies:
-    ms "2.0.0"
-
-debug@2.6.0:
+debug@*, debug@2.6.0, debug@^2.1.1, debug@^2.2.0:
   version "2.6.0"
   resolved "http://r.cnpmjs.org/debug/download/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
@@ -2242,10 +2236,6 @@ ms@0.7.2:
   version "0.7.2"
   resolved "http://r.cnpmjs.org/ms/download/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
-ms@2.0.0:
-  version "2.0.0"
-  resolved "http://r.cnpmjs.org/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
-
 mute-stream@0.0.5:
   version "0.0.5"
   resolved "http://r.cnpmjs.org/mute-stream/download/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
@@ -2849,7 +2839,7 @@ supervisor@^0.12.0:
   version "0.12.0"
   resolved "http://r.cnpmjs.org/supervisor/download/supervisor-0.12.0.tgz#de7e6337015b291851c10f3538c4a7f04917ecc1"
 
-supports-color@3.1.2:
+supports-color@3.1.2, supports-color@^3.1.0:
   version "3.1.2"
   resolved "http://r.cnpmjs.org/supports-color/download/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
   dependencies:
@@ -2858,12 +2848,6 @@ supports-color@3.1.2:
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "http://r.cnpmjs.org/supports-color/download/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
-
-supports-color@^3.1.0:
-  version "3.2.3"
-  resolved "http://r.cnpmjs.org/supports-color/download/supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6"
-  dependencies:
-    has-flag "^1.0.0"
 
 table@^3.7.8:
   version "3.8.3"
@@ -2911,11 +2895,11 @@ text-table@~0.2.0:
   resolved "http://r.cnpmjs.org/text-table/download/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
 
 think_cache@^1.x.x:
-  version "1.0.8"
-  resolved "http://r.cnpmjs.org/think_cache/download/think_cache-1.0.8.tgz#f38fcf5b16cb6b091af2a04992ba927d713acab0"
+  version "1.1.0"
+  resolved "http://r.cnpmjs.org/think_cache/download/think_cache-1.1.0.tgz#17d410552584aca14e016917e92f2dea83bbd799"
   dependencies:
-    babel-runtime "6.23.0"
     think_lib "^1.x.x"
+    think_store "^1.x.x"
 
 think_controller@^1.x.x:
   version "1.0.2"
@@ -2936,8 +2920,8 @@ think_lib@^1.x.x:
     lodash "^4.17.4"
 
 think_logger@^1.x.x:
-  version "1.0.7"
-  resolved "http://r.cnpmjs.org/think_logger/download/think_logger-1.0.7.tgz#1423fd8393baec24b423ec06fe9b1c66b7a1b0a6"
+  version "1.0.8"
+  resolved "http://r.cnpmjs.org/think_logger/download/think_logger-1.0.8.tgz#1b3e39f379beddac33851f6560c7438185169bc7"
   dependencies:
     think_lib "^1.x.x"
 
@@ -2964,6 +2948,13 @@ think_static@^1.x.x:
   dependencies:
     compressible "^2.0.10"
     mime-types "^2.1.15"
+    think_lib "^1.x.x"
+
+think_store@^1.x.x:
+  version "1.0.1"
+  resolved "http://r.cnpmjs.org/think_store/download/think_store-1.0.1.tgz#26b1d418f281809f0ec62da3b56037e7d2fd798e"
+  dependencies:
+    babel-runtime "6.23.0"
     think_lib "^1.x.x"
 
 think_view@^1.x.x:
