@@ -778,8 +778,8 @@ camelcase@^1.0.2:
   resolved "http://r.cnpmjs.org/camelcase/download/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
 caniuse-lite@^1.0.30000684:
-  version "1.0.30000696"
-  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000696.tgz#30f2695d2a01a0dfd779a26ab83f4d134b3da5cc"
+  version "1.0.30000697"
+  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000697.tgz#125fb00604b63fbb188db96a667ce2922dcd6cdd"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -2839,7 +2839,7 @@ supervisor@^0.12.0:
   version "0.12.0"
   resolved "http://r.cnpmjs.org/supervisor/download/supervisor-0.12.0.tgz#de7e6337015b291851c10f3538c4a7f04917ecc1"
 
-supports-color@3.1.2, supports-color@^3.1.0:
+supports-color@3.1.2:
   version "3.1.2"
   resolved "http://r.cnpmjs.org/supports-color/download/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
   dependencies:
@@ -2848,6 +2848,12 @@ supports-color@3.1.2, supports-color@^3.1.0:
 supports-color@^2.0.0:
   version "2.0.0"
   resolved "http://r.cnpmjs.org/supports-color/download/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
+
+supports-color@^3.1.0:
+  version "3.2.3"
+  resolved "http://r.cnpmjs.org/supports-color/download/supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6"
+  dependencies:
+    has-flag "^1.0.0"
 
 table@^3.7.8:
   version "3.8.3"
@@ -2958,8 +2964,8 @@ think_store@^1.x.x:
     think_lib "^1.x.x"
 
 think_view@^1.x.x:
-  version "1.0.8"
-  resolved "http://r.cnpmjs.org/think_view/download/think_view-1.0.8.tgz#dbaab102ef8fade8e11c32632a0b2ce66a8001f4"
+  version "1.1.0"
+  resolved "http://r.cnpmjs.org/think_view/download/think_view-1.1.0.tgz#e66b23c8f02396ca40c0d4773f9eab11f3584f95"
   dependencies:
     ejs "^2.5.6"
     think_lib "^1.x.x"
