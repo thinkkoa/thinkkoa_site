@@ -7,7 +7,7 @@
 ```js
  //图片 buffer 数据，读取本地文件或者从远程获取
  let imageBuffer = new Buffer();
- this.echo(imageBuffer, 'image/png');
+ return this.echo(imageBuffer, 'image/png');
 
 ```
 

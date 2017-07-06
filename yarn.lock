@@ -24,8 +24,8 @@ acorn@^3.0.4:
   resolved "http://r.cnpmjs.org/acorn/download/acorn-3.3.0.tgz#45e37fb39e8da3f25baee3ff5369e2bb5f22017a"
 
 acorn@^5.0.1:
-  version "5.0.3"
-  resolved "http://r.cnpmjs.org/acorn/download/acorn-5.0.3.tgz#c460df08491463f028ccb82eab3730bf01087b3d"
+  version "5.1.1"
+  resolved "http://r.cnpmjs.org/acorn/download/acorn-5.1.1.tgz#53fe161111f912ab999ee887a90a0bc52822fd75"
 
 ajv-keywords@^1.0.0:
   version "1.5.1"
@@ -112,8 +112,8 @@ arr-diff@^2.0.0:
     arr-flatten "^1.0.1"
 
 arr-flatten@^1.0.1:
-  version "1.0.3"
-  resolved "http://r.cnpmjs.org/arr-flatten/download/arr-flatten-1.0.3.tgz#a274ed85ac08849b6bd7847c4580745dc51adfb1"
+  version "1.1.0"
+  resolved "http://r.cnpmjs.org/arr-flatten/download/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1"
 
 array-differ@^0.1.0:
   version "0.1.0"
@@ -2914,8 +2914,8 @@ think_controller@^1.x.x:
     think_lib "^1.x.x"
 
 think_error@^1.x.x:
-  version "1.0.4"
-  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.0.4.tgz#8e2549791353adcd73f2d77ac9362562c9ca9fb5"
+  version "1.1.1"
+  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.1.1.tgz#16d75d0d8208f1ecfa5f251120a0b2458fd97767"
   dependencies:
     think_lib "^1.x.x"
 
@@ -2971,8 +2971,8 @@ think_view@^1.x.x:
     think_lib "^1.x.x"
 
 thinkkoa@^1.x.x:
-  version "1.4.1"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.1.tgz#82c423c6e3aff5e00e06eae8f53b1f30831e8ec7"
+  version "1.4.3"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.3.tgz#ee9dd5ad52801146c088cea410495b9cc1f40049"
   dependencies:
     babel-runtime "6.23.0"
     bluebird "3.5.0"

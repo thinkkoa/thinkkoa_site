@@ -20,28 +20,6 @@ http协议版本
 
 因为ctx.path在中间件处理的时候可能发生变化，originalPath属性保存原始请求path。
 
-### ctx.timeoutTimer
-
-`ThinkKoa扩展` `think_http中间件`
-
-ctx.res的超时计时器，用于计算处理超时，返回504。超时时间可在项目中间件配置文件中进行定义：
-
-```js
-
-/**
- * Middleware config
- * @return
- */
-module.exports = {
-    list: [], //加载的中间件列表
-    config: { //中间件配置 
-        http: {
-        	timeout: 30, //http超时时间,30 seconds
-        }
-    }
-};
-```
-
 ### ctx.afterEnd
 
 `ThinkKoa扩展` `think_http中间件`
