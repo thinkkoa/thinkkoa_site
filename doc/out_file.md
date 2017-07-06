@@ -5,10 +5,16 @@
 控制器内输出图片:
 
 ```js
- //图片 buffer 数据，读取本地文件或者从远程获取
- let imageBuffer = new Buffer();
- return this.echo(imageBuffer, 'image/png');
+const file = think.root_path + '/static/upload/test.png';
+const filename = path.relative(path.dirname(file), file);
+
+this.header('Content-disposition', 'attachment; filename=' + filename);
+return this.echo(fs.createReadStream(file));
+```
+或者这样写：
+
+```js
+this.ctx.set('Content-disposition', 'attachment; filename=' + filename);
+this.ctx.body = fs.createReadStream(file);
 
 ```
-
-输出其他类型文件方法类似，修改传入的contentType即可。
