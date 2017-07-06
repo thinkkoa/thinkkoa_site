@@ -950,7 +950,13 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@*, debug@2.6.0, debug@^2.1.1, debug@^2.2.0:
+debug@*, debug@^2.1.1, debug@^2.2.0:
+  version "2.6.8"
+  resolved "http://r.cnpmjs.org/debug/download/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  dependencies:
+    ms "2.0.0"
+
+debug@2.6.0:
   version "2.6.0"
   resolved "http://r.cnpmjs.org/debug/download/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
@@ -2236,6 +2242,10 @@ ms@0.7.2:
   version "0.7.2"
   resolved "http://r.cnpmjs.org/ms/download/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
+ms@2.0.0:
+  version "2.0.0"
+  resolved "http://r.cnpmjs.org/ms/download/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
+
 mute-stream@0.0.5:
   version "0.0.5"
   resolved "http://r.cnpmjs.org/mute-stream/download/mute-stream-0.0.5.tgz#8fbfabb0a98a253d3184331f9e8deb7372fac6c0"
@@ -2914,8 +2924,8 @@ think_controller@^1.x.x:
     think_lib "^1.x.x"
 
 think_error@^1.x.x:
-  version "1.1.1"
-  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.1.1.tgz#16d75d0d8208f1ecfa5f251120a0b2458fd97767"
+  version "1.1.2"
+  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.1.2.tgz#21d05ca2beb5dee0cdde8aebe4f01ccdac1eef69"
   dependencies:
     think_lib "^1.x.x"
 

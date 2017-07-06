@@ -6,7 +6,7 @@
     "script": "index.js",
     "cwd": "/acs/data",
     "max_memory_restart": "300M",
-    "instances"  : 3,
+    "instances"  : 2,
     "exec_mode"  : "cluster",
     "autorestart": true,
     "max_restarts": 10,
