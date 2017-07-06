@@ -26,7 +26,6 @@ module.exports = {
   /*app config*/
   app_port: 3000,
   encoding: 'utf-8', //输出数据的编码
-  language: 'zh-cn' 
 };
 ```
 #### 框架默认中间件配置
