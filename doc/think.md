@@ -424,6 +424,7 @@ think.datetime('2017-01-01', 'yyyy');
 `think_lib`
 
 将 arr 数组删除指定元素.
+
 * arr 数组
 * indexs 需要删除的下标数组[0, 1, 2]
 
