@@ -108,7 +108,7 @@ think.define(obj, 'getInfo', function(){}, 1);
 
 `think_lib`
 
-返回path.sep，根据OS不同返回文件分隔符。
+返回path.sep，根据OS不同返回文件目录分隔符。
 
 ```js
 //windows
@@ -337,13 +337,13 @@ console.log(think.sep()); // /
 
 `think_lib`
 
-字符转义实体.将value中的实体字符反转义.
+实体转义字符.将value中的实体字符反转义.
 
 ### think.ucFirst(value)
 
 `think_lib`
 
-字符转义实体.将value首字符大写.
+将value字符串首字符大写.
 
 ### think.md5(value)
 
@@ -355,7 +355,7 @@ console.log(think.sep()); // /
 
 `think_lib`
 
-将value生成 hash 散列(非标准hash).
+将value生成 hash 散列(自定义hash字符串，效率比md5快，但有很小的几率重复).
 
 ### think.rand(min, max)
 
