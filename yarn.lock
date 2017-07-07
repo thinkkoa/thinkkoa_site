@@ -1992,6 +1992,10 @@ koa-compose@^3.0.0:
   dependencies:
     any-promise "^1.1.0"
 
+koa-compose@^4.0.0:
+  version "4.0.0"
+  resolved "http://r.cnpmjs.org/koa-compose/download/koa-compose-4.0.0.tgz#2800a513d9c361ef0d63852b038e4f6f2d5a773c"
+
 koa-convert@^1.2.0:
   version "1.2.0"
   resolved "http://r.cnpmjs.org/koa-convert/download/koa-convert-1.2.0.tgz#da40875df49de0539098d1700b50820cebcd21d0"
@@ -2003,9 +2007,9 @@ koa-is-json@^1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/koa-is-json/download/koa-is-json-1.0.0.tgz#273c07edcdcb8df6a2c1ab7d59ee76491451ec14"
 
-koa@2.2.0:
-  version "2.2.0"
-  resolved "http://r.cnpmjs.org/koa/download/koa-2.2.0.tgz#b055933187849d540ad8b9f731baaa4be97c652d"
+koa@2.3.0:
+  version "2.3.0"
+  resolved "http://r.cnpmjs.org/koa/download/koa-2.3.0.tgz#9e1e8e4da401839c57b8527eadc57f76127555a7"
   dependencies:
     accepts "^1.2.2"
     content-disposition "~0.5.0"
@@ -2021,7 +2025,7 @@ koa@2.2.0:
     http-assert "^1.1.0"
     http-errors "^1.2.8"
     is-generator-function "^1.0.3"
-    koa-compose "^3.0.0"
+    koa-compose "^4.0.0"
     koa-convert "^1.2.0"
     koa-is-json "^1.0.0"
     mime-types "^2.0.7"
@@ -2981,12 +2985,12 @@ think_view@^1.x.x:
     think_lib "^1.x.x"
 
 thinkkoa@^1.x.x:
-  version "1.4.3"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.3.tgz#ee9dd5ad52801146c088cea410495b9cc1f40049"
+  version "1.4.4"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.4.tgz#35f722f235429c6c4c299c8bb8c4bc3a898eabd1"
   dependencies:
     babel-runtime "6.23.0"
     bluebird "3.5.0"
-    koa "2.2.0"
+    koa "2.3.0"
     think_controller "^1.x.x"
     think_error "^1.x.x"
     think_lib "^1.x.x"

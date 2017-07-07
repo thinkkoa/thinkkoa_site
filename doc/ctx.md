@@ -20,12 +20,6 @@ http协议版本
 
 因为ctx.path在中间件处理的时候可能发生变化，originalPath属性保存原始请求path。
 
-### ctx.afterEnd
-
-`ThinkKoa扩展` `think_http中间件`
-
-使用 `process.nextTick` 处理清理超时计时器、打印控制台信息等当完成response后的操作。
-
 ### ctx.isGet()
 
 `ThinkKoa扩展` `think_http中间件`

@@ -10,6 +10,11 @@
 
 ## 更新日志
 
+### 1.4.4 
+* 升级核心koa到2.3.0
+* 升级模块babel-preset-env到1.6.0
+* 升级模块eslint到4.1.1
+
 ### 1.4.3 (推荐升级)
 * 将http timeout移入`think_error`中间件，统一拦截控制更加合理
 * 优化http中间件
