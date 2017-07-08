@@ -7,10 +7,6 @@
 在控制器中，错误的输出分为三种情况：
 
 * API接口错误输出，格式为JSON
-* 给用户显示错误提示页面
-* 代码块中抛出错误，交给框架拦截
-
-API接口错误输出，格式为JSON：
 
 ```js
 
@@ -20,11 +16,11 @@ this.error(errmsg, data, code, options);
 
 errmsg： 错误提示信息
 data： 输出数据项
-code： http status code，未传入默认500
+code： 错误码，未传入默认500
 options：定义错误输出的JSON对象key值
 ```
 
-给用户显示错误提示页面：
+* 给用户显示错误页面
 
 ```js
 //传入参数为错误模板物理路径
@@ -32,7 +28,7 @@ this.set('errmsg', '没有权限');
 this.render(think.app_path + '/view/default/error.html');
 ```
 
-代码块中抛出错误，交给框架拦截：
+* 代码块中抛出错误，交给框架拦截
 
 ```js
 //抛出404错误
