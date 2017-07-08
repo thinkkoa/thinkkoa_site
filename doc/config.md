@@ -129,9 +129,7 @@ think.config('key', 'middleware');
 配置项:
 
 ```
-key : {
-aa : 'bb'
-}
+key : {aa : 'bb'}
 ```
 
 读取：
