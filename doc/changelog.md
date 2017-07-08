@@ -10,7 +10,14 @@
 
 ## 更新日志
 
-### 1.4.5 (推荐升级)
+### 1.4.6 (推荐升级)
+* 为更好的兼容性，移除跟ctx原生属性命名冲突的扩展属性
+    移除扩展的ctx.header()函数，ctx.type和ctx.get及ctx.set完全可替代
+    ctx.echo修改为ctx.write
+    ctx.get修改为ctx.querys，因为原生ctx.get功能为获取header
+* 框架默认启用的中间件之间解耦
+
+### 1.4.5 
 * 将框架内的http中间件独立为think_http中间件
 * 修改框架标示语：为敏捷开发为主题
 

@@ -40,11 +40,11 @@ this.http
 //src/controller/index.js控制器
  ...
  __empty(){
-     return this.echo('action not found');
+     return this.write('action not found');
  }
 
  indexAction(){
-     return this.echo('hello world');
+     return this.write('hello world');
  }
  ...
 
@@ -192,13 +192,13 @@ this.types('text/plian', 'utf-8');
 
 ```js
 //获取所有header属性
-ctx.header();
+this.header();
 
 //获取某个header值
-ctx.header('Content-Type');
+this.header('Content-Type');
 
 //设置header属性
-ctx.header('Content-Type', 'text/plain');
+this.header('Content-Type', 'text/plain');
 ```
 #### referer([host])
 
@@ -218,6 +218,12 @@ ref = this.referer('http://baidu.com');
 * code http状态码       
                                
 页面跳转。
+
+```js
+this.redirect('/index');
+
+this.redirect('http://baidu.com');
+```
 
 #### deny()
 返回403禁止访问。
@@ -282,7 +288,7 @@ this.session('user', {'username': 'test'});
 this.session('user', {'username': 'test'}, 30);
 ```
 
-#### echo(data[, contentType, encoding])
+#### write(data[, contentType, encoding])
 对ctx.body赋值进行功能封装。 
 
 * content 输出的内容
@@ -290,8 +296,11 @@ this.session('user', {'username': 'test'}, 30);
 * encoding 输出文档编码，默认 `utf-8`，在项目配置文件 src/config/config.js内可修改
 
 ```js
-return this.echo('content'); //页面输出 content
+return this.write('content', 'text/plain'); //页面输出 content
 ```
+
+#### echo(data[, contentType, encoding])
+功能同write。
 
 #### json(data)
 
@@ -307,12 +316,11 @@ return this.json({aa: 111, bb: 222}); //页面输出   {"aa": 111, "bb":222}
 
 * data 输出的数据
 
-response返回jsonp格式数据。用于回调前端函数。
-
-* data 输出的数据
+response返回jsonp格式数据。用于回调前端函数。在jsonp返回值之前，request请求的时候需要传递callback函数名作为参数（http://host/index?callback=fun_name）
 
 ```js
-return this.jsonp({dddddd: 1}); //页面输出 callback({"dddddd": 1})
+//http://host/index?callback=fun_name
+return this.jsonp({dddddd: 1}); //页面输出 fun_name({"dddddd": 1})
 ```
 
 #### success(errmsg[, data, code = 200, options = {}])

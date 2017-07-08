@@ -56,24 +56,6 @@ http协议版本
 
 获取传入host的hostname作为referer；如果未传递参数，则当前request的headers.referer。
 
-### ctx.header([name, value])
-
-`ThinkKoa扩展` `think_http中间件`
-
-获取或者设置ctx.headers属性。
-
-```js
-//获取所有header属性
-ctx.header();
-
-//获取某个header值
-ctx.header('Content-Type');
-
-//设置header属性
-ctx.header('Content-Type', 'text/plain');
-
-```
-
 ### ctx.types([contentType, encoding])
 
 `ThinkKoa扩展` `think_http中间件`
@@ -133,7 +115,7 @@ module.exports = {
 };
 ```
 
-### ctx.echo(content[, contentType, encoding])
+### ctx.write(content[, contentType, encoding])
 
 `ThinkKoa扩展` `think_http中间件`
 
@@ -143,7 +125,7 @@ module.exports = {
 * contentType 输出文档类型，默认 `text/plain`
 * encoding 输出文档编码，默认 `utf-8`，在项目配置文件 src/config/config.js内可修改
 
-### ctx.get([name, value])
+### ctx.querys([name, value])
 
 `ThinkKoa扩展` `think_payload中间件`
 
@@ -151,14 +133,14 @@ module.exports = {
 
 ```js
 //获取所有querystring值
-ctx.get();
+ctx.querys();
 
 //获取某个querystring值
-ctx.get('username');
+ctx.querys('username');
 
 //构造querystring 值
-ctx.get('username', 'lin');
-ctx.get({
+ctx.querys('username', 'lin');
+ctx.querys({
     username: 'lin',
     age: 22
 })
@@ -214,12 +196,6 @@ ctx.file('filename');
 //构造传递的文件
 ctx.file('filename', fileObject);
 ``` 
-
-### ctx.path
-
-`ThinkKoa扩展` `think_router中间件`
-
-根据路由规则解析生成的path。
 
 ### ctx.group
 
@@ -309,17 +285,61 @@ Node 的 response 对象.
 * res.write()
 * res.end()
 
-### ctx.request
+### ctx.get(name)
 
 `koa原生`
 
-koa Request 对象.
+获取名为 name 的 header值:
 
-### ctx.response
+```js
+ctx.get('user-agent');
+```
+
+### ctx.set(name, value)
 
 `koa原生`
 
-koa Response 对象.
+设置 header值:
+
+```js
+ctx.set('Cache-Control', `max-age=3000`);
+```
+
+### ctx.type
+
+`koa原生`
+
+获取或设置response header中的content-type值:
+
+```js
+console.log(ctx.type);
+
+ctx.type = 'text/plain';
+```
+### ctx.query
+
+`koa原生`
+
+获取querystring值:
+
+```js
+console.log(ctx.query);
+```
+
+### ctx.body
+
+`koa原生`
+
+设置返回的response：
+
+```js
+ctx.body = 'hello world';
+```
+### ctx.path
+
+`koa原生`
+
+request的pathname(ThinkKoa中的路由中间件会根据路由规则解析覆盖path值)。
 
 ### ctx.cookies.get(name, [options])
 
@@ -395,19 +415,14 @@ koa 使用 `http-assert` 实现断言.
 
 如下访问器和别名同 Request 等价:
 
-* <del>ctx.header<del>
+* ctx.header
 * ctx.headers
 * ctx.method
-* ctx.method=
 * ctx.url
-* ctx.url=
 * ctx.originalUrl
-* <del>ctx.path<del>
-* <del>ctx.path=<del>
+* ctx.path
 * ctx.query
-* ctx.query=
 * ctx.querystring
-* ctx.querystring=
 * ctx.host
 * ctx.hostname
 * ctx.fresh
@@ -432,19 +447,14 @@ koa 使用 `http-assert` 实现断言.
 如下访问器和别名同 Response 等价:
 
 * ctx.body
-* ctx.body=
 * ctx.status
-* ctx.status=
 * ctx.message
-* ctx.message=
-* ctx.length=
 * ctx.length
 * ctx.type
-* <del>ctx.types<del>
+* ctx.etag
+* ctx.lastModified
 * ctx.headerSent
 * ctx.redirect()
 * ctx.attachment()
 * ctx.set()
 * ctx.remove()
-* ctx.lastModified=
-* ctx.etag=

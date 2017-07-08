@@ -9,7 +9,7 @@ const file = think.root_path + '/static/upload/test.png';
 const filename = path.relative(path.dirname(file), file);
 
 this.header('Content-disposition', 'attachment; filename=' + filename);
-return this.echo(fs.createReadStream(file));
+return this.write(fs.createReadStream(file));
 ```
 或者这样写：
 
