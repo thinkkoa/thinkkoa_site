@@ -43,3 +43,15 @@ params是服务类的构造方法入参。params可以为{}值，如果传入und
 think.service('test',{}).customMethod(xxx); 
 
 ```
+
+### 服务类的继承
+
+当服务类构造方法入参params传入的值为undefined，返回服务类自身:
+
+```js
+const seviceClass = think.service('test'); //构造方法入参params为undefined
+
+class extends serviceClass {
+	...
+}
+```
