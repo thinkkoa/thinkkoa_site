@@ -29,6 +29,7 @@
       "开发时自动重启": "debug",
       "修改服务监听端口": "edit_port",
       "输出文件或图片": "out_file",
+      "上传文件或图片": "upload",
       "修改默认中间件配置": "default_middleware",
       "禁止访问功能": "deny",
       "升级指南": "update"
