@@ -10,7 +10,22 @@
 
 ## 更新日志
 
-### 1.4.6 (推荐升级)
+### 1.4.7 (推荐升级)
+* 移除think.logs函数，跟中间件`think_logger`完全解耦
+* 支持多彩的控制台输出，错误一目了然
+* 完全重写`think_logger`中间件，新增了一系列日志处理函数：
+
+```js
+think.logger()
+think.logger.info()
+think.logger.success()
+think.logger.warn()
+think.logger.error()
+think.addLogs()
+```
+
+
+### 1.4.6
 * 为更好的兼容性，移除跟ctx原生属性命名冲突的扩展属性
 
 ```

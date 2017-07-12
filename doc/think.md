@@ -66,14 +66,6 @@ const passport = require('express-passport');
 think.useExp(passport());
 ```
 
-### think.logs(msg[, type, showTime, debug])
-控制台输出封装。
-
-* msg 输出信息。可以是string或 Error对象，如果为 Error对象，type参数值为 ERROR
-* type 输出信息类型。分为 INFO,ERROR,WARING,THINK，其中 ERROR,WARING类型默认会自动写入日志文件
-* showTime 输出执行时间
-* debug 为false时控制台不打印信息
-
 ### think.parseExpMiddleware(fn)
 转换express的middleware为koa使用
 
@@ -569,16 +561,95 @@ await think.cache('test', {aa: 11});
 await think.cache('test', {aa: 11}, 30);
 ```
 
+### think.logger(type, css, ...args)
+
+`think_logger中间件`
+
+自定义控制台输出。
+
+* type 控制台输出类型,例如 THINK, HTTP等
+* css 控制台输出字符颜色,例如 white,grey,black,blue,cyan,green,magenta,red,yellow等
+* ...args 其余可变参数。不限制参数个数
+
+```js
+think.logger('custom', 'blue', '测试内容');
+think.logger('custom', 'green', '测试：', '测试内容');
+think.logger('custom', 'blue', {"测试": "测试内容"});
+think.logger('custom', 'blue', ['测试：', '测试内容']);
+think.logger('custom', 'red', new Error('测试内容'));
+```
+
+### think.logger.info(...args)
+
+`think_logger中间件`
+
+自定义控制台输出info类型信息。
+
+* ...args 可变参数。不限制参数个数
+
+```js
+think.logger.info('测试内容');
+think.logger.info('测试：', '测试内容');
+think.logger.info({"测试": "测试内容"});
+think.logger.info(['测试：', '测试内容']);
+think.logger.info(new Error('测试内容'));
+```
+### think.logger.success(...args)
+
+`think_logger中间件`
+
+自定义控制台输出success类型信息。
+
+* ...args 可变参数。不限制参数个数
+
+```js
+think.logger.success('测试内容');
+think.logger.success('测试：', '测试内容');
+think.logger.success({"测试": "测试内容"});
+think.logger.success(['测试：', '测试内容']);
+think.logger.success(new Error('测试内容'));
+```
+### think.logger.warn(...args)
+
+`think_logger中间件`
+
+自定义控制台输出warn类型信息。
+
+* ...args 可变参数。不限制参数个数
+
+```js
+think.logger.warn('测试内容');
+think.logger.warn('测试：', '测试内容');
+think.logger.warn({"测试": "测试内容"});
+think.logger.warn(['测试：', '测试内容']);
+think.logger.warn(new Error('测试内容'));
+```
+### think.logger.error(...args)
+
+`think_logger中间件`
+
+自定义控制台输出error类型信息。
+
+* ...args 可变参数。不限制参数个数
+
+```js
+think.logger.error('测试内容');
+think.logger.error('测试：', '测试内容');
+think.logger.error({"测试": "测试内容"});
+think.logger.error(['测试：', '测试内容']);
+think.logger.error(new Error('测试内容'));
+```
+
 ### think.addLogs(name, msgs)
 
 `think_logger中间件`
 
-自定义信息写入日志文件。日志文件默认存在在 logs/custom。可修改 `think_logger`中间件配置。
+自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。可修改 `think_logger`中间件配置。
 
 如果日志超过指定大小，会自动按照日期切割。
 
-* name 缓存key,日志文件名
-* msgs 缓存value
+* name 日志文件名
+* msgs 接收 Error、对象、字符串等类型数据
 
 ```js
 

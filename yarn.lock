@@ -38,6 +38,15 @@ ajv@^4.7.0, ajv@^4.9.1:
     co "^4.6.0"
     json-stable-stringify "^1.0.1"
 
+ajv@^5.2.0:
+  version "5.2.2"
+  resolved "http://r.cnpmjs.org/ajv/download/ajv-5.2.2.tgz#47c68d69e86f5d953103b0074a9430dc63da5e39"
+  dependencies:
+    co "^4.6.0"
+    fast-deep-equal "^1.0.0"
+    json-schema-traverse "^0.3.0"
+    json-stable-stringify "^1.0.1"
+
 align-text@^0.1.1, align-text@^0.1.3:
   version "0.1.4"
   resolved "http://r.cnpmjs.org/align-text/download/align-text-0.1.4.tgz#0cd90a561093f35d0a99256c22b7069433fad117"
@@ -65,6 +74,12 @@ ansi-regex@^3.0.0:
 ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "http://r.cnpmjs.org/ansi-styles/download/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
+
+ansi-styles@^3.1.0:
+  version "3.1.0"
+  resolved "http://r.cnpmjs.org/ansi-styles/download/ansi-styles-3.1.0.tgz#09c202d5c917ec23188caa5c9cb9179cd9547750"
+  dependencies:
+    color-convert "^1.0.0"
 
 ansi-styles@~1.0.0:
   version "1.0.0"
@@ -778,8 +793,8 @@ camelcase@^1.0.2:
   resolved "http://r.cnpmjs.org/camelcase/download/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
 caniuse-lite@^1.0.30000684:
-  version "1.0.30000697"
-  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000697.tgz#125fb00604b63fbb188db96a667ce2922dcd6cdd"
+  version "1.0.30000700"
+  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000700.tgz#6084871ec75c6fa62327de97622514f95d9db26a"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -792,7 +807,7 @@ center-align@^0.1.1:
     align-text "^0.1.3"
     lazy-cache "^1.0.3"
 
-chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
+chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
   version "1.1.3"
   resolved "http://r.cnpmjs.org/chalk/download/chalk-1.1.3.tgz#a8115c55e4a702fe4d150abd3872822a7e09fc98"
   dependencies:
@@ -801,6 +816,14 @@ chalk@^1.0.0, chalk@^1.1.0, chalk@^1.1.1, chalk@^1.1.3:
     has-ansi "^2.0.0"
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
+
+chalk@^2.0.0:
+  version "2.0.1"
+  resolved "http://r.cnpmjs.org/chalk/download/chalk-2.0.1.tgz#dbec49436d2ae15f536114e76d14656cdbc0f44d"
+  dependencies:
+    ansi-styles "^3.1.0"
+    escape-string-regexp "^1.0.5"
+    supports-color "^4.0.0"
 
 chalk@~0.4.0:
   version "0.4.0"
@@ -858,6 +881,16 @@ code-point-at@^1.0.0:
 coffee-script@^1.8.0:
   version "1.12.6"
   resolved "http://r.cnpmjs.org/coffee-script/download/coffee-script-1.12.6.tgz#285a3f7115689065064d6bf9ef4572db66695cbf"
+
+color-convert@^1.0.0:
+  version "1.9.0"
+  resolved "http://r.cnpmjs.org/color-convert/download/color-convert-1.9.0.tgz#1accf97dd739b983bf994d56fec8f95853641b7a"
+  dependencies:
+    color-name "^1.1.1"
+
+color-name@^1.1.1:
+  version "1.1.2"
+  resolved "http://r.cnpmjs.org/color-name/download/color-name-1.1.2.tgz#5c8ab72b64bd2215d617ae9559ebb148475cf98d"
 
 combined-stream@^1.0.5, combined-stream@~1.0.5:
   version "1.0.5"
@@ -944,13 +977,13 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@*, debug@^2.1.1, debug@^2.2.0, debug@^2.6.8:
+debug@*, debug@^2.2.0, debug@^2.6.8:
   version "2.6.8"
   resolved "http://r.cnpmjs.org/debug/download/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
     ms "2.0.0"
 
-debug@2.6.0:
+debug@2.6.0, debug@^2.1.1:
   version "2.6.0"
   resolved "http://r.cnpmjs.org/debug/download/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
@@ -1088,9 +1121,10 @@ eslint-scope@^3.7.1:
     estraverse "^4.1.1"
 
 eslint@^4.1.1:
-  version "4.1.1"
-  resolved "http://r.cnpmjs.org/eslint/download/eslint-4.1.1.tgz#facbdfcfe3e0facd3a8b80dc98c4e6c13ae582df"
+  version "4.2.0"
+  resolved "http://r.cnpmjs.org/eslint/download/eslint-4.2.0.tgz#a2b3184111b198e02e9c7f3cca625a5e01c56b3d"
   dependencies:
+    ajv "^5.2.0"
     babel-code-frame "^6.22.0"
     chalk "^1.1.3"
     concat-stream "^1.6.0"
@@ -1107,7 +1141,6 @@ eslint@^4.1.1:
     ignore "^3.3.3"
     imurmurhash "^0.1.4"
     inquirer "^3.0.6"
-    is-my-json-valid "^2.16.0"
     is-resolvable "^1.0.0"
     js-yaml "^3.8.4"
     json-stable-stringify "^1.0.1"
@@ -1136,9 +1169,9 @@ esprima@2.7.x, esprima@^2.7.1:
   version "2.7.3"
   resolved "http://r.cnpmjs.org/esprima/download/esprima-2.7.3.tgz#96e3b70d5779f6ad49cd032673d1c312767ba581"
 
-esprima@^3.1.1:
-  version "3.1.3"
-  resolved "http://r.cnpmjs.org/esprima/download/esprima-3.1.3.tgz#fdca51cee6133895e3c88d535ce49dbff62a4633"
+esprima@^4.0.0:
+  version "4.0.0"
+  resolved "http://r.cnpmjs.org/esprima/download/esprima-4.0.0.tgz#4499eddcd1110e0b218bacf2fa7f7f59f55ca804"
 
 "esprima@~ 1.0.2":
   version "1.0.4"
@@ -1208,6 +1241,10 @@ extglob@^0.3.1:
 extsprintf@1.0.2:
   version "1.0.2"
   resolved "http://r.cnpmjs.org/extsprintf/download/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
+
+fast-deep-equal@^1.0.0:
+  version "1.0.0"
+  resolved "http://r.cnpmjs.org/fast-deep-equal/download/fast-deep-equal-1.0.0.tgz#96256a3bc975595eb36d82e9929d060d893439ff"
 
 fast-levenshtein@~2.0.4:
   version "2.0.6"
@@ -1357,16 +1394,6 @@ gauge@~2.7.3:
     string-width "^1.0.1"
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
-
-generate-function@^2.0.0:
-  version "2.0.0"
-  resolved "http://r.cnpmjs.org/generate-function/download/generate-function-2.0.0.tgz#6858fe7c0969b7d4e9093337647ac79f60dfbe74"
-
-generate-object-property@^1.1.0:
-  version "1.2.0"
-  resolved "http://r.cnpmjs.org/generate-object-property/download/generate-object-property-1.2.0.tgz#9c0e1c40308ce804f4783618b937fa88f99d50d0"
-  dependencies:
-    is-property "^1.0.0"
 
 getpass@^0.1.1:
   version "0.1.7"
@@ -1536,6 +1563,10 @@ has-flag@^1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/has-flag/download/has-flag-1.0.0.tgz#9d9e793165ce017a00f00418c43f942a7b1d11fa"
 
+has-flag@^2.0.0:
+  version "2.0.0"
+  resolved "http://r.cnpmjs.org/has-flag/download/has-flag-2.0.0.tgz#e8207af1cc7b30d446cc70b734b5e8be18f88d51"
+
 has-unicode@^2.0.0:
   version "2.0.1"
   resolved "http://r.cnpmjs.org/has-unicode/download/has-unicode-2.0.1.tgz#e0e6fe6a28cf51138855e086d1691e771de2a8b9"
@@ -1624,11 +1655,11 @@ ini@~1.3.0:
   resolved "http://r.cnpmjs.org/ini/download/ini-1.3.4.tgz#0537cb79daf59b59a1a517dff706c86ec039162e"
 
 inquirer@^3.0.6:
-  version "3.1.1"
-  resolved "http://r.cnpmjs.org/inquirer/download/inquirer-3.1.1.tgz#87621c4fba4072f48a8dd71c9f9df6f100b2d534"
+  version "3.2.0"
+  resolved "http://r.cnpmjs.org/inquirer/download/inquirer-3.2.0.tgz#45b44c2160c729d7578c54060b3eed94487bb42b"
   dependencies:
     ansi-escapes "^2.0.0"
-    chalk "^1.0.0"
+    chalk "^2.0.0"
     cli-cursor "^2.1.0"
     cli-width "^2.0.0"
     external-editor "^2.0.4"
@@ -1638,8 +1669,8 @@ inquirer@^3.0.6:
     run-async "^2.2.0"
     rx-lite "^4.0.8"
     rx-lite-aggregates "^4.0.8"
-    string-width "^2.0.0"
-    strip-ansi "^3.0.0"
+    string-width "^2.1.0"
+    strip-ansi "^4.0.0"
     through "^2.3.6"
 
 invariant@^2.2.0, invariant@^2.2.2:
@@ -1708,15 +1739,6 @@ is-glob@^2.0.0, is-glob@^2.0.1:
   dependencies:
     is-extglob "^1.0.0"
 
-is-my-json-valid@^2.16.0:
-  version "2.16.0"
-  resolved "http://r.cnpmjs.org/is-my-json-valid/download/is-my-json-valid-2.16.0.tgz#f079dd9bfdae65ee2038aae8acbc86ab109e3693"
-  dependencies:
-    generate-function "^2.0.0"
-    generate-object-property "^1.1.0"
-    jsonpointer "^4.0.0"
-    xtend "^4.0.0"
-
 is-number@^2.1.0:
   version "2.1.0"
   resolved "http://r.cnpmjs.org/is-number/download/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
@@ -1776,10 +1798,6 @@ is-primitive@^2.0.0:
 is-promise@^2.1.0:
   version "2.1.0"
   resolved "http://r.cnpmjs.org/is-promise/download/is-promise-2.1.0.tgz#79a2a9ece7f096e80f36d2b2f3bc16c1ff4bf3fa"
-
-is-property@^1.0.0:
-  version "1.0.2"
-  resolved "http://r.cnpmjs.org/is-property/download/is-property-1.0.2.tgz#57fe1c4e48474edd65b09911f26b1cd4095dda84"
 
 is-relative@^0.1.0:
   version "0.1.3"
@@ -1841,11 +1859,11 @@ js-tokens@^3.0.0:
   resolved "http://r.cnpmjs.org/js-tokens/download/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
 js-yaml@3.x, js-yaml@^3.2.2, js-yaml@^3.8.4:
-  version "3.8.4"
-  resolved "http://r.cnpmjs.org/js-yaml/download/js-yaml-3.8.4.tgz#520b4564f86573ba96662af85a8cafa7b4b5a6f6"
+  version "3.9.0"
+  resolved "http://r.cnpmjs.org/js-yaml/download/js-yaml-3.9.0.tgz#4ffbbf25c2ac963b8299dc74da7e3740de1c18ce"
   dependencies:
     argparse "^1.0.7"
-    esprima "^3.1.1"
+    esprima "^4.0.0"
 
 js-yaml@~3.0.2:
   version "3.0.2"
@@ -1869,6 +1887,10 @@ jsesc@^1.3.0:
 jsesc@~0.5.0:
   version "0.5.0"
   resolved "http://r.cnpmjs.org/jsesc/download/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
+
+json-schema-traverse@^0.3.0:
+  version "0.3.1"
+  resolved "http://r.cnpmjs.org/json-schema-traverse/download/json-schema-traverse-0.3.1.tgz#349a6d44c53a51de89b40805c5d5e59b417d3340"
 
 json-schema@0.2.3:
   version "0.2.3"
@@ -1895,10 +1917,6 @@ json5@^0.5.0:
 jsonify@~0.0.0:
   version "0.0.0"
   resolved "http://r.cnpmjs.org/jsonify/download/jsonify-0.0.0.tgz#2c74b6ee41d93ca51b7b5aaee8f503631d252a73"
-
-jsonpointer@^4.0.0:
-  version "4.0.1"
-  resolved "http://r.cnpmjs.org/jsonpointer/download/jsonpointer-4.0.1.tgz#4fd92cb34e0e9db3c89c8622ecf51f9b978c6cb9"
 
 jsprim@^1.2.2:
   version "1.4.0"
@@ -2719,7 +2737,7 @@ string-width@^1.0.1, string-width@^1.0.2:
     is-fullwidth-code-point "^1.0.0"
     strip-ansi "^3.0.0"
 
-string-width@^2.0.0:
+string-width@^2.0.0, string-width@^2.1.0:
   version "2.1.0"
   resolved "http://r.cnpmjs.org/string-width/download/string-width-2.1.0.tgz#030664561fc146c9423ec7d978fe2457437fe6d0"
   dependencies:
@@ -2782,7 +2800,7 @@ supervisor@^0.12.0:
   version "0.12.0"
   resolved "http://r.cnpmjs.org/supervisor/download/supervisor-0.12.0.tgz#de7e6337015b291851c10f3538c4a7f04917ecc1"
 
-supports-color@3.1.2:
+supports-color@3.1.2, supports-color@^3.1.0:
   version "3.1.2"
   resolved "http://r.cnpmjs.org/supports-color/download/supports-color-3.1.2.tgz#72a262894d9d408b956ca05ff37b2ed8a6e2a2d5"
   dependencies:
@@ -2792,11 +2810,11 @@ supports-color@^2.0.0:
   version "2.0.0"
   resolved "http://r.cnpmjs.org/supports-color/download/supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7"
 
-supports-color@^3.1.0:
-  version "3.2.3"
-  resolved "http://r.cnpmjs.org/supports-color/download/supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6"
+supports-color@^4.0.0:
+  version "4.2.0"
+  resolved "http://r.cnpmjs.org/supports-color/download/supports-color-4.2.0.tgz#ad986dc7eb2315d009b4d77c8169c2231a684037"
   dependencies:
-    has-flag "^1.0.0"
+    has-flag "^2.0.0"
 
 table@^4.0.1:
   version "4.0.1"
@@ -2863,8 +2881,8 @@ think_error@^1.x.x:
     think_lib "^1.x.x"
 
 think_http@^1.x.x:
-  version "1.1.0"
-  resolved "http://r.cnpmjs.org/think_http/download/think_http-1.1.0.tgz#dcb9626262e4f0f538f7e9eb451eec74ed218423"
+  version "1.1.1"
+  resolved "http://r.cnpmjs.org/think_http/download/think_http-1.1.1.tgz#881c0078d6d79905bbd40a29f987b6f263a0b59a"
   dependencies:
     think_lib "^1.x.x"
 
@@ -2875,8 +2893,8 @@ think_lib@^1.x.x:
     lodash "^4.17.4"
 
 think_logger@^1.x.x:
-  version "1.0.8"
-  resolved "http://r.cnpmjs.org/think_logger/download/think_logger-1.0.8.tgz#1b3e39f379beddac33851f6560c7438185169bc7"
+  version "1.1.0"
+  resolved "http://r.cnpmjs.org/think_logger/download/think_logger-1.1.0.tgz#621f02467e5e0e7ea3edd1993473eb8f315f377f"
   dependencies:
     think_lib "^1.x.x"
 
@@ -2920,8 +2938,8 @@ think_view@^1.x.x:
     think_lib "^1.x.x"
 
 thinkkoa@^1.x.x:
-  version "1.4.6"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.6.tgz#73b72e1ee99e8748a9dd5812f25cc1dcc799dc6d"
+  version "1.4.7"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.7.tgz#37c0424189b1195f058570b595286a9148253253"
   dependencies:
     babel-runtime "6.23.0"
     bluebird "3.5.0"
@@ -3121,10 +3139,6 @@ xmlbuilder@^4.1.0:
   resolved "http://r.cnpmjs.org/xmlbuilder/download/xmlbuilder-4.2.1.tgz#aa58a3041a066f90eaa16c2f5389ff19f3f461a5"
   dependencies:
     lodash "^4.0.0"
-
-xtend@^4.0.0:
-  version "4.0.1"
-  resolved "http://r.cnpmjs.org/xtend/download/xtend-4.0.1.tgz#a5c6d532be656e23db820efb943a1f04998d63af"
 
 yargs@~3.10.0:
   version "3.10.0"

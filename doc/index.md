@@ -34,23 +34,33 @@ ThinkKoa除默认的单模块模式(controller/action)及多模块模式(module/
 ```js
 //user controller, controller/user.js
 export default class extends think.controller.base {
-  //login action
-  async loginAction(){
-    //如果是get请求，直接显示登录页面
-    if(this.isGet()){
-      return this.display();
+    //login action
+    async loginAction(){
+        //如果是get请求，直接显示登录页面
+        if(this.isGet()){
+          return this.render();// or this.ctx.render
+        }
+        //这里可以通过post方法获取数据
+        let name = this.post('username');// or this.ctx.post
+        //用户名去匹配数据库中对应的条目.think.model使用thinkorm模块以及think_model中间件
+        let result = await think.model('user', {}).where({name: name, phonenum: {"not": ""}}).find();
+        if(!result){
+          //输出格式化的json数据 {"status":0,"errno":500,"errmsg":"login fail","data":{}}
+          return this.fail('login fail'); 
+          // 或者这样写
+          //this.ctx.type = 'application/json';
+          //this.ctx.body = {"status":0,"errno":500,"errmsg":"login fail","data":{}};
+          //return;
+        }
+        //获取到用户信息后，将用户信息写入session
+        await this.session('userInfo', result);
+        //输出格式化的json数据 {"status":1,"errno":200,"errmsg":"login success","data":{}}
+        return this.ok('login success'); 
+        // 或者这样写
+        //this.ctx.type = 'application/json';
+        //this.ctx.body = {"status":1,"errno":200,"errmsg":"login success","data":{}};
+        //return;
     }
-    //这里可以通过post方法获取所有的数据，数据已经在logic里做了校验
-    let data = this.post();
-    //用户名去匹配数据库中对应的条目
-    let result = await think.model('user', {}).where({name: data.name}).find();
-    if(!result){
-      return this.fail('login fail');
-    }
-    //获取到用户信息后，将用户信息写入session
-    await this.session('userInfo', result);
-    return this.success();
-  }
 }
 ```
 
