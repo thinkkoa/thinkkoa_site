@@ -2,7 +2,11 @@
 # yarn lockfile v1
 
 
-abbrev@1, abbrev@1.0.x:
+abbrev@1:
+  version "1.1.0"
+  resolved "http://r.cnpmjs.org/abbrev/download/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
+
+abbrev@1.0.x:
   version "1.0.9"
   resolved "http://r.cnpmjs.org/abbrev/download/abbrev-1.0.9.tgz#91b4792588a7738c25f35dd6f63752a2f8776135"
 
@@ -793,8 +797,8 @@ camelcase@^1.0.2:
   resolved "http://r.cnpmjs.org/camelcase/download/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
 caniuse-lite@^1.0.30000684:
-  version "1.0.30000700"
-  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000700.tgz#6084871ec75c6fa62327de97622514f95d9db26a"
+  version "1.0.30000701"
+  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000701.tgz#9d673cf6b74dcb3d5c21d213176b011ac6a45baa"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -879,8 +883,8 @@ code-point-at@^1.0.0:
   resolved "http://r.cnpmjs.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
 coffee-script@^1.8.0:
-  version "1.12.6"
-  resolved "http://r.cnpmjs.org/coffee-script/download/coffee-script-1.12.6.tgz#285a3f7115689065064d6bf9ef4572db66695cbf"
+  version "1.12.7"
+  resolved "http://r.cnpmjs.org/coffee-script/download/coffee-script-1.12.7.tgz#c05dae0cb79591d05b3070a8433a98c9a89ccc53"
 
 color-convert@^1.0.0:
   version "1.9.0"
@@ -889,8 +893,8 @@ color-convert@^1.0.0:
     color-name "^1.1.1"
 
 color-name@^1.1.1:
-  version "1.1.2"
-  resolved "http://r.cnpmjs.org/color-name/download/color-name-1.1.2.tgz#5c8ab72b64bd2215d617ae9559ebb148475cf98d"
+  version "1.1.3"
+  resolved "http://r.cnpmjs.org/color-name/download/color-name-1.1.3.tgz#a7d0558bd89c42f795dd42328f740831ca53bc25"
 
 combined-stream@^1.0.5, combined-stream@~1.0.5:
   version "1.0.5"
@@ -977,13 +981,13 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
-debug@*, debug@^2.2.0, debug@^2.6.8:
+debug@*, debug@^2.1.1, debug@^2.2.0, debug@^2.6.8:
   version "2.6.8"
   resolved "http://r.cnpmjs.org/debug/download/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
   dependencies:
     ms "2.0.0"
 
-debug@2.6.0, debug@^2.1.1:
+debug@2.6.0:
   version "2.6.0"
   resolved "http://r.cnpmjs.org/debug/download/debug-2.6.0.tgz#bc596bcabe7617f11d9fa15361eded5608b8499b"
   dependencies:
@@ -1877,8 +1881,8 @@ jsbn@~0.1.0:
   resolved "http://r.cnpmjs.org/jsbn/download/jsbn-0.1.1.tgz#a5e654c2e5a2deb5f201d96cefbca80c0ef2f513"
 
 jschardet@^1.4.2:
-  version "1.4.2"
-  resolved "http://r.cnpmjs.org/jschardet/download/jschardet-1.4.2.tgz#2aa107f142af4121d145659d44f50830961e699a"
+  version "1.5.0"
+  resolved "http://r.cnpmjs.org/jschardet/download/jschardet-1.5.0.tgz#a61f310306a5a71188e1b1acd08add3cfbb08b1e"
 
 jsesc@^1.3.0:
   version "1.3.0"
@@ -2122,7 +2126,11 @@ micromatch@^2.1.5:
     parse-glob "^3.0.4"
     regex-cache "^0.4.2"
 
-"mime-db@>= 1.27.0 < 2", mime-db@~1.27.0:
+"mime-db@>= 1.27.0 < 2":
+  version "1.29.0"
+  resolved "http://r.cnpmjs.org/mime-db/download/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878"
+
+mime-db@~1.27.0:
   version "1.27.0"
   resolved "http://r.cnpmjs.org/mime-db/download/mime-db-1.27.0.tgz#820f572296bbd20ec25ed55e5b5de869e5436eb1"
 
@@ -2166,13 +2174,17 @@ minimatch@~0.2.11:
     lru-cache "2"
     sigmund "~1.0.0"
 
-minimist@0.0.8, minimist@~0.0.1:
+minimist@0.0.8:
   version "0.0.8"
   resolved "http://r.cnpmjs.org/minimist/download/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@^1.2.0:
   version "1.2.0"
   resolved "http://r.cnpmjs.org/minimist/download/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
+
+minimist@~0.0.1:
+  version "0.0.10"
+  resolved "http://r.cnpmjs.org/minimist/download/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
 mixin-deep@^0.1.0:
   version "0.1.0"
@@ -2613,13 +2625,13 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
+rimraf@2, rimraf@^2.2.8, rimraf@^2.5.1, rimraf@^2.6.1:
   version "2.6.1"
   resolved "http://r.cnpmjs.org/rimraf/download/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
     glob "^7.0.5"
 
-rimraf@^2.2.8, rimraf@~2.2.6:
+rimraf@~2.2.6:
   version "2.2.8"
   resolved "http://r.cnpmjs.org/rimraf/download/rimraf-2.2.8.tgz#e439be2aaee327321952730f99a8929e4fc50582"
 
@@ -2905,8 +2917,8 @@ think_logger@^1.x.x:
     think_lib "^1.x.x"
 
 think_payload@^1.x.x:
-  version "1.0.5"
-  resolved "http://r.cnpmjs.org/think_payload/download/think_payload-1.0.5.tgz#2bbeb636482a85fe01c26e5819d6d4dde8d1818c"
+  version "1.0.6"
+  resolved "http://r.cnpmjs.org/think_payload/download/think_payload-1.0.6.tgz#a4cd3aad7fb41fb3406dc42955efcb07dd206300"
   dependencies:
     formidable "^1.1.1"
     inflation "^2.0.0"
@@ -2915,15 +2927,15 @@ think_payload@^1.x.x:
     xml2js "^0.4.17"
 
 think_router@^1.x.x:
-  version "1.0.8"
-  resolved "http://r.cnpmjs.org/think_router/download/think_router-1.0.8.tgz#835469f7af4de68c6d54352b946e4f9797dca9d1"
+  version "1.0.9"
+  resolved "http://r.cnpmjs.org/think_router/download/think_router-1.0.9.tgz#db81e117576f8f0a5e68ba43b8f475eadbc717f8"
   dependencies:
     path-to-regexp "^1.7.0"
     think_lib "^1.x.x"
 
 think_static@^1.x.x:
-  version "1.0.9"
-  resolved "http://r.cnpmjs.org/think_static/download/think_static-1.0.9.tgz#6efc684168a518a9853d846b4608d4f50ca49599"
+  version "1.0.10"
+  resolved "http://r.cnpmjs.org/think_static/download/think_static-1.0.10.tgz#88ad6e50adf42e86d2a66aa68f7f31d0df186a21"
   dependencies:
     compressible "^2.0.10"
     mime-types "^2.1.15"
@@ -2944,8 +2956,8 @@ think_view@^1.x.x:
     think_lib "^1.x.x"
 
 thinkkoa@^1.x.x:
-  version "1.4.8"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.4.8.tgz#cfb5719fe3cf80a8ba42ec5ccef550e87a8f3144"
+  version "1.5.2"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.5.2.tgz#6b66e326f1d76f0d80d2b5078b69c018b2172d19"
   dependencies:
     babel-runtime "6.23.0"
     bluebird "3.5.0"
