@@ -13,6 +13,7 @@
     },
     "扩展功能": {
       "服务类": "service",
+      "Cookie": "cookie",
       "Cache": "cache",
       "Session": "session",
       "View": "view",
@@ -27,6 +28,7 @@
       "并行处理": "parallel",
       "ES6/7开发项目": "next",
       "开发时自动重启": "debug",
+      "获取get、post参数": "querystring",
       "修改服务监听端口": "edit_port",
       "输出文件或图片": "out_file",
       "上传文件或图片": "upload",

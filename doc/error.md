@@ -24,7 +24,7 @@ options：定义错误输出的JSON对象key值
 
 ```js
 //传入参数为错误模板物理路径
-this.set('errmsg', '没有权限');
+this.assign('errmsg', '没有权限');
 this.render(think.app_path + '/view/default/error.html');
 ```
 

@@ -10,6 +10,13 @@
 
 ## 更新日志
 
+### 1.5.2 (推荐升级)
+* 废除`controller`中的 `this.echo`方法，请使用 `this.write`
+* 废除`controller`中的 `this.header`方法，跟 `ctx.header` 容易混淆。请使用 `this.set` 及 `this.get`代替
+* 修改`controller`中的 `this.get`方法，跟 `ctx.get` 功能保持一致。功能变更为获取header内容。原有功能获取querystring参数请使用`this.querys`
+* 修改`controller`中的 `this.set`方法，跟 `ctx.set` 功能保持一致。功能变更为设置header内容。原有功能模板变量赋值请使用`this.assign`
+* 修复特定场景下`npm start` 时加载模块资源清理缓存报错的bug。https://github.com/thinkkoa/thinkkoa/issues/4
+
 ### 1.4.8 
 * 增加FIGlet打印
 

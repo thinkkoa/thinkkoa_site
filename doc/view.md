@@ -39,9 +39,7 @@ config: { //中间件配置
 
 ```js
 //控制器中
-this.set(name, value);
-or
-this.assign(name, value)
+this.assign(name, value);
 ```
 
 获取模板引擎解析的内容：
@@ -59,8 +57,6 @@ ctx.fatch(templateFile, data);
 ```js
 //控制器中
 this.render(templateFile, charset, contentType);
-or 
-this.display(templateFile, charset, contentType)
 
 //中间件中
 ctx.render(templateFile, data, charset, contentType);

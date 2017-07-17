@@ -13,7 +13,7 @@ export default class extends base {
     
     //控制器默认方法
     indexAction () {
-        this.set('currentNav', 'case');
+        this.assign('currentNav', 'case');
         return this.render();
     }
 }

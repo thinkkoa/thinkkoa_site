@@ -117,7 +117,28 @@ if (this.isJsonp('callback')) {
 }
 ```
 
-#### get([name, value])
+#### set(name, value)
+
+设置header内容。
+
+* name 键
+* value 值
+
+```js
+this.set('Content-Type', 'text/plian'); //等同于 ctx.set
+```
+
+#### get(name)
+
+获取header内容
+* name 键
+
+```js
+this.get('Content-Type'); //等同于 ctx.get
+```
+
+
+#### querys([name, value])
 
 * name 参数名,如果值为undefined则返回所有querystring参数
 * value 参数值
@@ -126,10 +147,10 @@ if (this.isJsonp('callback')) {
 
 ```js
 //获取参数
-let test = this.get('test') || '';
+let test = this.querys('test') || '';
 
 //构造参数
-this.get('test', {aa: 1});
+this.querys('test', {aa: 1});
 ```
 
 #### post([name, value])
@@ -183,23 +204,6 @@ content-type 操作。
 this.types('text/plian', 'utf-8');
 ```
 
-#### header(name[, value])
-
-* name 属性名
-* value 属性值
-
-获取或者设置ctx.headers属性。
-
-```js
-//获取所有header属性
-this.header();
-
-//获取某个header值
-this.header('Content-Type');
-
-//设置header属性
-this.header('Content-Type', 'text/plain');
-```
 #### referer([host])
 
 * host url，如果传入值，返回 hostname
@@ -299,9 +303,6 @@ this.session('user', {'username': 'test'}, 30);
 return this.write('content', 'text/plain'); //页面输出 content
 ```
 
-#### echo(data[, contentType, encoding])
-功能同write。
-
 #### json(data)
 
 * data 输出的数据
@@ -357,7 +358,7 @@ return this.error('操作失败'); //页面输出 {"status":0,"errno":500,"errms
 
 功能同error.
 
-#### set(name, value)
+#### assign(name, value)
 
 * name 模板赋值key
 * value 模板赋值value
@@ -365,13 +366,11 @@ return this.error('操作失败'); //页面输出 {"status":0,"errno":500,"errms
 在使用模板引擎渲染模板时候，向模板赋值，模板赋值数据对象保存在 `this.tVar`。
 
 ```js
-this.set('user', '张三');
+this.assign('user', '张三');
 
 //获取所有模板赋值变量
-this.set(); //返回 {"user": "张三"}
+this.assign(); //返回 {"user": "张三"}
 ```
-#### assign(name, value)
-功能同set.
 
 #### fatch(templateFile, data)
 
@@ -404,8 +403,12 @@ let content = await this.fatch('', {aa: 1});
 ```js
 return this.render();
 ```
+
 #### display(templateFile, charset, contentType)
-功能同render.
+
+功能与render相同。
+
+
 
 ### think.controller(name, http)
 

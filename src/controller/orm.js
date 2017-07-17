@@ -17,14 +17,14 @@ export default class extends base {
     }
     //控制器默认方法
     async indexAction() {
-        let doc = this.get('doc') || 'index';
-        this.set('currentNav', 'orm');
-        this.set('title', 'ThinkORM - A flexible, lightweight and powerful Object-Relational Mapper for Node.js.');
+        let doc = this.querys('doc') || 'index';
+        this.assign('currentNav', 'orm');
+        this.assign('title', 'ThinkORM - A flexible, lightweight and powerful Object-Relational Mapper for Node.js.');
         if (doc === 'plugin') {
-            this.set('currentNav', 'plugin');
+            this.assign('currentNav', 'plugin');
         }
         if (doc === 'changelog') {
-            this.set('currentNav', 'changelog');
+            this.assign('currentNav', 'changelog');
         }
         await this.getSideBar();
 
@@ -51,7 +51,7 @@ export default class extends base {
             data = JSON.parse(content);
             think.cache(key, data);
         }
-        this.set('sidebar', data);
+        this.assign('sidebar', data);
     }
 
     /**
@@ -75,10 +75,10 @@ export default class extends base {
         let titleReg = /<h2(?:[^<>]*)>([^<>]+)<\/h2>/;
         let match = markedContent.match(titleReg);
         if (match) {
-            this.set('title', `${match[1]} - ThinkORM文档`);
+            this.assign('title', `${match[1]} - ThinkORM文档`);
         }
-        this.set('markedContent', markedContent);
-        this.set('doc', doc);
+        this.assign('markedContent', markedContent);
+        this.assign('doc', doc);
         return null;
     }
 
@@ -87,19 +87,19 @@ export default class extends base {
    * @return {} []
    */
     async searchAction() {
-        this.set('currentNav', 'orm');
-        this.set('title', 'ThinkORM - A flexible, lightweight and powerful Object-Relational Mapper for Node.js.');
+        this.assign('currentNav', 'orm');
+        this.assign('title', 'ThinkORM - A flexible, lightweight and powerful Object-Relational Mapper for Node.js.');
         await this.getSideBar();
 
-        let keyword = this.get('keyword').trim();
-        this.set('keyword', keyword);
+        let keyword = this.querys('keyword').trim();
+        this.assign('keyword', keyword);
         if (!keyword) {
-            return this.display();
+            return this.render();
         }
 
         let result = await this.getSearchResult(keyword);
-        this.set('searchResult', result);
-        return this.display();
+        this.assign('searchResult', result);
+        return this.render();
     }
 
     /**
