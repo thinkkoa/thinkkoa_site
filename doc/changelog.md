@@ -10,7 +10,18 @@
 
 ## 更新日志
 
-### 1.5.2 (推荐升级)
+### 1.6.0 (推荐升级)
+* 增加restful类型控制器基类，编写restful接口更加简单
+* 增加restful类型控制器命令行创建命令支持`think controller --rest user`。需要升级`thinkkoa_cli`
+* 将模板赋值方法`assign`移入`think_view`中间件。需要升级`think_view`
+* 增加`prevent`类型错误以及错误处理。需要升级`think_error`
+* 修改获取模板引擎渲染后内容的方法名`fatch` => `compile`，语义更加贴切
+* 修改控制器`deny`方法，返回`prevent`错误中断后续执行
+* 修改控制器`redirect`方法，返回`prevent`错误中断后续执行
+* 移除`ctx.deny`方法，中间件内实现同类功能直接返回`ctx.throw(403)`即可
+* 修改`ctx.write`方法，返回`prevent`错误中断后续执行。需要升级`think_http`
+
+### 1.5.2 
 * 废除`controller`中的 `this.echo`方法，请使用 `this.write`
 * 废除`controller`中的 `this.header`方法，跟 `ctx.header` 容易混淆。请使用 `this.set` 及 `this.get`代替
 * 修改`controller`中的 `this.get`方法，跟 `ctx.get` 功能保持一致。功能变更为获取header内容。原有功能获取querystring参数请使用`this.querys`

@@ -3,3 +3,4 @@ app
 cache
 logs
 node_modules
+yarn-error.log

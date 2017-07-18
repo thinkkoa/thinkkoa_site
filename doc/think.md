@@ -69,6 +69,17 @@ think.useExp(passport());
 ### think.parseExpMiddleware(fn)
 转换express的middleware为koa使用
 
+
+### think.prevent()
+返回一个prevent类型的错误，用于中断后续执行。该错误不会被框架作为错误处理，仅仅中断执行。
+
+```js
+return think.prevent();
+```
+
+### think.isPrevent(err)
+判断err是否为一个prevent类型的错误。
+
 ### think.config([name, type = 'config'])
 读取配置项。
 * name 配置项 key
@@ -81,6 +92,28 @@ think.config('aa.bb'); // aa: {bb: 1}
 
 think.config('cache', 'middleware');
 ```
+
+### think.controller(name, ctx)
+获取或者实例化一个指定的控制器。
+
+* name 控制器类名
+* ctx ctx对象
+
+```js
+let cls = think.controller('index', ctx);
+```
+
+### think.action(namem, ctx)
+执行传入的控制器中某个方法。
+
+* name 格式 `控制器名/方法名`。多模块模式下格式为 `模块名/控制器名/方法名`
+* http ctx对象别名
+
+`注意`： 
+
+1、在多模块模式下，think.action支持跨模型调用执行
+
+2、think.action在执行控制器某个方法时，该控制器的 \_\_before 及 \_before\_方法名 并不会被执行
 
 ### think.define(obj, property[, value, setter = false])
 
@@ -656,3 +689,4 @@ think.logger.error(new Error('测试内容'));
 //写入日志 logs/custom/test.log
 await think.addLogs('test', {aa: 11});
 ```
+

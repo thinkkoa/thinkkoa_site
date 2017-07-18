@@ -46,10 +46,10 @@ this.assign(name, value);
 
 ```js
 //控制器中
-this.fatch(templateFile, data);
+this.compile(templateFile, data);
 
 //中间件中
-ctx.fatch(templateFile, data);
+ctx.compile(templateFile, data);
 ```
 
 输出模板：

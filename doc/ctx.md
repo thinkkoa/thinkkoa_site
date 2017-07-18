@@ -62,12 +62,6 @@ http协议版本
 
 获取或设置ctx.headers.content-type属性；如果传入encoding，自动设置字符集。
 
-### ctx.deny([code = 403])
-
-`ThinkKoa扩展` `think_http中间件`
-
-设置ctx.status 为传入的code值，并抛出一个异常。一般用于禁止访问。
-
 ### ctx.sendTime([name])
 
 `ThinkKoa扩展` `think_http中间件`
@@ -238,7 +232,7 @@ ctx.session('user', {'username': 'test'});
 ctx.session('user', {'username': 'test'}, 30);
 ```
 
-### ctx.fatch(templateFile, data)
+### ctx.compile(templateFile, data)
 
 `ThinkKoa扩展` `think_view中间件`
 
@@ -248,7 +242,7 @@ ctx.session('user', {'username': 'test'}, 30);
 * data 模板变量`Object`
 
 ```js
-ctx.fatch(think.app_path + '/view/default/test.html', {data: 'hello world'});
+ctx.compile(think.app_path + '/view/default/test.html', {data: 'hello world'});
 ```
 
 ### ctx.render(templateFile, data[, charset, contentType])

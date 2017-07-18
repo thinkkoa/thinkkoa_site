@@ -216,10 +216,10 @@ let ref = this.referer();
 ref = this.referer('http://baidu.com');
 ```
 
-#### redirect(urls[, code])
+#### redirect(urls[, alt])
 
 * urls 需要跳转的url
-* code http状态码       
+* alt 定义Referrer
                                
 页面跳转。
 
@@ -229,7 +229,7 @@ this.redirect('/index');
 this.redirect('http://baidu.com');
 ```
 
-#### deny()
+#### deny([code = 403])
 返回403禁止访问。
 
 ```js
@@ -372,7 +372,7 @@ this.assign('user', '张三');
 this.assign(); //返回 {"user": "张三"}
 ```
 
-#### fatch(templateFile, data)
+#### compile(templateFile, data)
 
 `依赖中间件think_view`
 
@@ -385,7 +385,7 @@ this.assign(); //返回 {"user": "张三"}
 调用模板引擎，渲染模板返回渲染后的内容.
 
 ```js
-let content = await this.fatch('', {aa: 1});
+let content = await this.compile('', {aa: 1});
 ```
 #### render(templateFile, charset, contentType)
 
