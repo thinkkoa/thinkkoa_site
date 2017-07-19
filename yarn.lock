@@ -797,8 +797,8 @@ camelcase@^1.0.2:
   resolved "http://r.cnpmjs.org/camelcase/download/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
 caniuse-lite@^1.0.30000701:
-  version "1.0.30000701"
-  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000701.tgz#9d673cf6b74dcb3d5c21d213176b011ac6a45baa"
+  version "1.0.30000703"
+  resolved "http://r.cnpmjs.org/caniuse-lite/download/caniuse-lite-1.0.30000703.tgz#666e8c3f1e4f7abb1d16d48e04e7e9e8df934925"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1091,8 +1091,8 @@ ejs@^2.5.6:
   resolved "http://r.cnpmjs.org/ejs/download/ejs-2.5.6.tgz#479636bfa3fe3b1debd52087f0acb204b4f19c88"
 
 electron-to-chromium@^1.3.15:
-  version "1.3.15"
-  resolved "http://r.cnpmjs.org/electron-to-chromium/download/electron-to-chromium-1.3.15.tgz#08397934891cbcfaebbd18b82a95b5a481138369"
+  version "1.3.16"
+  resolved "http://r.cnpmjs.org/electron-to-chromium/download/electron-to-chromium-1.3.16.tgz#d0e026735754770901ae301a21664cba45d92f7d"
 
 error-inject@~1.0.0:
   version "1.0.0"
@@ -2750,8 +2750,8 @@ string-width@^1.0.1, string-width@^1.0.2:
     strip-ansi "^3.0.0"
 
 string-width@^2.0.0, string-width@^2.1.0:
-  version "2.1.0"
-  resolved "http://r.cnpmjs.org/string-width/download/string-width-2.1.0.tgz#030664561fc146c9423ec7d978fe2457437fe6d0"
+  version "2.1.1"
+  resolved "http://r.cnpmjs.org/string-width/download/string-width-2.1.1.tgz#ab93f27a8dc13d28cac815c462143a6d9012ae9e"
   dependencies:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
@@ -2893,8 +2893,8 @@ think_controller@^1.x.x:
     think_lib "^1.x.x"
 
 think_error@^1.x.x:
-  version "1.1.4"
-  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.1.4.tgz#e209f07aa12162cc6b70f00b98a242ca523c3d1f"
+  version "1.1.5"
+  resolved "http://r.cnpmjs.org/think_error/download/think_error-1.1.5.tgz#41c5388b85bc68137942bbe192c7286dd1e39a3d"
   dependencies:
     think_lib "^1.x.x"
 
@@ -2911,8 +2911,8 @@ think_lib@^1.x.x:
     lodash "^4.17.4"
 
 think_logger@^1.x.x:
-  version "1.1.0"
-  resolved "http://r.cnpmjs.org/think_logger/download/think_logger-1.1.0.tgz#621f02467e5e0e7ea3edd1993473eb8f315f377f"
+  version "1.1.1"
+  resolved "http://r.cnpmjs.org/think_logger/download/think_logger-1.1.1.tgz#6f293837a549a0c0c2a36dfb621dc2eaf56fb6e4"
   dependencies:
     think_lib "^1.x.x"
 
