@@ -241,11 +241,12 @@ return this.deny();
 获取或者设置cookie值。options包括项
 
 * signed sign cookie 值
-* expires cookie 过期 Date
-* path cookie 路径, 默认 /'
-* domain cookie 域名
-* secure secure cookie
-* httpOnly server 才能访问 cookie, 默认 true
+* domain: '',  // cookie所在的域名
+* path: '/',       // cookie所在的路径
+* maxAge: -1, // cookie有效时长
+* httpOnly: true,  // 是否只用于http请求中获取
+* overwrite: false,  // 是否允许重写
+* expires: new Date('2017-02-15')  // cookie失效时间
 
 ```js
 //获取cookie
@@ -270,7 +271,7 @@ module.exports = {
         	cookie: {
 		        domain: '',
 		        path: '/',
-		        timeout: 0
+		        ...
 			}
         }
     }
