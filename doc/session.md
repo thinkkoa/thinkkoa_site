@@ -78,3 +78,13 @@ this.session('name', 'test', 30);
 //中间件中
 ctx.session('name', 'test', 30);
 ```
+
+删除session:
+
+```js
+//删除单条session记录
+this.session('name', null);
+
+//删除当前用户所有session记录
+this.session();
+```

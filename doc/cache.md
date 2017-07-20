@@ -66,3 +66,9 @@ think.cache(key);
 //timeout单位秒，此处缓存超时时间为30s
 think.cache('name', 'test', 30);
 ```
+
+删除缓存：
+
+```js
+think.cache('name', null);
+```
