@@ -99,4 +99,4 @@ npm run test-cov
 ### 发布
 代码版本库托管到github.com， 并且使用 `npm publish` 发布到 npm仓库（如果之前没发布过，会提示创建帐号和密码）。
 
-发布完成后，请给我们发邮件或者 [issuse](https://github.com/thinkkoa/thinkkoa_awesome/issues)，经确认后，即可体检到官方插件列表中。会有奖励哦。
+发布完成后，请给我们发邮件或者 [issuse](https://github.com/thinkkoa/thinkkoa_awesome/issues)，经确认后，即可添加到到插件列表中。会有奖励哦。
