@@ -690,3 +690,13 @@ think.logger.error(new Error('测试内容'));
 await think.addLogs('test', {aa: 11});
 ```
 
+### think.await(key, fn)
+
+`think_cache中间件`
+
+执行等待，常用于并发处理，将并发转化为非重复的队列处理，同一个事件(相同key)仅执行一次，避免一个耗时的操作多次被执行。 
+
+callback 需要返回一个 Promise 。
+
+* key 队列key
+* fn 执行的函数

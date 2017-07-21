@@ -10,6 +10,12 @@
 
 ## 更新日志
 
+### 1.6.1
+* 修复`think.service`错误提示语bug
+* 将`think.action`函数移入`think_controller`中间件
+* 增加`unhandledRejection`拦截处理中对于`prevent`错误的处理
+* 增加队列执行`think.await`函数
+
 ### 1.6.0 (推荐升级)
 * 增加restful类型控制器基类，编写restful接口更加简单
 * 增加restful类型控制器命令行创建命令支持`think controller --rest user`。需要升级`thinkkoa_cli`
