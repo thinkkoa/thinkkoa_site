@@ -83,7 +83,7 @@ http协议版本
 * signed sign cookie 值
 * domain: '',  // cookie所在的域名
 * path: '/',       // cookie所在的路径
-* maxAge: -1, // cookie有效时长
+* maxAge: 86400, // cookie有效时长
 * httpOnly: true,  // 是否只用于http请求中获取
 * overwrite: false,  // 是否允许重写
 * expires: new Date('2017-02-15')  // cookie失效时间
@@ -114,7 +114,7 @@ module.exports = {
 
 `ThinkKoa扩展` `think_http中间件`
 
-对ctx.body赋值进行功能封装。 
+对ctx.body赋值进行功能封装。注意ctx.write输出内容后，并不会中断程序执行。
 
 * content 输出的内容
 * contentType 输出文档类型，默认 `text/plain`
@@ -354,7 +354,7 @@ koa 使用 cookies 模块, options 被直接传递过去.
 * signed sign cookie 值
 * domain: '',  // cookie所在的域名
 * path: '/',       // cookie所在的路径
-* maxAge: -1, // cookie有效时长
+* maxAge: 86400, // cookie有效时长
 * httpOnly: true,  // 是否只用于http请求中获取
 * overwrite: false,  // 是否允许重写
 * expires: new Date('2017-02-15')  // cookie失效时间

@@ -243,7 +243,7 @@ return this.deny();
 * signed sign cookie 值
 * domain: '',  // cookie所在的域名
 * path: '/',       // cookie所在的路径
-* maxAge: -1, // cookie有效时长
+* maxAge: 86400, // cookie有效时长
 * httpOnly: true,  // 是否只用于http请求中获取
 * overwrite: false,  // 是否允许重写
 * expires: new Date('2017-02-15')  // cookie失效时间
@@ -294,7 +294,8 @@ this.session('user', {'username': 'test'}, 30);
 ```
 
 #### write(data[, contentType, encoding])
-对ctx.body赋值进行功能封装。 
+
+对ctx.body赋值进行功能封装。 注意控制器中的this.write方法和ctx.write最大的不同是输出内容后，会返回think.prevent()错误中断程序执行。
 
 * content 输出的内容
 * contentType 输出文档类型，默认 `text/plain`

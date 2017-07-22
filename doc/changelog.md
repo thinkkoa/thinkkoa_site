@@ -10,13 +10,17 @@
 
 ## 更新日志
 
+### 1.6.2 (推荐升级)
+* 控制器的`write`,`json`,`jsonp`,`ok`,`fail`等方法返回`prevent`中断,防止在`await`异步`catch`处理内调用未中断程序的bug
+* 模板输出`render`返回`prevent`中断。需要升级`think_view`
+
 ### 1.6.1
 * 修复`think.service`错误提示语bug
 * 将`think.action`函数移入`think_controller`中间件
 * 增加`unhandledRejection`拦截处理中对于`prevent`错误的处理
 * 增加队列执行`think.await`函数
 
-### 1.6.0 (推荐升级)
+### 1.6.0
 * 增加restful类型控制器基类，编写restful接口更加简单
 * 增加restful类型控制器命令行创建命令支持`think controller --rest user`。需要升级`thinkkoa_cli`
 * 将模板赋值方法`assign`移入`think_view`中间件。需要升级`think_view`
