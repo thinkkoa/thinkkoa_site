@@ -62,10 +62,10 @@ let config = {
 
 
 // 加载模型类到thinkorm
-let user = thinkorm.require(path.reslove('./user.js'));
-let profile = thinkorm.require(path.reslove('./profile.js'));
-let pet = thinkorm.require(path.reslove('./pet.js'));
-let group = thinkorm.require(path.reslove('./group.js'));
+let user = thinkorm.require(path.resolve('./user.js'));
+let profile = thinkorm.require(path.resolve('./profile.js'));
+let pet = thinkorm.require(path.resolve('./pet.js'));
+let group = thinkorm.require(path.resolve('./group.js'));
 
 thinkorm.setCollection(user, config);
 thinkorm.setCollection(profile, config);

@@ -40,7 +40,7 @@ let config = {
 
 
 // 加载模型类到thinkorm
-let user = thinkorm.require(path.reslove('./user.js'));
+let user = thinkorm.require(path.resolve('./user.js'));
 thinkorm.setCollection(user, config);
 ...
 //加载其他需要迁移的模型
