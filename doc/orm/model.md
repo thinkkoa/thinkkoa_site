@@ -5,12 +5,6 @@
 
 创建 user.js文件，模板代码如下：
 
-ThinkKoa框架可使用命令行工具： 
-
-```bash
-think model user
-```
-
 
 ```js
 const thinkorm = require('thinkorm');
@@ -30,6 +24,12 @@ module.exports = class extends thinkorm {
     }
 }
 
+```
+
+ThinkKoa框架可使用命令行工具创建模型： 
+
+```bash
+think model user
 ```
 
 
@@ -84,7 +84,7 @@ think.model('user', config);
 
 
 
-**1、ThinkORM的单个模型类对应着数据库中的一个表。(manytomany中的map表无需创建模型)**
+**1、ThinkORM的单个模型类对应着数据库中的一个表。**
 
 
 
