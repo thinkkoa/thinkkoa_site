@@ -74,21 +74,7 @@ length | 需要获取的记录数 \(int\)
 ------------- | -------------
 order | 可接受对象{id: 'desc'}及字符串'id desc, name asc'
 
-### page\(page, listRows\)
-方法说明：
-
-
-类型 | 作用
-------------- | -------------
-非中断方法 | 只能配合countSelect方法使用。获取指定页码指定条数的数据
-参数说明：
-
-参数 | 说明
-------------- | -------------
-page | 页码 （int）
-listRows | 单页条数 \(int\)
-
-### rel\(table = false\[, fields])
+### rel\(table = true\{, options})
 方法说明：
 
 
@@ -100,15 +86,19 @@ listRows | 单页条数 \(int\)
 参数 | 说明
 ------------- | -------------
 table | 可传入布尔值 true或false 表示开启或关闭关联查询如果传入的是模型名，则仅关联查询传入的模型（模型类关联多个子表的情况下）
-fields | 指定关联查询关联表的筛选字段
+options | 指定关联表的查询选项
 
 例子：
 
 ```js
-.rel(true,{Profile: ['name'], Pet: ['types']})
+.rel(true,{Profile: {field: ['name'], where: {name: {'<>': ''}}}})
+
+or
+
+.rel(['Profile'],{Profile: {field: ['name'], where: {name: {'<>': ''}}}})
 ```
 
-### field\(fields\)
+### field\([fields]\)
 方法说明：
 
 
@@ -119,18 +109,13 @@ fields | 指定关联查询关联表的筛选字段
 
 参数 | 说明
 ------------- | -------------
-fields | 可接受数组及字符串
+fields | 可接受数组
 
 
 传入数组
 
 ```js
 field(['username', 'phone'])
-```
-传入字符串
-
-```js
-field('username, phone')
 ```
 
 ### where\(where\)

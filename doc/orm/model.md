@@ -10,7 +10,7 @@
 const thinkorm = require('thinkorm');
 
 module.exports = class extends thinkorm {
-
+    // 构造方法
     init(name, config){
         super.init(name, config);
         // 是否开启迁移(migrate方法可用)
@@ -40,7 +40,6 @@ think model user
 
 ```js
 
-const path = require('path');
 const thinkorm = require('thinkorm');
 
 //数据源配置
@@ -63,9 +62,8 @@ let config = {
     }
 };
 
-
 // 加载模型类到thinkorm
-let user = thinkorm.require(path.resolve('./user.js'));
+let user = thinkorm.require(require.resolve('./user.js'));
 thinkorm.setCollection(user, config);
 
 //实例化
