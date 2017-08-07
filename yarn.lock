@@ -2981,7 +2981,7 @@ think_store@^1.x.x:
     babel-runtime "6.23.0"
     think_lib "^1.x.x"
 
-think_trace@^1.0.0, think_trace@^1.x.x:
+think_trace@^1.0.1, think_trace@^1.x.x:
   version "1.0.1"
   resolved "http://r.cnpmjs.org/think_trace/download/think_trace-1.0.1.tgz#6f812aa6244b581c00c508668863288b5a9ebcb1"
   dependencies:
