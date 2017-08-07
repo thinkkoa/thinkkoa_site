@@ -47,7 +47,7 @@ this.cookie('site', 'www.baidu.com');
 
 ctx.cookie(name[, value, options = {}])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_cookie中间件`
 
 获取或者设置cookie值。options包括项
 

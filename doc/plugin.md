@@ -7,13 +7,13 @@
 
 Cache for ThinkKoa, support file, memcache, redis.
 
-*  [think_error](https://github.com/thinkkoa/think_error) 
-[![npm version](https://badge.fury.io/js/think_error.svg)](https://badge.fury.io/js/think_error) 
+*  [think_trace](https://github.com/thinkkoa/think_trace) 
+[![npm version](https://badge.fury.io/js/think_trace.svg)](https://badge.fury.io/js/think_trace) 
 
-Error catch for ThinkKoa.
+Trace for ThinkKoa.
 
-*  [think_http](https://github.com/thinkkoa/think_http) 
-[![npm version](https://badge.fury.io/js/think_http.svg)](https://badge.fury.io/js/think_http) 
+*  [think_context](https://github.com/thinkkoa/think_context) 
+[![npm version](https://badge.fury.io/js/think_context.svg)](https://badge.fury.io/js/think_context) 
 
 Ctx extensions for ThinkKoa.
 
@@ -21,11 +21,6 @@ Ctx extensions for ThinkKoa.
 [![npm version](https://badge.fury.io/js/think_i18n.svg)](https://badge.fury.io/js/think_i18n) 
 
 Internationalization and localization for ThinkKoa.
-
-*  [think_logger](https://github.com/thinkkoa/think_logger) 
-[![npm version](https://badge.fury.io/js/think_logger.svg)](https://badge.fury.io/js/think_logger) 
-
-Logger for ThinkKoa.
 
 *  [think_model](https://github.com/thinkkoa/think_model) 
 [![npm version](https://badge.fury.io/js/think_model.svg)](https://badge.fury.io/js/think_model) 

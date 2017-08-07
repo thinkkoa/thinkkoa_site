@@ -4,79 +4,79 @@ Koa处理请求的过程：当请求到来的时候，会通过req和res来创�
 
 ### ctx.startTime
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 request处理开始时间，用于输出和记录处理时长
 
 ### ctx.version
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 http协议版本
 
 ### ctx.originalPath
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 因为ctx.path在中间件处理的时候可能发生变化，originalPath属性保存原始请求path。
 
 ### ctx.isGet()
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否GET请求。
 
 ### ctx.isPost()
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否POST请求。
 
 ### ctx.isAjax()
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否Ajax请求。
 
 ### ctx.isPjax()
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否Pjax请求。
 
 ### ctx.isJsonp()
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否JsonP请求。
 
 ### ctx.referer([host])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 获取传入host的hostname作为referer；如果未传递参数，则当前request的headers.referer。
 
 ### ctx.types([contentType, encoding])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 获取或设置ctx.headers.content-type属性；如果传入encoding，自动设置字符集。
 
 ### ctx.sendTime([name])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 设置ctx.headers的 `X-name || X-EXEC-TIME` 值。一般用于发送处理时间。
 
 ### ctx.expires([time = 30])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 设置ctx.headers的 `Cache-Control: max-age` 值以及 `Expires`。一般用于输出缓存控制。
 
 ### ctx.cookie(name[, value, options = {}])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_cookie中间件`
 
 获取或者设置cookie值。options包括项
 
@@ -112,7 +112,7 @@ module.exports = {
 
 ### ctx.write(content[, contentType, encoding])
 
-`ThinkKoa扩展` `think_http中间件`
+`ThinkKoa扩展` `think_context中间件`
 
 对ctx.body赋值进行功能封装。注意ctx.write输出内容后，并不会中断程序执行。
 

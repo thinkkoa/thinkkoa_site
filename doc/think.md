@@ -596,7 +596,7 @@ await think.cache('test', {aa: 11}, 30);
 
 ### think.logger(type, css, ...args)
 
-`think_logger中间件`
+`think_trace中间件`
 
 自定义控制台输出。
 
@@ -614,7 +614,7 @@ think.logger('custom', 'red', new Error('测试内容'));
 
 ### think.logger.info(...args)
 
-`think_logger中间件`
+`think_trace中间件`
 
 自定义控制台输出info类型信息。
 
@@ -629,7 +629,7 @@ think.logger.info(new Error('测试内容'));
 ```
 ### think.logger.success(...args)
 
-`think_logger中间件`
+`think_trace中间件`
 
 自定义控制台输出success类型信息。
 
@@ -644,7 +644,7 @@ think.logger.success(new Error('测试内容'));
 ```
 ### think.logger.warn(...args)
 
-`think_logger中间件`
+`think_trace中间件`
 
 自定义控制台输出warn类型信息。
 
@@ -659,7 +659,7 @@ think.logger.warn(new Error('测试内容'));
 ```
 ### think.logger.error(...args)
 
-`think_logger中间件`
+`think_trace中间件`
 
 自定义控制台输出error类型信息。
 
@@ -675,9 +675,9 @@ think.logger.error(new Error('测试内容'));
 
 ### think.addLogs(name, msgs)
 
-`think_logger中间件`
+`think_trace中间件`
 
-自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。可修改 `think_logger`中间件配置。
+自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。可修改 `think_trace`中间件配置。
 
 如果日志超过指定大小，会自动按照日期切割。
 
