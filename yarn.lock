@@ -2925,9 +2925,9 @@ think_cache@^1.x.x:
     think_lib "^1.x.x"
     think_store "^1.x.x"
 
-think_context@^1.x.x:
-  version "1.0.0"
-  resolved "http://r.cnpmjs.org/think_context/download/think_context-1.0.0.tgz#d426a9fe5aa3e02b42fa9912005799a6b9809b6f"
+think_context@^1.0.1, think_context@^1.x.x:
+  version "1.0.1"
+  resolved "http://r.cnpmjs.org/think_context/download/think_context-1.0.1.tgz#2e89fa6c30c46bd00b14861bb7eaf6382eca4676"
   dependencies:
     think_lib "^1.x.x"
 
@@ -2981,9 +2981,9 @@ think_store@^1.x.x:
     babel-runtime "6.23.0"
     think_lib "^1.x.x"
 
-think_trace@^1.x.x:
-  version "1.0.0"
-  resolved "http://r.cnpmjs.org/think_trace/download/think_trace-1.0.0.tgz#3adbc4b643465f80b46fbf318ed6d8d5f9744154"
+think_trace@^1.0.0, think_trace@^1.x.x:
+  version "1.0.1"
+  resolved "http://r.cnpmjs.org/think_trace/download/think_trace-1.0.1.tgz#6f812aa6244b581c00c508668863288b5a9ebcb1"
   dependencies:
     http-errors "^1.6.2"
     think_lib "^1.x.x"
@@ -2996,8 +2996,8 @@ think_view@^1.x.x:
     think_lib "^1.x.x"
 
 thinkkoa@^1.x.x:
-  version "1.7.1"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.7.1.tgz#dd23318801c36da405abfd3245e8de66e2e5e120"
+  version "1.7.2"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.7.2.tgz#3521520fd81a225a772b434e51f43118e8d82e2e"
   dependencies:
     babel-runtime "^6.23.0"
     bluebird "^3.5.0"

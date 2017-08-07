@@ -7,6 +7,11 @@
 
 Cache for ThinkKoa, support file, memcache, redis.
 
+*  [think_cookie](https://github.com/thinkkoa/think_cookie) 
+[![npm version](https://badge.fury.io/js/think_cookie.svg)](https://badge.fury.io/js/think_cookie) 
+
+Cookie for ThinkKoa.
+
 *  [think_trace](https://github.com/thinkkoa/think_trace) 
 [![npm version](https://badge.fury.io/js/think_trace.svg)](https://badge.fury.io/js/think_trace) 
 
@@ -75,3 +80,41 @@ Cache's Storage for ThinkKoa.
 [![npm version](https://badge.fury.io/js/thinkkoa_cli.svg)](https://badge.fury.io/js/thinkkoa_cli)
 
 ThinkKoa command line tool.
+
+
+### ORM
+
+*  [thinkorm](https://github.com/thinkkoa/thinkorm) 
+[![npm version](https://badge.fury.io/js/thinkorm.svg)](https://badge.fury.io/js/thinkorm)
+
+A flexible, lightweight and powerful Object-Relational Mapper for Node.js.
+
+*  [thinkorm_adapter_mysql](https://github.com/thinkkoa/thinkorm_adapter_mysql) 
+[![npm version](https://badge.fury.io/js/thinkorm_adapter_mysql.svg)](https://badge.fury.io/js/thinkorm_adapter_mysql)
+
+Mysql adapter for thinkorm 2.x.
+
+*  [thinkorm_adapter_postgresql](https://github.com/thinkkoa/thinkorm_adapter_postgresql) 
+[![npm version](https://badge.fury.io/js/thinkorm_adapter_postgresql.svg)](https://badge.fury.io/js/thinkorm_adapter_postgresql)
+
+PostgreSQL adapter for thinkorm 2.x.
+
+*  [thinkorm_adapter_sqlite3](https://github.com/thinkkoa/thinkorm_adapter_sqlite3) 
+[![npm version](https://badge.fury.io/js/thinkorm_adapter_sqlite3.svg)](https://badge.fury.io/js/thinkorm_adapter_sqlite3)
+
+SQLite3 adapter for thinkorm 2.x.
+
+*  [thinkorm_adapter_mongodb](https://github.com/thinkkoa/thinkorm_adapter_mongodb) 
+[![npm version](https://badge.fury.io/js/thinkorm_adapter_mongodb.svg)](https://badge.fury.io/js/thinkorm_adapter_mongodb)
+
+MongoDB adapter for thinkorm 2.x.
+
+*  [thinkorm_adapter_mssql](https://github.com/thinkkoa/thinkorm_adapter_mssql) 
+[![npm version](https://badge.fury.io/js/thinkorm_adapter_mssql.svg)](https://badge.fury.io/js/thinkorm_adapter_mssql)
+
+MSSQL adapter for thinkorm 2.x.
+
+*  [thinkorm_adapter_oracle](https://github.com/thinkkoa/thinkorm_adapter_oracle) 
+[![npm version](https://badge.fury.io/js/thinkorm_adapter_oracle.svg)](https://badge.fury.io/js/thinkorm_adapter_oracle)
+
+Oracle adapter for thinkorm 2.x.
