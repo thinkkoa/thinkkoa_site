@@ -11,9 +11,9 @@ import base from './base';
 
 export default class extends base {
     //构造方法
-    init(http) {
+    init(ctx) {
         //调用父类构造方法
-        super.init(http);
+        super.init(ctx);
     }
     //控制器默认方法
     async indexAction() {
@@ -31,7 +31,7 @@ export default class extends base {
             await this.getDoc(doc);
             return this.render();
         } catch (err) {
-            return this.http.throw(404, err);
+            return this.ctx.throw(404, err);
         }
     }
 
@@ -66,7 +66,7 @@ export default class extends base {
             markedContent = fs.readFileSync(htmlPath, 'utf8');
         } else {
             if (!think.isFile(filePath)) {
-                return this.http.throw(404, `/doc/${doc}.html is not exist`);
+                return this.ctx.throw(404, `/doc/${doc}.html is not exist`);
             }
             markedContent = await this.getMarkedContent(filePath);
         }

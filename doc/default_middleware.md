@@ -3,7 +3,7 @@
 ThinkKoa框架默认加载了一些常用的中间件:
 
 ```js
-'logger', 'http', 'error', 'static', 'payload', 'controller'
+'trace', 'context', 'static', 'cookie', 'payload', 'controller'
 ```
 这些中间件的配置在项目中未重新定义的时候，都会遵循各自的默认配置，我们可以根据项目的实际情况进行修改。
 

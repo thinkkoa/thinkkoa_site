@@ -107,7 +107,7 @@ let cls = think.controller('index', ctx);
 执行传入的控制器中某个方法。
 
 * name 格式 `控制器名/方法名`。多模块模式下格式为 `模块名/控制器名/方法名`
-* http ctx对象别名
+* ctx ctx对象
 
 `注意`： 
 

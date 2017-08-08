@@ -35,9 +35,9 @@ think controller admin/index
 ```js
 exports.default = class extends think.controller.base {
     //构造方法
-    init(http) {
+    init(ctx) {
         //调用父类构造方法
-        super.init(http);
+        super.init(ctx);
     }
     //所有该控制器(含子类)方法前置方法
     __before() {
@@ -70,9 +70,9 @@ ES6的构造方法在使用中有一些坑，比如父类方法的调用supper�
 
 ```js
 //构造方法
-init(http){
+init(ctx){
     //调用父类构造方法
-    super.init(http);
+    super.init(ctx);
     ....
 }
 ```
@@ -139,8 +139,8 @@ ThinkKoa默认仅暴露带 `Action`后缀的控制器方法给URL访问，如果
 ```js
 module.exports = class extends think.controller.base {
 
-    init(http) {
-        super.init(http);
+    init(ctx) {
+        super.init(ctx);
     }
 
     test() { //不包含后缀，无法被URL直接访问

@@ -32,8 +32,6 @@ this.render(think.app_path + '/view/default/error.html');
 
 ```js
 //抛出404错误
-this.http.throw(404, '未找到页面');
-or
 this.ctx.throw(404, '未找到页面');
 ```
 使用此方式抛出错误，框架会自动拦截，并显示默认的404或500等错误页面。对于用户来讲，并不是很好的体验，建议使用前两种方式做错误处理。

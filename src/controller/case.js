@@ -6,9 +6,9 @@ import base from './base';
 
 export default class extends base {
     //构造方法
-    init(http){
+    init(ctx){
         //调用父类构造方法
-        super.init(http);
+        super.init(ctx);
     }
     
     //控制器默认方法

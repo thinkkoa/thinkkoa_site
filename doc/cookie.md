@@ -9,12 +9,10 @@ koa对cookie提供了很好的支持，在此基础上ThinkKoa进行了进一步
 ```js
 config: { //中间件配置
     ...,
-    http: {
-        cookie: {
-            domain: '',
-            path: '/',
-            ...
-        }
+    cookie: {
+        domain: '',
+        path: '/',
+        ...
     }
 }
 ```

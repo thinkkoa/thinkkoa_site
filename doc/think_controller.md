@@ -11,8 +11,8 @@ export default class extends think.controller.base {
     * init method
     * @return {} []
     */
-    init(http){
-        super.init(http);
+    init(ctx){
+        super.init(ctx);
     }
 }
 
@@ -256,7 +256,7 @@ this.cookie('site');
 this.cookie('site', 'www.baidu.com');
 ```
 
-如果options未传递，默认遵循http中间件的配置。可在项目中间件配置文件中进行定义：
+如果options未传递，默认遵循中间件的配置。可在项目中间件配置文件中进行定义：
 
 ```js
 
@@ -267,12 +267,10 @@ this.cookie('site', 'www.baidu.com');
 module.exports = {
     list: [], //加载的中间件列表
     config: { //中间件配置 
-        http: {
-        	cookie: {
-		        domain: '',
-		        path: '/',
-		        ...
-			}
+        cookie: {
+            domain: '',
+            path: '/',
+            ...
         }
     }
 };
@@ -412,14 +410,14 @@ return this.render();
 
 
 
-### think.controller(name, http)
+### think.controller(name, ctx)
 
 根据传入的name返回控制器类或该控制器的实例。
 
 * name 控制器名。多模块模式下，`控制器名为 模块名/控制器名`。
         如果传入的是类文件路径，则自动加载该类文件
         如果name值为false，返回 think.controller.base
-* http ctx对象的别名
+* ctx  ctx对象
         如果值为undefined,则返回该类而非实例
 
 返回控制器类：
@@ -431,8 +429,8 @@ export default class extends admin {
     * init method
     * @return {} []
     */
-    init(http){
-        super.init(http);
+    init(ctx){
+        super.init(ctx);
     }
 }
 
@@ -443,8 +441,8 @@ export default class extends admin {
     * init method
     * @return {} []
     */
-    init(http){
-        super.init(http);
+    init(ctx){
+        super.init(ctx);
     }
 }
 ```
@@ -455,11 +453,11 @@ const admin = think.controller('admin', ctx);
 admin.indexAction();
 ```
 
-### think.action(name, http)
+### think.action(name, ctx)
 执行传入的控制器中某个方法。
 
 * name 格式 `控制器名/方法名`。多模块模式下格式为 `模块名/控制器名/方法名`
-* http ctx对象别名
+* ctx ctx对象
 
 `注意`： 
 

@@ -42,11 +42,11 @@ module.exports = {
 ThinkKoa 框架默认开启的中间件： 
 
 ```js
-['logger', 'http', 'error', 'static', 'payload', 'router','controller']
+['trace', 'context', 'cookie', 'static', 'payload', 'router','controller']
 
-logger： 日志记录
-http: 系统核心中间件，此中间件不能被禁用
-error：错误拦截
+trace： 错误拦截及日志记录
+context：系统核心中间件,ctx扩展
+cookie：cookie处理
 static：静态资源服务
 payload：url querystring 及body paser
 router：路由解析
@@ -108,9 +108,7 @@ config: { //中间件配置
 ```
 *注意：*
 
-*1、请确保您对框架中间件作用完全了解，否则请勿随意禁用，可能导致异常*
-
-*2、http中间件不能被禁用*
+*请确保您对框架中间件作用完全了解，否则请勿随意禁用，可能导致异常*
 
 ### 读取配置
 

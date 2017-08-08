@@ -97,7 +97,7 @@ export default class extends think.controller.base {
 
  从表中测试数据可以看到：
  
- 1、ThinkKoa性能略次于Koa2以及Express，但差距很小。这是因为ThinkKoa默认加载了logger、error、payload、router、http、static、controller等常用的中间件，Express或者Koa在加载同等功能的中间件后，性能和ThinkKoa持平。
+ 1、ThinkKoa性能略次于Koa2以及Express，但差距很小。这是因为ThinkKoa默认加载了trace、context、static、cookie、payload、router、controller等常用的中间件，Express或者Koa在加载同等功能的中间件后，性能和ThinkKoa持平。
  
  2、ThinkKoa用很小的性能损失换来项目敏捷开发，并且结构和规范合理，适合开发大的项目。
 
