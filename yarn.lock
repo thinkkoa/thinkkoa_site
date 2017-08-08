@@ -2995,9 +2995,9 @@ think_view@^1.x.x:
     ejs "^2.5.6"
     think_lib "^1.x.x"
 
-thinkkoa@^1.x.x:
-  version "1.7.2"
-  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.7.2.tgz#3521520fd81a225a772b434e51f43118e8d82e2e"
+thinkkoa@^1.7.4:
+  version "1.7.4"
+  resolved "http://r.cnpmjs.org/thinkkoa/download/thinkkoa-1.7.4.tgz#fb3e2597a0e6f1cd02be3491e075ec6664810b0e"
   dependencies:
     babel-runtime "^6.23.0"
     bluebird "^3.5.0"
