@@ -10,7 +10,7 @@
 
 ## 更新日志
 
-### 1.7.2 
+### 1.7.3 
 * 原`think_http`中间件优化更名为`think_context`
 * 原`think_error`、`think_logger`合并为`think_trace`中间件
 * cookie处理独立为中间件`think_cookie`(注意session对cookie有依赖)
