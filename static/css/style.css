@@ -512,7 +512,7 @@ header {
   backface-visibility: hidden;
   z-index: 100; }
   header .container {
-    padding: 30px 15px; }
+    padding: 0 15px; }
     @media only screen and (min-width: 0px) and (max-width: 991px) {
       header .container {
         padding: 15px; } }
@@ -523,7 +523,7 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
     animation: sticky_anim .4s; }
     header.fixed_header.sticky .container {
-      padding: 15px; }
+      padding: 0 }
     @media only screen and (min-width: 992px) {
       header.fixed_header.sticky {
         position: fixed; } }
@@ -532,7 +532,7 @@ header {
         padding: 20px 15px;
         background-color: #ffffff; } }
     header.fixed_header.sticky ul.menu > li > a:before {
-      bottom: -16px; }
+      bottom: -32px; }
 @keyframes sticky_anim {
   0% {
     transform: translateY(-120px);
