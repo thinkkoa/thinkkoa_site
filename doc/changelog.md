@@ -10,13 +10,17 @@
 
 ## 更新日志
 
+### 1.7.4 (推荐升级)
+* 修复`uncaughtException`类型错误拦截处理的bug
+* 增加`controller`中`cookie`方法依赖检查
+
 ### 1.7.3 
 * 原`think_http`中间件优化更名为`think_context`
 * 原`think_error`、`think_logger`合并为`think_trace`中间件
 * cookie处理独立为中间件`think_cookie`(注意session对cookie有依赖)
 * loader新增加载控制器的方法`loadControllers`
 
-### 1.6.2 (推荐升级)
+### 1.6.2 
 * 控制器的`write`,`json`,`jsonp`,`ok`,`fail`等方法返回`prevent`中断,防止在`await`异步`catch`处理内调用未中断程序的bug
 * 模板输出`render`返回`prevent`中断。需要升级`think_view`
 
