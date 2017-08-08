@@ -4,19 +4,19 @@ Koa处理请求的过程：当请求到来的时候，会通过req和res来创�
 
 ### ctx.startTime
 
-`ThinkKoa扩展` `think_context中间件`
+`ThinkKoa扩展` `think_trace中间件`
 
 request处理开始时间，用于输出和记录处理时长
 
 ### ctx.version
 
-`ThinkKoa扩展` `think_context中间件`
+`ThinkKoa扩展` `think_trace中间件`
 
 http协议版本
 
 ### ctx.originalPath
 
-`ThinkKoa扩展` `think_context中间件`
+`ThinkKoa扩展` `think_trace中间件`
 
 因为ctx.path在中间件处理的时候可能发生变化，originalPath属性保存原始请求path。
 
