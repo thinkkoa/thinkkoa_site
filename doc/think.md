@@ -90,7 +90,7 @@ think.config('aa');
 
 think.config('aa.bb'); // aa: {bb: 1}
 
-think.config('cache', 'middleware');
+think.config('config.cache', 'middleware');
 ```
 
 ### think.controller(name, ctx)

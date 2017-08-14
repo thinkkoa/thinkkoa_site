@@ -119,7 +119,21 @@ config: { //中间件配置
 think.config('key');
 
 //读取中间件配置
-think.config('key', 'middleware');
+think.config('config.middleware_name', 'middleware'); 
+
+//注意中间件配置包含list及config两个部分
+{
+    list: [], //加载的中间件列表
+    config: { //中间件配置
+        cache: {
+            xxx: 1
+        }
+    }
+}
+
+//如果需要获取cache中间件xxx项的值,需要使用
+think.config('config.cache', 'middleware').xxx; 
+
 ```
 
 读取配置支持子对象方式:
@@ -127,13 +141,13 @@ think.config('key', 'middleware');
 配置项:
 
 ```
-key : {aa : 'bb'}
+key1 : {aa : 'bb'}
 ```
 
 读取：
 
 ```
-think.config('key.aa');
+think.config('key1.aa');
 ```
 
 ### 扩展配置
@@ -145,10 +159,11 @@ think.config('key.aa');
 ```js
 module.exports = {
 	//扩展配置内容
+    key1: 1
 }
 ```
 读取扩展配置项:
 
 ```js
-think.config('key', 'custom');
+think.config('key1', 'custom');
 ```
