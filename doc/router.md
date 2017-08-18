@@ -138,16 +138,16 @@ config: { //中间件配置
 
 ```js
 module.exports = {
-    ['/user', {
-        get: "/home/user/index"
+    test: ['/product', {
+        get: "/home/product/index"
     }],
-    ['/product/:id', {
+    test1: ['/product/:id', {
         get: "/home/product/detail",
         post: "/home/product/add",
         put: "/home/product/update",
         delete: "/home/product/delete",
     }],
-    ['/test', "/home/test/index"]
+    test2: ['/product', "/home/product/index"]
 }
 
 ```

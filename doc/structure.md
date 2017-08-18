@@ -96,4 +96,4 @@ module.exports = {
 };
 ```
 
-配置操作请见配置章节[配置](/doc/index/doc/config.jhtml)
+配置操作请见配置章节[配置](/doc/config.jhtml)

@@ -90,7 +90,7 @@ lib.define(think, 'test', function(arg) {
 npm run test-cov
 ```
 
-可以参考我们已经发布的中间件源码(github)进行具体的中间件开发: [中间件列表](/doc/index/doc/plugin.jhtml#middlewares)
+可以参考我们已经发布的中间件源码(github)进行具体的中间件开发: [中间件列表](/doc/plugin.jhtml#middlewares)
 
 ### 说明文档
 

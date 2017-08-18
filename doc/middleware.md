@@ -132,4 +132,4 @@ module.exports = function (options) {
 *express中间件数量众多，无法一一覆盖测试。而且大部分在koa内有对应的中间件。因此建议自行修改实现，尽量不要直接引用。*
 
 ### ctx上下文
-见文档章节[API/ctx](/doc/index/doc/ctx.jhtml)
+见文档章节[API/ctx](/doc/ctx.jhtml)

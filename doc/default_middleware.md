@@ -47,4 +47,4 @@ module.exports = {
 
 ```
 
-具体的中间件配置项请参考各个中间件说明，[ThinkKoa中间件列表](/doc/index/doc/plugin.jhtml)
+具体的中间件配置项请参考各个中间件说明，[ThinkKoa中间件列表](/doc/plugin.jhtml)

@@ -9,7 +9,7 @@
           <dt><%-key%></dt>
             <dd>
               <%for(var name in sidebar[key]){%>
-              <a href="/orm/index/doc/<%-sidebar[key][name]%>.jhtml"><%-name%></a>
+              <a href="/orm/<%-sidebar[key][name]%>.jhtml"><%-name%></a>
               <%}%>
             </dd>
         </dl>
@@ -32,7 +32,7 @@
                 <%}else{%>
                   <h2>搜索结果(<%-searchResult.length%>)</h2>
                   <%searchResult.forEach(function(item){%>
-                  <h4><a target="_blank" href="/orm/index/doc/<%-item.filename.replace('.md', '')%>.jhtml"><%-item.title%></a></h4>
+                  <h4><a target="_blank" href="/orm/<%-item.filename.replace('.md', '')%>.jhtml"><%-item.title%></a></h4>
                   <%item.text.slice(0, 10).forEach(function(textItem){%>
                   <p><%-textItem%></p>
                   <%})%>

@@ -165,4 +165,4 @@ config: { //中间件配置
 
 
 ### 属性及方法
-见文档章节[API/controller](/doc/index/doc/think_controller.jhtml)
+见文档章节[API/controller](/doc/think_controller.jhtml)
