@@ -27,9 +27,11 @@
   },
   "dependencies": {
     "babel-runtime": "6.23.0",
+    "graceful-fs": "^4.0.0",
     "highlight.js": "^8.8.0",
     "marked": "^0.3.6",
     "marked-toc": "^0.3.0",
+    "minimatch": "3.0.2",
     "think_cache": "^1.x.x",
     "think_view": "^1.x.x",
     "thinkkoa": "^1.7.4"
