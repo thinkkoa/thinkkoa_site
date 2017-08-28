@@ -1,6 +1,6 @@
 ## 中间件
 
-ThinkKoa框架默认加载了trace、context、static、cookie、payload、router、controller等常用的中间件，能够满足大部分的Web应用场景。用户也可以自行增加中间件进行扩展。
+ThinkKoa框架默认加载了trace、static、cookie、payload、router、controller等常用的中间件，能够满足大部分的Web应用场景。用户也可以自行增加中间件进行扩展。
 
 ### 创建中间件
 

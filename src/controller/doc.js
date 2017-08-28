@@ -17,7 +17,7 @@ export default class extends base {
     }
     //控制器默认方法
     async indexAction() {
-        let doc = this.querys('doc') || 'index';
+        let doc = this.get('doc') || 'index';
         this.assign('currentNav', 'doc');
         if (doc === 'plugin') {
             this.assign('currentNav', 'plugin');
@@ -89,7 +89,7 @@ export default class extends base {
         this.assign('currentNav', 'doc');
         await this.getSideBar();
 
-        let keyword = this.querys('keyword').trim();
+        let keyword = this.get('keyword').trim();
         this.assign('keyword', keyword);
         if (!keyword) {
             return this.render();

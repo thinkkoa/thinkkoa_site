@@ -42,10 +42,9 @@ module.exports = {
 ThinkKoa 框架默认开启的中间件： 
 
 ```js
-['trace', 'context', 'cookie', 'static', 'payload', 'router','controller']
+['trace', 'cookie', 'static', 'payload', 'router','controller']
 
 trace： 错误拦截及日志记录
-context：系统核心中间件,ctx扩展
 cookie：cookie处理
 static：静态资源服务
 payload：url querystring 及body paser

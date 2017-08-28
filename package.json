@@ -34,7 +34,7 @@
     "marked-toc": "^0.3.0",
     "think_cache": "^1.x.x",
     "think_view": "^1.x.x",
-    "thinkkoa": "^1.8.0"
+    "thinkkoa": "^1.9.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

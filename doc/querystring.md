@@ -4,9 +4,9 @@
 
 ### 控制器中获取参数
 
-控制器中提供了 `this.querys`、`this.post`、`this.param`、`this.file`来获取各种参数数据：
+控制器中提供了 `this.get`、`this.post`、`this.param`、`this.file`来获取各种参数数据：
 
-#### querys([name, value])
+#### get([name, value])
 
 * name 参数名,如果值为undefined则返回所有querystring参数
 * value 参数值
@@ -15,10 +15,10 @@
 
 ```js
 //获取参数
-let test = this.querys('test') || '';
+let test = this.get('test') || '';
 
 //构造参数
-this.querys('test', {aa: 1});
+this.get('test', {aa: 1});
 ```
 
 #### post([name, value])

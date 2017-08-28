@@ -575,6 +575,17 @@ think.datetime('2017-01-01', 'yyyy');
 
 浅继承或深度继承对象。使用locdash库实现.深度继承生成的对象发生改变，不影响 source对象。
 
+### think.await(key, fn)
+
+`think_lib`
+
+执行等待，常用于并发处理，将并发转化为非重复的队列处理，同一个事件(相同key)仅执行一次，避免一个耗时的操作多次被执行。 
+
+callback 需要返回一个 Promise 。
+
+* key 队列key
+* fn 执行的函数
+
 ### think.cache(name, value, timeout)
 
 `think_cache中间件`
@@ -689,14 +700,3 @@ think.logger.error(new Error('测试内容'));
 //写入日志 logs/custom/test.log
 await think.addLogs('test', {aa: 11});
 ```
-
-### think.await(key, fn)
-
-`think_cache中间件`
-
-执行等待，常用于并发处理，将并发转化为非重复的队列处理，同一个事件(相同key)仅执行一次，避免一个耗时的操作多次被执行。 
-
-callback 需要返回一个 Promise 。
-
-* key 队列key
-* fn 执行的函数
