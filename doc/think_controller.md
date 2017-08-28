@@ -26,7 +26,7 @@ ctx对象。
 ```js
 this.ctx
 ```
-#### http
+#### <del>http</del>
 ctx对象别名。
 
 ```js
@@ -117,28 +117,20 @@ if (this.isJsonp('callback')) {
 }
 ```
 
-#### set(name, value)
+#### header(name, value)
 
-设置header内容。
+获取或设置header内容。
 
 * name 键
 * value 值
 
 ```js
-this.set('Content-Type', 'text/plian'); //等同于 ctx.set
+this.header('Content-Type', 'text/plian'); //等同于 ctx.set('Content-Type', 'text/plian')
+
+this.header('Content-Type'); //等同于 ctx.get('Content-Type')
 ```
 
-#### get(name)
-
-获取header内容
-* name 键
-
-```js
-this.get('Content-Type'); //等同于 ctx.get
-```
-
-
-#### querys([name, value])
+#### get([name, value])
 
 * name 参数名,如果值为undefined则返回所有querystring参数
 * value 参数值
@@ -147,10 +139,10 @@ this.get('Content-Type'); //等同于 ctx.get
 
 ```js
 //获取参数
-let test = this.querys('test') || '';
+let test = this.get('test') || '';
 
 //构造参数
-this.querys('test', {aa: 1});
+this.get('test', {aa: 1});
 ```
 
 #### post([name, value])

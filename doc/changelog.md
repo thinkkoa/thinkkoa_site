@@ -10,6 +10,13 @@
 
 ## 更新日志
 
+### 1.9.0
+* 移除控制器方法`set`、`get`，请使用`this.ctx.set`及`this.ctx.get`代替
+* 新增控制器方法`header`,用于获取或设置header项
+* 移除控制器方法`querys`,请使用`this.ctx.querys`或者`this.get`代替
+* 移除`think_context`中间件,部分功能合并到`think.controller.base`,对`ctx`的侵入性更小
+* 升级框架到此版本需要同时升级`think_trace`、`think_view`中间件.
+
 ### 1.8.0 (推荐升级)
 * 升级babel相关模块到`6.26.0`,需升级`thinkkoa_cli`命令行工具
 * 优化中间件加载及错误处理逻辑,需升级`think_trace`中间件

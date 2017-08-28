@@ -20,55 +20,55 @@ http协议版本
 
 因为ctx.path在中间件处理的时候可能发生变化，originalPath属性保存原始请求path。
 
-### ctx.isGet()
+### <del>ctx.isGet()</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否GET请求。
 
-### ctx.isPost()
+### <del>ctx.isPost()</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否POST请求。
 
-### ctx.isAjax()
+### <del>ctx.isAjax()</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否Ajax请求。
 
-### ctx.isPjax()
+### <del>ctx.isPjax()</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否Pjax请求。
 
-### ctx.isJsonp()
+### <del>ctx.isJsonp()</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 判断当前request是否JsonP请求。
 
-### ctx.referer([host])
+### <del>ctx.referer([host])</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 获取传入host的hostname作为referer；如果未传递参数，则当前request的headers.referer。
 
-### ctx.types([contentType, encoding])
+### <del>ctx.types([contentType, encoding])</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 获取或设置ctx.headers.content-type属性；如果传入encoding，自动设置字符集。
 
-### ctx.sendTime([name])
+### <del>ctx.sendTime([name])</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
 设置ctx.headers的 `X-name || X-EXEC-TIME` 值。一般用于发送处理时间。
 
-### ctx.expires([time = 30])
+### <del>ctx.expires([time = 30])</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
