@@ -110,7 +110,7 @@ module.exports = {
 };
 ```
 
-### ctx.write(content[, contentType, encoding])
+### <del>ctx.write(content[, contentType, encoding])</del> [Deprecated on 1.9.0]
 
 `ThinkKoa扩展` `think_context中间件`
 
