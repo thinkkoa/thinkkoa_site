@@ -140,7 +140,7 @@ ctx.file('filename', fileObject);
 
 ### 特别注意
 
-* 控制器方法this.get()以及ctx.get为获取header内容，并非获取querystring参数
+* ctx.get为获取header内容，并非获取querystring参数
 
 * ctx.querys 和 ctx.query的区别：
 
