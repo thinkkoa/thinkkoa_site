@@ -10,6 +10,12 @@
 
 ## 更新日志
 
+### 1.10.0 (推荐升级)
+* 移除全局函数`think.await`,此函数初衷为解决并发转队列问题,但存在bug,且此类问题可以使用第三方库co实现
+* 调整`loader.js`、`server.js`位置
+* 修复node.js > 8.5在特定场景下的一个偶发bug
+* 经过实际项目检验`1.9.0`进入稳定版本,发布稳定版本`1.10.0`
+
 ### 1.9.0
 * 移除控制器方法`set`、`get`，请使用`this.ctx.set`及`this.ctx.get`代替
 * 新增控制器方法`header`,用于获取或设置header项
@@ -17,7 +23,7 @@
 * 移除`think_context`中间件,部分功能合并到`think.controller.base`,对`ctx`的侵入性更小
 * 升级框架到此版本需要同时升级`think_trace`、`think_view`中间件.
 
-### 1.8.0 (推荐升级)
+### 1.8.0 
 * 升级babel相关模块到`6.26.0`,需升级`thinkkoa_cli`命令行工具
 * 优化中间件加载及错误处理逻辑,需升级`think_trace`中间件
 * 优化修复多路由规则处理,需升级`think_router`中间件
