@@ -8,16 +8,6 @@ ThinkKoa定义了以下规范：
 * ORM的构造方法第一个形参为数据源配置项。
         如果第三方ORM无法满足此条件，则不能使用`think.model()`函数来实例化模型类，需要自行使用`new`关键字实例化
 
-
-### think.model.base
-模型类基类。项目中所有的模型类均继承此基类以实现数据库操作。
-
-```js
-export default class extends think.model.base {
-    ...
-}
-```
-
 ### think.model(name, config)
 
 获取或者实例化一个模型类。

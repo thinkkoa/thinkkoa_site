@@ -30,15 +30,18 @@ console.error('错误'); //控制台输出 [2017-07-12 20:38:33]  [ERROR]  错�
 自定义控制台输出。
 
 * type 控制台输出类型,例如 THINK, HTTP等
-* css 控制台输出字符颜色,例如 white,grey,black,blue,cyan,green,magenta,red,yellow等
-* ...args 其余可变参数。不限制参数个数
+* option { path: path, record: record, css: 'css' } 
+    record 是否保存为日志文件
+    path 日志文件保存路径
+    css 控制台输出字符颜色,例如 white,grey,black,blue,cyan,green,magenta,red,yellow等
+* ...args 其余可变参数。不限制参数个数。类型为数组
 
 ```js
-think.logger('custom', 'blue', '测试内容');
-think.logger('custom', 'green', '测试：', '测试内容');
-think.logger('custom', 'blue', {"测试": "测试内容"});
-think.logger('custom', 'blue', ['测试：', '测试内容']);
-think.logger('custom', 'red', new Error('测试内容'));
+think.logger('custom', {css:'blue'}, ['测试内容']);
+think.logger('custom', {css:'green'}, ['测试：', '测试内容']);
+think.logger('custom', {css:'blue'}, [{"测试": "测试内容"}]);
+think.logger('custom', {css:'blue'}, ['测试：', '测试内容']);
+think.logger('custom', {css:'red'}, [new Error('测试内容')]);
 ```
 
 ### think.logger.info(...args)
