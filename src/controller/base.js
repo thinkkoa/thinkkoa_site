@@ -3,7 +3,7 @@
  * @return
  */
 
-export default class extends think.controller.base {
+module.exports = class extends think.controller.base {
     //构造方法
     init(ctx) {
         //调用父类构造方法
@@ -16,4 +16,4 @@ export default class extends think.controller.base {
             currentNav: ''
         });
     }
-}
+};

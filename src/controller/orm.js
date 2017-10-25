@@ -2,14 +2,14 @@
  * Controller
  * @return
  */
-import fs from 'fs';
-import child_process from 'child_process';
-import highlight from 'highlight.js';
-import marked from 'marked';
-import markToc from 'marked-toc';
-import base from './base';
+const fs = require('fs');
+const child_process = require('child_process');
+const highlight = require('highlight.js');
+const marked = require('marked');
+const markToc = require('marked-toc');
+const base = require('./base');
 
-export default class extends base {
+module.exports = class extends base {
     //构造方法
     init(ctx) {
         //调用父类构造方法
@@ -205,4 +205,4 @@ export default class extends base {
         return data;
     }
 
-}
+};

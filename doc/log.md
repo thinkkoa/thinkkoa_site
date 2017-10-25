@@ -23,7 +23,7 @@ console.error('错误'); //控制台输出 [2017-07-12 20:38:33]  [ERROR]  错�
 //如果开启存储日志，会同时写入日志文件内
 ```
 
-### think.logger(type, css, ...args)
+### think.logger(type, option, ...args)
 
 `think_trace中间件`
 

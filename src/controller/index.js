@@ -2,9 +2,9 @@
  * Controller
  * @return
  */
-import base from './base';
+const base = require('./base');
 
-export default class extends base {
+module.exports = class extends base {
     //构造方法
     init(ctx){
         //调用父类构造方法
@@ -15,4 +15,4 @@ export default class extends base {
         this.assign('currentNav', 'index');
         return this.render();
     }
-}
+};
