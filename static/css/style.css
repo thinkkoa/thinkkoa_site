@@ -1551,7 +1551,9 @@ footer .footer_btm {
     padding: 8px 0; }
     footer .footer_btm .foo_txt p {
       margin: 0;
-      line-height: 30px; }
+      line-height: 30px; 
+      text-align: center;
+    }
   footer .footer_btm .top_scrl {
     height: 46px;
     width: 46px;

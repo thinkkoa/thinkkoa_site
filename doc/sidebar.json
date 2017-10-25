@@ -3,7 +3,8 @@
       "介绍": "index",
       "创建项目": "create",
       "项目结构": "structure",
-      "代码规范": "specification"
+      "代码规范": "specification",
+      "更新记录": "changelog"
     },
     "进阶应用": {
       "配置": "config",
