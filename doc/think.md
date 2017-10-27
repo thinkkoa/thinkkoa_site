@@ -444,6 +444,20 @@ think.datetime('2017-01-01', 'yyyy');
 
 浅继承或深度继承对象。使用locdash库实现.深度继承生成的对象发生改变，不影响 source对象。
 
+### think.logger(type, option, [...args])
+
+自定义控制台输出。
+
+[详细说明](/doc/log.jhtml)
+
+### think.addLogs(name, msgs)
+
+自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。
+
+如果日志超过指定大小，会自动按照日期切割。
+
+[详细说明](/doc/log.jhtml)
+
 ### think.service(name, config)
 
 获取或者实例化一个服务类。
@@ -457,24 +471,6 @@ think.datetime('2017-01-01', 'yyyy');
 缓存操作函数。支持 file、redis、memcache形式的存储。
 
 [详细说明](/doc/cache.jhtml)
-
-### think.logger(type, option, [...args])
-
-`think_trace中间件`
-
-自定义控制台输出。
-
-[详细说明](/doc/log.jhtml)
-
-### think.addLogs(name, msgs)
-
-`think_trace中间件`
-
-自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。可修改 `think_trace`中间件配置。
-
-如果日志超过指定大小，会自动按照日期切割。
-
-[详细说明](/doc/log.jhtml)
 
 ### think.model(name, config)
 

@@ -25,15 +25,14 @@ console.error('错误'); //控制台输出 [2017-07-12 20:38:33]  [ERROR]  错�
 
 ### think.logger(type, option, ...args)
 
-`think_trace中间件`
-
 自定义控制台输出。
 
 * type 控制台输出类型,例如 THINK, HTTP等
-* option { path: path, record: record, css: 'css' } 
+* option { print: true, css: 'blue', record: true, path: path } 
+    print 是否在控制台打印日志
+    css 控制台输出字符颜色,例如 white,grey,black,blue,cyan,green,magenta,red,yellow等
     record 是否保存为日志文件
     path 日志文件保存路径
-    css 控制台输出字符颜色,例如 white,grey,black,blue,cyan,green,magenta,red,yellow等
 * ...args 其余可变参数。不限制参数个数。类型为数组
 
 ```js
@@ -45,8 +44,6 @@ think.logger('custom', {css:'red'}, [new Error('测试内容')]);
 ```
 
 ### think.logger.info(...args)
-
-`think_trace中间件`
 
 自定义控制台输出info类型信息。
 
@@ -61,8 +58,6 @@ think.logger.info(new Error('测试内容'));
 ```
 ### think.logger.success(...args)
 
-`think_trace中间件`
-
 自定义控制台输出success类型信息。
 
 * ...args 可变参数。不限制参数个数
@@ -76,8 +71,6 @@ think.logger.success(new Error('测试内容'));
 ```
 ### think.logger.warn(...args)
 
-`think_trace中间件`
-
 自定义控制台输出warn类型信息。
 
 * ...args 可变参数。不限制参数个数
@@ -90,8 +83,6 @@ think.logger.warn(['测试：', '测试内容']);
 think.logger.warn(new Error('测试内容'));
 ```
 ### think.logger.error(...args)
-
-`think_trace中间件`
 
 自定义控制台输出error类型信息。
 
@@ -107,9 +98,13 @@ think.logger.error(new Error('测试内容'));
 
 ### think.addLogs(name, msgs)
 
-`think_trace中间件`
+自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。可修改系统配置 config/config.js。
 
-自定义信息写入日志文件。日志文件默认存在在 项目目录/logs。可修改 `think_trace`中间件配置。
+```js
+  logs: true, //是否存储日志
+  logs_path: think.root_path + '/logs', //存储日志文件目录
+  logs_level: ['warn', 'error'] //日志存储级别, 'info', 'warn', 'error', 'success' or custom type
+```
 
 如果日志超过指定大小，会自动按照日期切割。
 

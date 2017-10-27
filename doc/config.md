@@ -34,8 +34,7 @@ module.exports = {
 ```js
 module.exports = {
     list: [], //加载的中间件列表
-    config: {//中间件配置 {logger: {log: true}}
-
+    config: {//中间件配置 
     }
 };
 ```
