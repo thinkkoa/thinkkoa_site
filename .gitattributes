@@ -1,2 +1,2 @@
-/static/* linguist-vendored=true
+/static/* linguist-vendored=false
 *.md linguist-language=Markdown
