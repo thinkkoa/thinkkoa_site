@@ -9,7 +9,7 @@
           <dt><%-key%></dt>
             <dd>
               <%for(var name in sidebar[key]){%>
-              <a href="/doc/<%-sidebar[key][name]%>.jhtml"><%-name%></a>
+              <a href="/<%= ver ? 'doc1.0' : 'doc'%>/<%-sidebar[key][name]%>.jhtml"><%-name%></a>
               <%}%>
             </dd>
         </dl>
@@ -19,7 +19,7 @@
           <div class="clearfix">
 
             <div class="search">
-              <form method="get" action="/doc/search">
+              <form method="get" action="/<%= ver ? 'doc1.0' : 'doc'%>/search">
                   <input class="sea-txt" value="" required name="keyword" />
                   <input class="sea-btn" type="submit" value="" />
               </form>

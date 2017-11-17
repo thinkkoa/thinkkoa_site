@@ -9,7 +9,7 @@
           <dt><%-key%></dt>
             <dd>
               <%for(var name in sidebar[key]){%>
-              <a href="/doc/<%-sidebar[key][name]%>.jhtml"><%-name%></a>
+              <a href="/<%= ver ? 'doc1.0' : 'doc'%>/<%-sidebar[key][name]%>.jhtml"><%-name%></a>
               <%}%>
             </dd>
         </dl>
@@ -18,7 +18,7 @@
         <div class="rbox">
           <div class="clearfix">
             <div class="search">
-              <form method="get" action="/doc/search">
+              <form method="get" action="/<%= ver ? 'doc1.0' : 'doc'%>/search">
                   <input class="sea-txt" value="<%=keyword%>" required name="keyword" placeholder="keyword" />
                   <input class="sea-btn" type="submit" value="" />
               </form>
@@ -32,7 +32,7 @@
                 <%}else{%>
                   <h2>搜索结果(<%-searchResult.length%>)</h2>
                   <%searchResult.forEach(function(item){%>
-                  <h4><a target="_blank" href="/doc/<%-item.filename.replace('.md', '')%>.jhtml"><%-item.title%></a></h4>
+                  <h4><a target="_blank" href="/<%= ver ? 'doc1.0' : 'doc'%>/<%-item.filename.replace('.md', '')%>.jhtml"><%-item.title%></a></h4>
                   <%item.text.slice(0, 10).forEach(function(textItem){%>
                   <p><%-textItem%></p>
                   <%})%>

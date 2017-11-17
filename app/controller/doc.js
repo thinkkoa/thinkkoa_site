@@ -19,6 +19,7 @@ module.exports = class extends base {
     //控制器默认方法
     async indexAction() {
         let doc = this.get('doc') || 'index';
+        let ver = this.get('ver') || '';
         this.assign('currentNav', 'doc');
         if (doc === 'plugin') {
             this.assign('currentNav', 'plugin');
@@ -26,10 +27,10 @@ module.exports = class extends base {
         if (doc === 'changelog') {
             this.assign('currentNav', 'changelog');
         }
-        await this.getSideBar();
+        await this.getSideBar(ver);
 
         try {
-            await this.getDoc(doc);
+            await this.getDoc(doc, ver);
             return this.render();
         } catch (err) {
             return this.ctx.throw(404, err);
@@ -41,16 +42,17 @@ module.exports = class extends base {
      * get sidebar json
      * @return {} []
    */
-    async getSideBar() {
-        let key = helper.md5('sidebar');
+    async getSideBar(ver) {
+        let key = helper.md5(`sidebar${ver ? ver : ''}`);
         let data = this.app.app_debug ? null : await this.app.cache(key);
         if (!data) {
-            let filePath = `${this.app.root_path}/doc/sidebar.json`;
+            let filePath = `${this.app.root_path}/doc/${ver ? ver + '/' : ''}sidebar.json`;
             helper.chmod(filePath, '755');
             let content = fs.readFileSync(filePath);
             data = JSON.parse(content);
             this.app.cache(key, data);
         }
+        this.assign('ver', ver);
         this.assign('sidebar', data);
     }
 
@@ -58,16 +60,16 @@ module.exports = class extends base {
      * get doc content
      * @return {} []
   */
-    async getDoc(doc) {
+    async getDoc(doc, ver) {
         let markedContent;
-        let filePath = `${this.app.root_path}/doc/${doc}.md`;
+        let filePath = `${this.app.root_path}/doc/${ver ? ver + '/' : ''}${doc}.md`;
         let htmlPath = filePath.replace('.md', '.html');
 
         if (helper.isFile(htmlPath)) {
             markedContent = fs.readFileSync(htmlPath, 'utf8');
         } else {
             if (!helper.isFile(filePath)) {
-                return this.ctx.throw(404, `/doc/${doc}.html is not exist`);
+                return this.ctx.throw(404, `/doc/${ver ? ver + '/' : ''}${doc}.html is not exist`);
             }
             markedContent = await this.getMarkedContent(filePath);
         }
@@ -88,7 +90,8 @@ module.exports = class extends base {
    */
     async searchAction() {
         this.assign('currentNav', 'doc');
-        await this.getSideBar();
+        let ver = this.get('ver') || '';
+        await this.getSideBar(ver);
 
         let keyword = this.get('keyword').trim();
         this.assign('keyword', keyword);
@@ -96,7 +99,7 @@ module.exports = class extends base {
             return this.render();
         }
 
-        let result = await this.getSearchResult(keyword);
+        let result = await this.getSearchResult(keyword, ver);
         this.assign('searchResult', result);
         return this.render();
     }
@@ -166,11 +169,11 @@ module.exports = class extends base {
    * @param  {String} keyword []
    * @return {}         []
    */
-    async getSearchResult(keyword) {
+    async getSearchResult(keyword, ver) {
         let cmd = `grep '${keyword}' -ri *.md`;
         let fn = helper.promisify(child_process.exec, child_process);
         let options = {
-            cwd: this.app.root_path + `/doc/`
+            cwd: this.app.root_path + `/doc/${ver ? ver + '/' : ''}`
         };
         //ignore command error
         let result = await fn(cmd, options).catch(err => '');
@@ -192,7 +195,7 @@ module.exports = class extends base {
         });
         data = Object.keys(data).map(item => {
             let itemData = data[item];
-            let filePath = `${this.app.root_path}/doc/${itemData.filename}`;
+            let filePath = `${this.app.root_path}/doc/${ver ? ver + '/' : ''}${itemData.filename}`;
             let content = fs.readFileSync(filePath, 'utf8').trim();
             content.replace(/#+([^\n]+)/, (a, c) => {
                 itemData.title = c;
