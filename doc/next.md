@@ -1,6 +1,8 @@
 ## ES6/7开发项目
 从ES6正式成为标准发布以后，几家欢乐几家愁。有的人认为javascript丢失了自己的特点，但是我相信大部分人是乐见其成的。ES6新增了大量的新特性，使得javascript更加工程化，更加适应企业级大工程化研发，这是大势所趋。
 
+需要注意的是，当前Node.js 8 并没有对 es6的 module 进行支持，因此我们要避免使用 import/export
+
 ### let  和 const
 在ES6之前，相信javascript程序员都遇到过全局变量提升的坑。`let` 和 `const` 限制为块级作用域。简单来说就是  `{代码块}` 花括号包起来的部分。在 `if / else` 和 `try / catch / finally` 及函数中经常出现。跟 `var` 还有一个区别是，`let` 和 `const` 不能重复声明，也不存在变量提升。
 

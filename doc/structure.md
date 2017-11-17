@@ -1,9 +1,8 @@
-## 项目结构说明
+## 项目结构
 
 创建项目后，会生成如下的目录结构：
 
 ```js
-├── app                    //应用编译文件目录
 
 ├── cache                  //缓存文件目录
 
@@ -11,7 +10,7 @@
 
 ├── node_modules           //node模块目录
 
-├── src　　　　　　　　　　   //应用源文件目录
+├── app　　　　　　　　　　   //应用文件目录
 
     └──config              //应用配置目录
 
@@ -53,17 +52,16 @@ const path = require('path');
 const thinkkoa = require('thinkkoa');
 
 //thinknode instantiation
-const instance = new thinkkoa({
+const app = new thinkkoa({
     root_path: __dirname,
     app_path: __dirname + path.sep + 'app',
     app_debug: true //线上环境切记要将debug模式关闭，即：app_debug:false
 });
 
-//app run
-instance.run();
+app.listen();
 ```
 
-默认开启 debug 模式，该模式下文件修改后立即生效（运行了编译监听的情况下 npm run watch-compile），会自动重启 node 服务。
+默认开启 debug 模式，该模式下文件修改后立即生效，并且会自动重启 node 服务。控制台会打印日志
 
 
 ### 应用配置文件

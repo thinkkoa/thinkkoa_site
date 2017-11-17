@@ -4,7 +4,7 @@ ThinkKoa提供了颗粒度比较细的访问控制，不管是中间件、控制
 
 ### 禁止访问模块
 
-中间件配置  src/config/middleware.js
+中间件配置  app/config/middleware.js
 
 ```js
 
@@ -27,7 +27,7 @@ module.exports = {
 
 ### 禁止访问控制器
 
-中间件配置  src/config/middleware.js
+中间件配置  app/config/middleware.js
 
 ```js
 
@@ -51,7 +51,9 @@ module.exports = {
 ThinkKoa框架定义： 控制器中方法名不包含指定后缀(默认配置为Action)的方法，都无法被url直接访问。
 
 ```js
-module.exports = class extends think.controller.base {
+const {controller} = require('thinkkoa');
+
+module.exports = class extends controller {
 
 	init() {
 		...

@@ -23,9 +23,14 @@ ThinkKoa提供了丰富的配置项。配置分为：
 
 ```js
 module.exports = {
-  /*app config*/
-  app_port: 3000,
-  encoding: 'utf-8', //输出数据的编码
+    /*app config*/
+    app_port: 3000, // 监听端口
+    app_hostname: '127.0.0.1', // Hostname
+    encoding: 'utf-8', //输出数据的编码
+
+    logs: true, //是否存储日志
+    logs_path: process.env.ROOT_PATH + '/logs', //存储日志文件目录
+    logs_level: ['warn', 'error'], //日志存储级别, 'info', 'warn', 'error', 'success' or custom type
 };
 ```
 #### 框架默认中间件配置
@@ -35,20 +40,9 @@ module.exports = {
 module.exports = {
     list: [], //加载的中间件列表
     config: {//中间件配置 
+
     }
 };
-```
-ThinkKoa 框架默认开启的中间件： 
-
-```js
-['trace', 'cookie', 'static', 'payload', 'router','controller']
-
-trace： 错误拦截及日志记录
-cookie：cookie处理
-static：静态资源服务
-payload：url querystring 及body paser
-router：路由解析
-controller：定位并执行控制器
 ```
 
 
@@ -59,7 +53,7 @@ controller：定位并执行控制器
 
 开发中可以根据具体应用需求参照框架配置项修改定制。例如我们修改项目监听端口号为8080：
 
-/src/config/config.js
+/app/config/config.js
 
 ```js
 module.exports = {
@@ -72,7 +66,7 @@ module.exports = {
 
 应用的中间件配置定义了项目中挂载的中间件以及具体中间件的配置：
 
-/src/config/middleware.js
+/app/config/middleware.js
 
 ```js
 list: [], //加载的中间件列表
@@ -95,7 +89,7 @@ config: { //中间件配置
 
 关闭框架默认中间件
 
-/src/config/middleware.js
+/app/config/middleware.js
 
 ```js
 //关闭框架默认的static中间件
@@ -110,14 +104,14 @@ config: { //中间件配置
 
 ### 读取配置
 
-使用全局函数think.config可以在应用任何地方方便的读取配置值
+使用函数app.config可以在控制器以及中间件中方便的读取配置值(注意在控制器中需要使用this.app.config)
 
 ```
 //读取项目配置
-think.config('key');
+app.config('key');
 
 //读取中间件配置
-think.config('config.middleware_name', 'middleware'); 
+app.config('config.middleware_name', 'middleware'); 
 
 //注意中间件配置包含list及config两个部分
 {
@@ -130,7 +124,7 @@ think.config('config.middleware_name', 'middleware');
 }
 
 //如果需要获取cache中间件xxx项的值,需要使用
-think.config('config.cache', 'middleware').xxx; 
+app.config('config.cache', 'middleware').xxx; 
 
 ```
 
@@ -145,14 +139,14 @@ key1 : {aa : 'bb'}
 读取：
 
 ```
-think.config('key1.aa');
+app.config('key1.aa');
 ```
 
 ### 扩展配置
 
-除项目配置和中间件配置以外，在开发中可自行扩展其他的配置文件。仅需要将扩展配置文件放入src/config/目录，框架会自动加载。
+除项目配置和中间件配置以外，在开发中可自行扩展其他的配置文件。仅需要将扩展配置文件放入app/config/目录，框架会自动加载。
 
-例如将项目某个功能的配置独立成为文件 src/config/custom.js
+例如将项目某个功能的配置独立成为文件 app/config/custom.js
 
 ```js
 module.exports = {
@@ -163,5 +157,5 @@ module.exports = {
 读取扩展配置项:
 
 ```js
-think.config('key1', 'custom');
+app.config('key1', 'custom');
 ```

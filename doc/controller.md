@@ -18,7 +18,7 @@ ThinkKoa 基于 模块/控制器/操作 的设计原则：
 think controller index
 ```
 
-会自动创建 src/controller/index.js文件。
+会自动创建 app/controller/index.js文件。
 
 多模块模式：
 
@@ -27,13 +27,15 @@ think controller index
 think controller admin/index
 ```
 
-会自动创建 src/controller/admin/index.js文件。
+会自动创建 app/controller/admin/index.js文件。
 
 
 控制器模板代码如下：
 
 ```js
-exports.default = class extends think.controller.base {
+const {controller, helper} = require('thinkkoa');
+
+module.exports = class extends controller {
     //构造方法
     init(ctx) {
         //调用父类构造方法
@@ -60,13 +62,13 @@ exports.default = class extends think.controller.base {
 
 ### 继承
 
-控制器类必须继承于 think.controller.base 或 think.controller.base 的子类。
+控制器类必须继承于 thinkkoa.controller. 或 thinkkoa.controller 的子类。
 
 ### 构造方法
 
-ES6的构造方法在使用中有一些坑，比如父类方法的调用supper在配合babel编译的时候容易出现作用域问题，为避免问题，ThinkKoa 实现了一套自动调用的机制。自动调用的方法名为 init，用这个init 方法来替代construct 构造方法。
+ThinkKoa 使用`init()` 方法来替代`construct()` 构造方法(construct在使用super时有限制)。
 
-如果控制器里重写 init 方法，那么必须调用父类的 init 方法，如：
+如果控制器里重载 `init` 方法，那么必须调用父类的 `init` 方法，如：
 
 ```js
 //构造方法
@@ -90,21 +92,49 @@ __before(){
 }
 ```
 
-公共前置方法会在当前控制器内除init、内部方法(没有Action后缀)外的其他方法调用前执行，也就是说，除构造方法外，其他任何HTTP可访问方法执行的时候，会先执行此前置方法。
+公共前置方法会在接收到HTTP请求后，在执行路由规则匹配的`action`之前执行。
+
+```js
+__before(){
+    console.log('__before');
+}
+
+indexAction(){
+    console.log('indexAction');
+}
+//控制台打印
+__before
+indexAction
+```
 
 **独有前置方法：**
 
+独有的前置方法会在执行具体方法之前执行。
+
+**注意：init构造方法和被访问限制的方法(不带Action后缀)不支持前置操作**
+
+
 ```js
-//indexAction前置方法
+__before(){
+    console.log('__before');
+}
+
 _before_index(){
     console.log('_before_index');
 }
+
+indexAction(){
+    console.log('indexAction');
+}
+
+//控制台打印
+__before
+_before_index
+indexAction
+
 ```
 
-独有的前置方法会在执行具体方法之前执行，例如上面的代码中，当indexAction方法执行时，会先执行此独有前置方法。
-注意：当公共前置方法和独有前置方法并存的时候，执行顺序为(indexAction举例)： 公共前置方法 --> 独有前置方法 --> indexAction
-
-**注意：init构造方法和内部方法(不带Action后缀)不支持前置操作**
+执行顺序为(indexAction举例)： 公共前置方法(\_\_before) --> 独有前置方法(\_before\_index) --> indexAction
 
 ### 空操作
 
@@ -133,11 +163,12 @@ __empty(){
 如果控制器下没有空操作对应的方法，那么访问一个不存在的 url 时则会报错。
 
 
-### '私有'方法
+### 访问控制
 ThinkKoa默认仅暴露带 `Action`后缀的控制器方法给URL访问，如果控制器内方法名不包含此后缀，该方法无法被URL直接访问。
 
 ```js
-module.exports = class extends think.controller.base {
+const {controller, helper}
+module.exports = class extends controller {
 
     init(ctx) {
         super.init(ctx);
@@ -161,8 +192,7 @@ config: { //中间件配置
 }
 ```
 
-*注意：此处的'私有'跟面向对象编程中的'私有'概念不同，不能混为一谈。*
-
+`Action`后缀可以自定义修改，具体请参考`think_controller`中间件配置。
 
 ### 属性及方法
 见文档章节[API/controller](/doc/think_controller.jhtml)

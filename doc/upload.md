@@ -20,7 +20,7 @@ config: { //中间件配置
         file_allow_type: 'jpg|jpeg|png|bmp|gif|xls|doc|docx|zip|rar|ipa|apk', //允许上传的文件类型
 
         // upload_type='local'
-        file_save_path: `${think.root_path}/static/uploads/`, //上传文件保存目录
+        file_save_path: `${process.env.ROOT_PATH}/static/uploads/`, //上传文件保存目录
         file_save_url: '/uploads/', //上传文件目录访问URL
 
         // upload_type='ftp'
@@ -43,5 +43,8 @@ config: { //中间件配置
 3、使用：
 
 ```js
+// in controller
+let info = await this.ctx.uploadFile(); // [{filename: '..', fileurl: '..', filesize: 10}] or null
+// in middleware
 let info = await ctx.uploadFile(); // [{filename: '..', fileurl: '..', filesize: 10}] or null
 ```

@@ -48,27 +48,28 @@ config: { //中间件配置
 ```
 ### 使用
 
-引入 `think_cache`中间件后，`think` 对象上会自动扩展一个缓存方法：
+引入 `think_cache`中间件后，`app` 对象上会自动扩展一个缓存方法：
 
 ```js
-think.cache(key, value, timeout);
+//注意在控制器中需要使用 this.app
+app.cache(key, value, timeout);
 ```
 
 读取缓存：
 
 ```js
-think.cache(key);
+app.cache(key);
 ```
 
 写入缓存：
 
 ```js
 //timeout单位秒，此处缓存超时时间为30s
-think.cache('name', 'test', 30);
+app.cache('name', 'test', 30);
 ```
 
 删除缓存：
 
 ```js
-think.cache('name', null);
+app.cache('name', null);
 ```

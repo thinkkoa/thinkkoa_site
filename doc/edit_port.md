@@ -2,7 +2,7 @@
 
 ### 修改配置
 
-编辑 src/config/config.js ：
+编辑 app/config/config.js ：
 
 ```js
 /**

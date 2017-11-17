@@ -10,7 +10,7 @@ ThinkKoa框架默认加载了一些常用的中间件:
 ### 修改中间件配置
 这里以静态资源中间件`static`举例： 
 
-修改项目中间件配置  src/config/middleware.js
+修改项目中间件配置  app/config/middleware.js
 
 ```js
 /**
@@ -31,7 +31,7 @@ module.exports = {
 ### 停止中间件
 这里以缓存中间件`cache`举例： 
 
-修改项目中间件配置  src/config/middleware.js
+修改项目中间件配置  app/config/middleware.js
 
 ```js
 /**
@@ -47,4 +47,4 @@ module.exports = {
 
 ```
 
-具体的中间件配置项请参考各个中间件说明，[ThinkKoa中间件列表](/doc/plugin.jhtml)
+具体的中间件配置项请参考各个中间件说明

@@ -70,9 +70,9 @@ think model admin/user
  */
 const thinkorm = require('thinkorm');
 
-export default class extends thinkorm {
-    init(name, config){
-        super.init(name, config);
+module.exports = class extends thinkorm {
+    init( config){
+        super.init(config);
         // 是否开启迁移(migrate方法可用)
         this.safe = false;
         // 数据表字段信息
@@ -87,27 +87,17 @@ export default class extends thinkorm {
 
 ```
 #### 实例化模型
-ThinkKoa提供了 `think.model` 函数来调用操作ORM。
 
 ```js
-think.model('模型名称', {配置})
+const user = require('../model/user.js');
+
+let userModel = new user(app.config('config.model', 'middleware'));
 ```
-例如:
-
-```js
-think.model('user', {});
-```
-*注意：*
-
-*1、实例化模型时不传入配置或者传递undefined，仅仅返回模型类自身而非实例*
-
-*2、实例化模型配置传入{}，框架会自动遵循`model `中间件配置*
-
 
 #### 模型查询
 
 ```js
-let info = await think.model('user', {}).find();
+let info = await userModel.find();
 ```
 更多的操作语法请查看ThinkORM文档。
 

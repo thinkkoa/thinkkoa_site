@@ -1,11 +1,13 @@
-## think.base
+## Base
 
-`think.base`是基类，在项目中除中间件外所有的类都继承该类，该类提供了一些基本的方法。
+`Base`是基类，在项目中除中间件外所有的类都继承该类，该类提供了一些基本的方法。
 
-使用 ES6 语法继承该类：
+继承该类：
 
 ```js
-export default class extends think.base {
+const {base} = require('thinkkoa');
+
+export default class extends base {
   /**
    * init method
    * @return {} []
@@ -23,10 +25,11 @@ export default class extends think.base {
 初始化方法，这里可以进行一些赋值等操作。
 
 ```js
-class a extends think.base {
-  init(name, value){
-    this.name = name;
-    this.value = value;
+
+class a extends base {
+  init(args){
+    this.name = args.name;
+    this.value = args.value;
   }
 }
 ```

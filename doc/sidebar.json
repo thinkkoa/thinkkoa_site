@@ -3,8 +3,7 @@
       "介绍": "index",
       "创建项目": "create",
       "项目结构": "structure",
-      "代码规范": "specification",
-      "更新记录": "changelog"
+      "代码规范": "specification"
     },
     "进阶应用": {
       "配置": "config",
@@ -35,15 +34,14 @@
       "上传文件或图片": "upload",
       "修改默认中间件配置": "default_middleware",
       "禁止访问功能": "deny",
-      "升级指南": "update",
-      "开发中间件": "dev_middleware"
+      "开发中间件": "dev_middleware",
+      "更新记录": "changelog",
+      "升级指南": "update_guid"
     },
     "API": {
-      "ctx": "ctx",
-      "think": "think",
-      "think.base": "think_base",
-      "think.controller": "think_controller",
-      "think.model": "think_model",
-      "think.service": "think_service"
+      "ctx": "think_ctx",
+      "app": "think_app",
+      "base": "think_base",
+      "controller": "think_controller"
     }
   }

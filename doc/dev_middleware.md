@@ -4,8 +4,7 @@ ThinkKoa团队欢迎用户贡献自己开发的中间件。具体的开发规范
 ### 创建中间件插件工程
 #### 目录结构
 
-* `lib/` 存放编译后文件
-* `src/` 存放源代码，使用 ES6/7 特性开发
+* `lib/` 存放源代码
 * `test/` 单元测试目录
 * `.eslintrc` eslint 检查配置文件
 * `.gitignore` git忽略的文件
@@ -13,12 +12,6 @@ ThinkKoa团队欢迎用户贡献自己开发的中间件。具体的开发规范
 * `.travis.yml`  travis 持续集成配置文件
 * `package.json` npm 配置文件
 * `README.md` 说明文件
-
-*注意：*
-
-*1、package.json中配置包入口文件为 lib/index.js*
-
-*2、`.npmignore` npm发布时忽略的文件 包含 src目录；`.gitignore` git忽略的文件包括 lib目录*
 
 ### 开发
 
@@ -29,12 +22,14 @@ ThinkKoa团队欢迎用户贡献自己开发的中间件。具体的开发规范
 //引入依赖包
 const xxx = require('xxx'); 
 
-module.exports = function(options) {
+module.exports = function(options, app) {
 	return  function (ctx, next) {
 		......
 	}
 }
 ```
+app 为 thinkkoa的实例, options为中间件默认配置
+
 
 中间件包含异步，使用async/await:
 
@@ -42,7 +37,7 @@ module.exports = function(options) {
 //引入依赖包
 const xxx = require('xxx'); 
 
-module.exports = function(options) {
+module.exports = function(options, app) {
 	return  async function (ctx, next) {
 		......
 		await ......
@@ -52,7 +47,7 @@ module.exports = function(options) {
 
 #### 扩展规范
 
-* 1、处理request及response的相关功能函数扩展，设置为ctx的属性，例如：
+* 1、处理http输入输出(request及response)相关功能函数扩展，设置为ctx的属性，例如：
 
 ```js
 const lib = require('think_lib');
@@ -70,20 +65,21 @@ lib.define(ctx, 'aaa', function(arg){
 ctx.aaa = 222; 
 console.log(ctx.aaa); //222
 ```
-* 2、其他通用功能函数扩展，设置为think的属性，例如： 
+* 2、其他通用功能函数扩展，设置为app的属性，例如： 
 
 ```js
 const lib = require('think_lib');
-//think.test is getter
-lib.define(think, 'test', function(arg) {
+//app.test is getter
+lib.define(app, 'test', function(arg) {
 	...
 });
 ```
-* 3、在扩展功能的时候，为了保持对koa原生中间件的兼容性，不管是ctx还是think都`不要重载已有的属性`；且扩展属性或函数名不能以`_`开头命名。具体属性列表见API
+* 3、在扩展功能的时候，为了保持对koa原生中间件的兼容性，不管是ctx还是app都`不能重载已有的属性`；且扩展属性或函数名不能以`_`开头命名。具体属性列表见API
 
 * 4、为保持中间件之间解耦，尽量使用koa原生属性来实现中间件
 
 ### 单元测试
+
 在 test/index.js 文件书写相关的单元测试，测试框架使用 mocha， 需要配置下面的命令进行单元测试并输出结果：
 
 ```bash
@@ -97,6 +93,7 @@ npm run test-cov
 代码开发和单元测试完成后，需要在`README.md` 里书写详细的说明文档。
 
 ### 发布
+
 代码版本库托管到github.com， 并且使用 `npm publish` 发布到 npm仓库（如果之前没发布过，会提示创建帐号和密码）。
 
 发布完成后，请给我们发邮件或者 [issuse](https://github.com/thinkkoa/thinkkoa_awesome/issues)，经确认后，即可添加到到插件列表中。会有奖励哦。

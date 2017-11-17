@@ -5,16 +5,16 @@
 控制器内输出图片:
 
 ```js
-const file = think.root_path + '/static/upload/test.png';
+const file = this.app.root_path + '/static/upload/test.png';
 const filename = path.relative(path.dirname(file), file);
 
 this.ctx.set('Content-disposition', 'attachment; filename=' + filename);
 return this.write(fs.createReadStream(file));
 ```
-或者这样写：
+或者中间件中这样写：
 
 ```js
-this.ctx.set('Content-disposition', 'attachment; filename=' + filename);
-this.ctx.body = fs.createReadStream(file);
+ctx.set('Content-disposition', 'attachment; filename=' + filename);
+ctx.body = fs.createReadStream(file);
 
 ```

@@ -1,12 +1,11 @@
-## think.controller
+## controller
 
-think.controller 是ThinkKoa中非常重要的一个对象。
-
-### think.controller.base
-ThinkKoa控制器基类。所有的控制器都必须继承 `think.controller.base`或它的子类
+controller 是ThinkKoa中的控制器基类。所有的控制器都必须继承 `controller`或它的子类
 
 ```js
-export default class extends think.controller.base {
+const {controller} = require('thinkkoa');
+
+export default class extends controller {
     /**
     * init method
     * @return {} []
@@ -26,11 +25,11 @@ ctx对象。
 ```js
 this.ctx
 ```
-#### <del>http</del>
-ctx对象别名。
+#### app
+thinkkoa的实例, 是koa实例的扩展
 
 ```js
-this.http
+this.app
 ```
 
 #### __empty()
@@ -399,60 +398,3 @@ return this.render();
 #### display(templateFile, charset, contentType)
 
 功能与render相同。
-
-
-
-### think.controller(name, ctx)
-
-根据传入的name返回控制器类或该控制器的实例。
-
-* name 控制器名。多模块模式下，`控制器名为 模块名/控制器名`。
-        如果传入的是类文件路径，则自动加载该类文件
-        如果name值为false，返回 think.controller.base
-* ctx  ctx对象
-        如果值为undefined,则返回该类而非实例
-
-返回控制器类：
-```js
-//控制器继承(不推荐写法)
-const admin = think.controller('admin');
-export default class extends admin {
-    /**
-    * init method
-    * @return {} []
-    */
-    init(ctx){
-        super.init(ctx);
-    }
-}
-
-//控制器继承(推荐写法)
-import admin from './admin';
-export default class extends admin {
-    /**
-    * init method
-    * @return {} []
-    */
-    init(ctx){
-        super.init(ctx);
-    }
-}
-```
-控制器实例化：
-```js
-const admin = think.controller('admin', ctx);
-
-admin.indexAction();
-```
-
-### think.action(name, ctx)
-执行传入的控制器中某个方法。
-
-* name 格式 `控制器名/方法名`。多模块模式下格式为 `模块名/控制器名/方法名`
-* ctx ctx对象
-
-`注意`： 
-
-1、在多模块模式下，think.action支持跨模型调用执行
-
-2、think.action在执行控制器某个方法时，该控制器的 \_\_before 及 \_before\_方法名 并不会被执行

@@ -20,60 +20,6 @@ http协议版本
 
 因为ctx.path在中间件处理的时候可能发生变化，originalPath属性保存原始请求path。
 
-### <del>ctx.isGet()</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-判断当前request是否GET请求。
-
-### <del>ctx.isPost()</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-判断当前request是否POST请求。
-
-### <del>ctx.isAjax()</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-判断当前request是否Ajax请求。
-
-### <del>ctx.isPjax()</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-判断当前request是否Pjax请求。
-
-### <del>ctx.isJsonp()</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-判断当前request是否JsonP请求。
-
-### <del>ctx.referer([host])</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-获取传入host的hostname作为referer；如果未传递参数，则当前request的headers.referer。
-
-### <del>ctx.types([contentType, encoding])</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-获取或设置ctx.headers.content-type属性；如果传入encoding，自动设置字符集。
-
-### <del>ctx.sendTime([name])</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-设置ctx.headers的 `X-name || X-EXEC-TIME` 值。一般用于发送处理时间。
-
-### <del>ctx.expires([time = 30])</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-设置ctx.headers的 `Cache-Control: max-age` 值以及 `Expires`。一般用于输出缓存控制。
-
 ### ctx.cookie(name[, value, options = {}])
 
 `ThinkKoa扩展` `think_cookie中间件`
@@ -109,17 +55,6 @@ module.exports = {
     }
 };
 ```
-
-### <del>ctx.write(content[, contentType, encoding])</del> [Deprecated on 1.9.0]
-
-`ThinkKoa扩展` `think_context中间件`
-
-对ctx.body赋值进行功能封装。注意ctx.write输出内容后，并不会中断程序执行。
-
-* content 输出的内容
-* contentType 输出文档类型，默认 `text/plain`
-* encoding 输出文档编码，默认 `utf-8`，在项目配置文件 src/config/config.js内可修改
-
 ### ctx.querys([name, value])
 
 `ThinkKoa扩展` `think_payload中间件`
@@ -243,7 +178,7 @@ ctx.session('user', {'username': 'test'}, 30);
 * data 模板变量`Object`
 
 ```js
-ctx.compile(think.app_path + '/view/default/test.html', {data: 'hello world'});
+ctx.compile(process.env.APP_PATH + '/view/default/test.html', {data: 'hello world'});
 ```
 
 ### ctx.render(templateFile, data[, charset, contentType])
@@ -258,7 +193,7 @@ ctx.compile(think.app_path + '/view/default/test.html', {data: 'hello world'});
 * contentType 输出模板文档类型
 
 ```js
-ctx.render(think.app_path + '/view/default/test.html', {data: 'hello world'});
+ctx.render(process.env.APP_PATH + '/view/default/test.html', {data: 'hello world'});
 ```
 
 ### ctx.req

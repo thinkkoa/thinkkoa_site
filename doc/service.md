@@ -15,7 +15,9 @@ think service test
 会自动创建src/service/test.js,生成的模板代码：
 
 ```js
-export default class extends think.base{
+const {base, helper} = require('thinkkoa');
+
+module.exports = class extends base{
 	init(params){
 		super.init(params);
 	}
@@ -29,10 +31,11 @@ export default class extends think.base{
 服务类的实例化：
 
 ```js
-think.service('test', params)
-```
+const test = require('../service/test.js');
 
-params是服务类的构造方法入参。params可以为{}值，如果传入undefined或不传，think.service函数返回的不是一个实例，而是服务类本身。
+let testService = new test(params);
+```
+params是服务类的构造方法入参。
 
 ### 服务类的调用
 
@@ -40,18 +43,16 @@ params是服务类的构造方法入参。params可以为{}值，如果传入und
 
 ```js
 //调用test服务类的customMethod方法
-think.service('test',{}).customMethod(xxx); 
+testService.customMethod(xxx); 
 
 ```
 
 ### 服务类的继承
 
-当服务类构造方法入参params传入的值为undefined，返回服务类自身:
-
 ```js
-const seviceClass = think.service('test'); //构造方法入参params为undefined
+const test = require('../service/test.js');
 
-class extends serviceClass {
+class extends test {
 	...
 }
 ```
