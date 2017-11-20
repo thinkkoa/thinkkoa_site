@@ -12,7 +12,7 @@ export default class extends base {
    * init method
    * @return {} []
    */
-  init(){
+  init(params){
 
   }
 }
