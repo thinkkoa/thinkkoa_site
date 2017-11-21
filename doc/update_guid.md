@@ -105,7 +105,7 @@ think.think\_path | process.env.THINK\_PATH 或 app.think\_path
 
 ### 控制器
 
-控制器基类也有所变化
+1、控制器继承基类也有所变化
 
 ```js
 // 2.x
@@ -121,6 +121,19 @@ ThinkKoa 1.x | ThinkKoa 2.x
 ------------- | -------------
 think.controller.base | controller
 think.controller.restful | controller.restful
+
+
+2、修改控制器构造方法, 增加app入参:
+
+```js
+
+init(ctx, app) {
+    super.init(ctx, app);
+    ...
+}
+
+```
+
 
 ### 中间件
 
@@ -147,6 +160,18 @@ module.exports = class extends base {
     ...
 }
 
+```
+
+### 模型类
+
+模型类增加定义modelName属性:
+
+```js
+// app/model/user.js
+init(config) {
+    super.init(config);
+    this.modelName = 'user';
+}
 ```
 
 ### 项目入口文件
