@@ -1,6 +1,7 @@
 {
     "快速入门": {
       "介绍": "index",
+      "版本": "changelog",
       "创建项目": "create",
       "项目结构": "structure",
       "代码规范": "specification"
@@ -35,7 +36,6 @@
       "修改默认中间件配置": "default_middleware",
       "禁止访问功能": "deny",
       "开发中间件": "dev_middleware",
-      "更新记录": "changelog",
       "升级指南": "update_guid"
     },
     "API": {

@@ -113,3 +113,11 @@ app.config('config.cache', 'middleware');
 
 自动加载框架及应用文件，并启动一个HTTP服务，并监听指定的端口。
 
+### cache()
+
+`think_cache中间件`
+
+缓存操作函数。支持 file、redis、memcache形式的存储。
+
+[详细说明](/doc/cache.jhtml)
+
