@@ -27,7 +27,7 @@
             <div class="doc">
                 <%if(!keyword){%>
                 <h2 style="color:#555">请输入关键词进行搜索</h2>
-                <%}else if(think.isEmpty(searchResult)){%>
+                <%}else if(helper.isEmpty(searchResult)){%>
                 <h2 style="color:#555">未查询到相关内容</h2>
                 <%}else{%>
                   <h2>搜索结果(<%-searchResult.length%>)</h2>
