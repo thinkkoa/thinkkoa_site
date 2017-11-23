@@ -52,7 +52,6 @@ fkey/rkey主要定义了关联模型中的主键及外键名，具体含义见�
 关联模型在查询或修改等操作前，必须要将关联定义所有模型类都加载到orm：
 
 ```js
-const path = require('path');
 const thinkorm = require('thinkorm');
 
 //数据源配置
@@ -62,10 +61,10 @@ let config = {
 
 
 // 加载模型类到thinkorm
-let user = thinkorm.require(path.resolve('./user.js'));
-let profile = thinkorm.require(path.resolve('./profile.js'));
-let pet = thinkorm.require(path.resolve('./pet.js'));
-let group = thinkorm.require(path.resolve('./group.js'));
+let user = thinkorm.require(require.resolve('./user.js'));
+let profile = thinkorm.require(require.resolve('./profile.js'));
+let pet = thinkorm.require(require.resolvee('./pet.js'));
+let group = thinkorm.require(require.resolve('./group.js'));
 
 thinkorm.setCollection(user, config);
 thinkorm.setCollection(profile, config);

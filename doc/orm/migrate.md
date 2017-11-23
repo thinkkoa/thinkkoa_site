@@ -25,7 +25,6 @@ module.exports = class extends thinkorm {
 #### 迁移脚本
 
 ```js
-const path = require('path');
 const thinkorm = require('thinkorm');
 
 //数据源配置
@@ -35,7 +34,7 @@ let config = {
 
 
 // 加载模型类到thinkorm
-let user = thinkorm.require(path.resolve('./user.js'));
+let user = thinkorm.require(require.resolve('./user.js'));
 thinkorm.setCollection(user, config);
 ...
 //加载其他需要迁移的模型

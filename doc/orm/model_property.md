@@ -39,7 +39,6 @@ UserGroup => think_user_group
 定义是否开启迁移，默认为true。当值为false时，可以通过下面代码进行数据结构迁移：
 
 ```js
-const path = require('path');
 const thinkorm = require('thinkorm');
 
 //数据源配置
@@ -49,7 +48,7 @@ let config = {
 
 
 // 加载模型类到thinkorm
-let user = thinkorm.require(path.resolve('./user.js'));
+let user = thinkorm.require(require.resolve('./user.js'));
 thinkorm.setCollection(user, config);
 ...
 
