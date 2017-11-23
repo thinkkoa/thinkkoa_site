@@ -19,7 +19,7 @@ config: {
 在项目中，可以引入 logger 来进行日志处理
 
 ```js
-const {helper} = require('thinkkoa');
+const {logger} = require('thinkkoa');
 
 logger.info('test'); // 打印 test
 
