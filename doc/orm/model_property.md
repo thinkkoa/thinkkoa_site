@@ -3,27 +3,40 @@
 创建一个模型类，我们需要定义以下几个主要的属性：
 
 ```js
-
-// 是否开启迁移(migrate方法可用)
-
-//this.safe = false;
-
+// 模型名称
+this.modelName = 'user';
+// 数据表名 可不用设置,默认为表前缀+模型名(小写,单词以下划线分隔)
+this.tableName = 'think_user';
+// 是否开启迁移(执行migrate方法可用)
+this.safe = true;
 // 数据表字段信息
-
 this.fields = {};
-
 // 数据验证
-
 this.validations = {};
-
 // 关联关系
-
 this.relation = {};
 
 ```
+### modelName 
+
+定义模型名称，在关联模型描述中使用。
+
+### tableName
+
+定义数据库表名称。如果未设置（属性不存在），默认值为 表前缀+模型名(小写,单词以下划线分隔)：
+
+```js
+user => think_user
+
+user_profile => think_user_profile
+
+UserGroup => think_user_group
+
+```
+
 ### safe：
 
-定义是否开启迁移，默认为true。修改为false，可以通过下面代码进行数据结构迁移：
+定义是否开启迁移，默认为true。当值为false时，可以通过下面代码进行数据结构迁移：
 
 ```js
 const path = require('path');
@@ -46,10 +59,11 @@ thinkorm.migrage();
 ```
 
 
-如果您使用ThinkKoa框架，可以使用命令行工具ThinkKoa_cli进行快速结构迁移:
+命令行工具ThinkKoa_cli进行快速结构迁移:
 
 ```bash
-//bash
+//bash命令
+cd project_path
 think migrate
 
 ```
@@ -104,36 +118,22 @@ validations属性定义了模型类的验证规则。验证规则在调用模型
 ```js
 
 this.validations = {
-
     type: {
         method: 'ADD', //仅在新增时验证
-
         valid: ['required'],
-
         msg: {
-
-        required: '活动类别必填'
-
+            required: '活动类别必填'
         }
 
     },
-
     phonenum: {
-
         method: 'UPDATE',//仅在更新时验证
-
         valid: ['required','mobile'],
-
         msg: {
-
             required: '手机号必填',
-
             mobile: '请输入正确的手机号'
-
         }
-
     }
-
 }
 
 ```
@@ -155,9 +155,9 @@ userModel.where({id: 1}).update(data);//data如果包含phonenum则验证
 
 ```
 
-valid定义规则，支持多个规则匹配，msg则定义了不满足规则时的错误提示。具体支持的规则详见文件：node_modules/thinkorm/lib/Util/valid.js
+valid定义规则，支持多个规则匹配，msg则定义了不满足规则时的错误提示。
 
-
+详细说明见[数据验证](/orm/validations.jhtml)
 
 
 

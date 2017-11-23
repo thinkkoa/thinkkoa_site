@@ -13,6 +13,10 @@ module.exports = class extends thinkorm {
     // 构造方法
     init(name, config){
         super.init(name, config);
+        // 模型名称
+        this.modelName = 'user';
+        // 数据表名 可不用设置,默认为表前缀+模型名(小写,单词以下划线分隔)
+        //this.tableName = 'think_user';
         // 是否开启迁移(migrate方法可用)
         //this.safe = false;
         // 数据表字段信息
@@ -29,6 +33,10 @@ module.exports = class extends thinkorm {
 ThinkKoa框架可使用命令行工具创建模型： 
 
 ```bash
+//全局安装thinkkoa_cli，注意mac或linux上可能需要sudo
+npm i -g thinkkoa_cli@2.x
+
+//创建模型类user
 think model user
 ```
 
@@ -68,13 +76,6 @@ thinkorm.setCollection(user, config);
 
 //实例化
 let userModel = new user(config);
-
-```
-
-ThinkKoa框架可使用函数：
-
-```js
-think.model('user', config);
 ```
 
 

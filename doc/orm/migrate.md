@@ -8,14 +8,9 @@ ThinkORM支持将项目中定义的模型类迁移到目标数据库，支持自
 
 ### 迁移方法
 
-#### 保证处于开发模式下
-为数据安全考虑，迁移仅在开发模式下生效，请确保启动node项目使用:
+#### 模型类属性：
 
-```bash
-node --debug index.js
-```
-
-#### 修改需要迁移的模型类属性：
+修改需要迁移的模型类，将 `safe` 属性设置为 `false`
 
 ```js
 module.exports = class extends thinkorm {
@@ -52,10 +47,12 @@ thinkorm.migrage();
 ```
 
 
-如果您使用ThinkKoa框架，可以使用命令行工具ThinkKoa_cli进行快速结构迁移:
+也可以可以使用命令行工具ThinkKoa_cli进行快速结构迁移:
 
 ```bash
 //bash
+cd project_path
+
 think migrate
 
 ```

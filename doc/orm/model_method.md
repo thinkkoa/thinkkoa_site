@@ -31,50 +31,68 @@ userModel.where({id:1}).field('username').find().order('id desc'); //错误
 ------------- | -------------
 中断方法 | 获取模型类对应的数据库表名
 
-### getModelName\(\)
-方法说明：
-
-
-类型 | 作用
-------------- | -------------
-中断方法 | 获取模型类名
-
 ### getPk\(\)
-方法说明：
 
+方法说明：
 
 类型 | 作用
 ------------- | -------------
 中断方法 | 获取模型类对应的数据库表主键
 
-### limit\(offset, length\)
-方法说明：
+```js
+userModel.getPk();
+```
 
+### alias(alias)
+类型 | 作用
+------------- | -------------
+非中断方法 | 配合find、select等查询方法可以自定义表的查询别名
+
+参数说明：
+
+参数 | 说明
+------------- | -------------
+alias | 接受字符串
+
+
+### limit(skip, limit)
+
+方法说明：
 
 类型 | 作用
 ------------- | -------------
 非中断方法 | 配合find、select等查询方法可以获取指定区间的数据记录
 
+```js
+userModel.limit(1).find();
+userModel.limit(10, 20).find();
+userModel.limit([10, 10]).find();
+```
 
 参数 | 说明
 ------------- | -------------
-offset | 起跳记录数（int）
-length | 需要获取的记录数 \(int\)
+skip | 起跳记录数（int）
+limit | 需要获取的记录数 \(int\)
 
 ### order\(order\)
-方法说明：
 
+方法说明：
 
 类型 | 作用
 ------------- | -------------
 非中断方法 | 配合find、select等查询方法可以根据规则将数据记录排序
+
 参数说明：
 
 参数 | 说明
 ------------- | -------------
-order | 可接受对象{id: 'desc'}及字符串'id desc, name asc'
+order | 接受对象{id: 'desc'}
 
-### rel\(table = true\{, options})
+```js
+userModel.order({'name': 'asc', 'id': 'desc'})
+```
+
+### rel\(rels = true\{, options})
 方法说明：
 
 
@@ -85,22 +103,22 @@ order | 可接受对象{id: 'desc'}及字符串'id desc, name asc'
 
 参数 | 说明
 ------------- | -------------
-table | 可传入布尔值 true或false 表示开启或关闭关联查询如果传入的是模型名，则仅关联查询传入的模型（模型类关联多个子表的情况下）
+rels | 可传入布尔值 true或false 表示开启或关闭关联查询如果传入的是模型名，则仅关联查询传入的模型（模型类关联多个子表的情况下）
 options | 指定关联表的查询选项
 
 例子：
 
 ```js
-.rel(true,{Profile: {field: ['name'], where: {name: {'<>': ''}}}})
+userModel.rel(true, {Profile: {field: ['name'], where: {name: {'<>': ''}}}})
 
 or
 
-.rel(['Profile'],{Profile: {field: ['name'], where: {name: {'<>': ''}}}})
+userModel.rel(['Profile'],{Profile: {field: ['name'], where: {name: {'<>': ''}}}})
 ```
 
 ### field\([fields]\)
-方法说明：
 
+方法说明：
 
 类型 | 作用
 ------------- | -------------
@@ -111,16 +129,13 @@ or
 ------------- | -------------
 fields | 可接受数组
 
-
-传入数组
-
 ```js
 field(['username', 'phone'])
 ```
 
 ### where\(where\)
-方法说明：
 
+方法说明：
 
 类型 | 作用
 ------------- | -------------
@@ -130,6 +145,25 @@ field(['username', 'phone'])
 参数 | 说明
 ------------- | -------------
 where | 接受对象（请参考查询语言章节）
+
+```js
+//or:  
+where({or: [{...}, {...}]})
+//not: 
+where({not: {name: '', id: 1}})
+//notin: 
+where({notin: {'id': [1,2,3]}})
+// in: 
+where({id: [1,2,3]})
+// and: 
+where({id: 1, name: 'a'},)
+// operator: 
+where({id: {'<>': 1}})
+// operator: 
+where({id: {'<>': 1, '>=': 0, '<': 100, '<=': 10}})
+// like: 
+where({name: {'like': '%a'}})
+```
 
 ### join(joinArray)
 方法说明：
