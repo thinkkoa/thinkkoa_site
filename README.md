@@ -3,6 +3,8 @@ application created by [ThinkKoa]
 
 ## install dependencies
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/thinkkoa/thinkkoa_site.svg)](https://greenkeeper.io/)
+
 ```
 npm install
 ```
