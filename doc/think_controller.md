@@ -10,8 +10,8 @@ export default class extends controller {
     * init method
     * @return {} []
     */
-    init(ctx){
-        super.init(ctx);
+    init(ctx, app){
+        super.init(ctx, app);
     }
 }
 
