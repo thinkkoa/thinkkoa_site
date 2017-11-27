@@ -1,6 +1,6 @@
 ## Base
 
-`Base`是基类，在项目中服务类继承自该类，该类提供了一些基本的方法。建议自定义的类也继承该类。
+`Base`是基类，在项目中控制器类以及服务类都继承自该类，该类提供了一些基本的方法。建议自定义的类也继承该类。
 
 继承该类：
 
@@ -12,7 +12,7 @@ export default class extends base {
    * init method
    * @return {} []
    */
-  init(params){
+  init(params1, params2, params3){
 
   }
 }
@@ -27,9 +27,9 @@ export default class extends base {
 ```js
 
 class a extends base {
-  init(args){
-    this.name = args.name;
-    this.value = args.value;
+  init(name, value){
+    this.name = name;
+    this.value = value;
   }
 }
 ```
