@@ -45,6 +45,27 @@ module.exports = {
 };
 ```
 
+需要注意的是，为保持框架的扩展性，中间件的默认配置都由具体的中间件自行设定，框架此处的设置为空！具体的中间件默认设置请参照中间件的readme.
+
+例如 `think_static` 中间件的默认设置在 node_modules/think\_static/index.js文件内:
+
+```js
+/**
+ * default options
+ */
+const defaultOptions = {
+    dir: '/static', //resource path
+    prefix: '/', //resource prefix 
+    gzip: true, //enable gzip
+    filter: null, //function or array['jpg', 'gif']
+    maxAge: 3600 * 24 * 7, //cache maxAge seconds
+    buffer: false, //enable buffer
+    alias: {},  //alias files {key: path}
+    preload: false, //preload files
+    cache: true //resource cache
+};
+```
+
 
 ### 应用配置
 应用配置（包括应用项目配置及应用中间件配置）会继承并重载框架同名配置。
