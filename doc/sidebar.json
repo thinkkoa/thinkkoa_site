@@ -39,6 +39,7 @@
       "升级指南": "update_guid"
     },
     "API": {
+      "process.env": "process_env",
       "ctx": "think_ctx",
       "app": "think_app",
       "base": "think_base",

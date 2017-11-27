@@ -31,6 +31,7 @@ app.listen();
 app是koa实例的扩展，除了拥有原生的koa实例属性和方法外，ThinkKoa还扩展或者重载了以下属性：
 
 ### root_path
+
 项目根目录
 
 ```js
@@ -42,6 +43,7 @@ app是koa实例的扩展，除了拥有原生的koa实例属性和方法外，Th
 ```
 
 ### app_path
+
 项目app目录(项目程序执行目录)
 
 ```js
@@ -52,6 +54,7 @@ app是koa实例的扩展，除了拥有原生的koa实例属性和方法外，Th
 ```
 
 ### think_path
+
 ThinkKoa框架目录
 
 ```js

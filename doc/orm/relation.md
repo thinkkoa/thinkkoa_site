@@ -59,7 +59,6 @@ let config = {
 ...
 };
 
-
 // 加载模型类到thinkorm
 let user = thinkorm.require(require.resolve('./user.js'));
 let profile = thinkorm.require(require.resolve('./profile.js'));
@@ -74,10 +73,7 @@ thinkorm.setCollection(group, config);
 ...
 
 
-
-
 ```
-
 ### 关联模型的查询
 
 为提高执行效率，ThinkORM默认不会进行关联查询，即使模型类中已经定义了关联关系，如果需要进行关联查询，则通过Model类的rel方法来打开。
