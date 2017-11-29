@@ -195,3 +195,27 @@ const app = new thinkkoa({
 app.listen();
 
 ```
+
+### 项目package.json
+
+如果项目中使用了官方提供的中间件，需要升级为对应的2.x版本
+
+ThinkKoa 1.x | ThinkKoa 2.x | 备注
+------------- | ------------- | -------------
+think\_cache: 1.x.x | think\_cache: 2.x.x |
+think\_lib: 1.x.x | think\_lib: 2.x.x |
+think\_store: 1.x.x | think\_store: 2.x.x | 
+think\_session: 1.x.x | think\_session: 2.x.x | 
+think\_upload: 1.x.x | think\_upload: 2.x.x | 
+think\_loader: 1.x.x | think\_loader: 2.x.x | 
+think\_logger: 1.x.x | think\_logger: 2.x.x | 
+think\_model: 1.x.x | think\_model: 2.x.x | 
+think\_view: 1.x.x | think\_view: 2.x.x | 
+think\_csrf: 1.x.x | think\_csrf: 2.x.x | 
+think\_i18n: 1.x.x | think\_i18n: 2.x.x | 
+think\_trace: 1.x.x | think\_trace: 2.x.x | 此模块如果在package.json未定义,则无需升级。框架自动依赖
+think\_static: 1.x.x | think\_static: 2.x.x | 此模块如果在package.json未定义,则无需升级。框架自动依赖
+think\_payload: 1.x.x | think\_payload: 2.x.x | 此模块如果在package.json未定义,则无需升级。框架自动依赖
+think\_cookie: 1.x.x | think\_cookie: 2.x.x | 此模块如果在package.json未定义,则无需升级。框架自动依赖
+think\_router: 1.x.x | think\_router: 2.x.x | 此模块如果在package.json未定义,则无需升级。框架自动依赖
+think\_controller: 1.x.x | think\_controller: 2.x.x | 此模块如果在package.json未定义,则无需升级。框架自动依赖
