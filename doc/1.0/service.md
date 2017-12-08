@@ -15,7 +15,7 @@ think service test
 会自动创建src/service/test.js,生成的模板代码：
 
 ```js
-export default class extends think.base{
+module.exports = class extends think.base{
 	init(params){
 		super.init(params);
 	}

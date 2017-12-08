@@ -5,7 +5,7 @@
 使用 ES6 语法继承该类：
 
 ```js
-export default class extends think.base {
+module.exports = class extends think.base {
   /**
    * init method
    * @return {} []

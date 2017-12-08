@@ -23,7 +23,7 @@ sms.setMethod(); //...
 
 ```js
 let sms = think.service('sms');
-export default class extends sms {
+module.exports = class extends sms {
 
 }
 ```

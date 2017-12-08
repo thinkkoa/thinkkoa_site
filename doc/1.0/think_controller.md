@@ -6,7 +6,7 @@ think.controller 是ThinkKoa中非常重要的一个对象。
 ThinkKoa控制器基类。所有的控制器都必须继承 `think.controller.base`或它的子类
 
 ```js
-export default class extends think.controller.base {
+module.exports = class extends think.controller.base {
     /**
     * init method
     * @return {} []
@@ -416,7 +416,7 @@ return this.render();
 ```js
 //控制器继承(不推荐写法)
 const admin = think.controller('admin');
-export default class extends admin {
+module.exports = class extends admin {
     /**
     * init method
     * @return {} []
@@ -428,7 +428,7 @@ export default class extends admin {
 
 //控制器继承(推荐写法)
 import admin from './admin';
-export default class extends admin {
+module.exports = class extends admin {
     /**
     * init method
     * @return {} []

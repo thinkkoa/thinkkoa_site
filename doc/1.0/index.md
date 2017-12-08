@@ -42,7 +42,7 @@ ThinkKoa除默认的单模块模式(controller/action)及多模块模式(module/
 
 ```js
 //user controller, controller/user.js
-export default class extends think.controller.base {
+module.exports = class extends think.controller.base {
     //login action
     async loginAction(){
         //如果是get请求，直接显示登录页面

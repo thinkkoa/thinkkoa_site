@@ -7,7 +7,7 @@
 ```js
 const {base} = require('thinkkoa');
 
-export default class extends base {
+module.exports = class extends base {
   /**
    * init method
    * @return {} []

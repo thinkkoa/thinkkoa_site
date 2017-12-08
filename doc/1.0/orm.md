@@ -70,7 +70,7 @@ think model admin/user
  */
 const thinkorm = require('thinkorm');
 
-export default class extends thinkorm {
+module.exports = class extends thinkorm {
     init(name, config){
         super.init(name, config);
         // 是否开启迁移(migrate方法可用)

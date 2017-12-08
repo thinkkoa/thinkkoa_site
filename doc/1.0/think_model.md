@@ -51,7 +51,7 @@ let info = await think.model('user', {});
 
 ```js
 const user = think.model('user');
-export default class extends user {
+module.exports = class extends user {
 
 }
 
