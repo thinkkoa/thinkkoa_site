@@ -48,7 +48,7 @@ module.exports = [
 
 `controller.restful`控制器继承自`controller`，除拥有`controller`的所有属性和方法外，还有一些自身特殊的属性和方法：
 
-#### getAction()
+### getAction()
 
 处理GET类型HTTP请求
 
