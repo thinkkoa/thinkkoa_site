@@ -43,6 +43,10 @@
       "ctx": "think_ctx",
       "app": "think_app",
       "base": "think_base",
-      "controller": "think_controller"
+      "controller": "think_controller",
+      "controller.restful": "restful",
+      "helper": "think_helper",
+      "logger": "log",
+      "lodder": "think_loader"
     }
   }

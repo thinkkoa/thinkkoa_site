@@ -361,7 +361,13 @@ this.assign('user', '张三');
 
 //获取所有模板赋值变量
 this.assign(); //返回 {"user": "张三"}
+
 ```
+
+
+#### set(name, value)
+
+功能同assign.
 
 #### compile(templateFile, data)
 

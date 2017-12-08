@@ -43,3 +43,23 @@ module.exports = [
 无需做任何修改,就已经支持GET/POST/PUT/DELETE方式的HTTP请求。
 
 当然我们也可以根据实际情况进行修改和定制。
+
+### 控制器属性和方法
+
+`controller.restful`控制器继承自`controller`，除拥有`controller`的所有属性和方法外，还有一些自身特殊的属性和方法：
+
+#### getAction()
+
+处理GET类型HTTP请求
+
+### postAction()
+
+处理POST类型HTTP请求
+
+### deleteAction()
+
+处理DELETE类型HTTP请求
+
+### putAction()
+
+处理PUT类型HTTP请求
