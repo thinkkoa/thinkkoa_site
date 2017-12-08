@@ -47,6 +47,6 @@
       "controller.restful": "restful",
       "helper": "think_helper",
       "logger": "log",
-      "lodder": "think_loader"
+      "loader": "think_loader"
     }
   }
