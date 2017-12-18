@@ -17,22 +17,22 @@ module.exports = class extends controller {
 
 ```
 
-### 控制器属性和方法
+## 控制器属性和方法
 
-#### ctx
+### ctx
 ctx对象。
 
 ```js
 this.ctx
 ```
-#### app
+### app
 thinkkoa的实例, 是koa实例的扩展
 
 ```js
 this.app
 ```
 
-#### __empty()
+### __empty()
 空方法。执行当前控制器不存在的方法，自动调用。
 
 ```js
@@ -52,7 +52,7 @@ this.app
  //当访问 /index/aaa 页面输出  'action not found'
 ```
 
-#### isGet()
+### isGet()
 
 判断当前request是否GET请求。
 
@@ -62,7 +62,7 @@ if (this.isGet()) {
 }
 ```
 
-#### isPost()
+### isPost()
 
 判断当前request是否POST请求。
 
@@ -72,7 +72,7 @@ if (this.isPost()) {
 }
 ```
 
-#### isMethod(method)
+### isMethod(method)
 
 * method 请求类型 get/post等
 
@@ -84,7 +84,7 @@ if (this.isMethod('get')) {
 }
 ```
 
-#### isAjax()
+### isAjax()
 
 判断当前request是否Ajax请求。
 
@@ -94,7 +94,7 @@ if (this.isAjax()) {
 }
 ```
 
-#### isPjax()
+### isPjax()
 
 判断当前request是否Pjax请求。
 
@@ -104,7 +104,7 @@ if (this.isPjax()) {
 }
 ```
 
-#### isJsonp(name)
+### isJsonp(name)
 
 * name jsonP callback 函数名
 
@@ -116,7 +116,7 @@ if (this.isJsonp('callback')) {
 }
 ```
 
-#### header(name, value)
+### header(name, value)
 
 获取或设置header内容。
 
@@ -129,7 +129,7 @@ this.header('Content-Type', 'text/plian'); //等同于 ctx.set('Content-Type', '
 this.header('Content-Type'); //等同于 ctx.get('Content-Type')
 ```
 
-#### get([name, value])
+### get([name, value])
 
 * name 参数名,如果值为undefined则返回所有querystring参数
 * value 参数值
@@ -144,7 +144,7 @@ let test = this.get('test') || '';
 this.get('test', {aa: 1});
 ```
 
-#### post([name, value])
+### post([name, value])
 
 * name 参数名,如果值为undefined则返回所有post参数
 * value 参数值
@@ -159,7 +159,7 @@ let test = this.post('test') || '';
 this.post('test', {aa: 1});
 ```
 
-#### param([name])
+### param([name])
 * name 参数名,如果值为undefined则返回所有querystring以及post参数
         querystring中同名key会被post值覆盖
 获取参数，先从post参数中查找，如果不存在则从querstring中查找。
@@ -170,7 +170,7 @@ let all = this.param();
 let info = this.param('info') || {};
 
 ```
-#### file([name, value])
+### file([name, value])
 
 * name 文件名,如果值为undefined则返回所有file对象
 * value 参数值
@@ -185,7 +185,7 @@ let test = this.file('filename') || {};
 this.file('test.txt', {...});
 ```
 
-#### types(contentType[, encoding])
+### types(contentType[, encoding])
 
 * contentType 文档类型
 * encoding 编码格式,默认值为'utf-8'
@@ -195,7 +195,7 @@ content-type 操作。
 this.types('text/plian', 'utf-8');
 ```
 
-#### referer([host])
+### referer([host])
 
 * host url，如果传入值，返回 hostname
 
@@ -207,7 +207,7 @@ let ref = this.referer();
 ref = this.referer('http://baidu.com');
 ```
 
-#### redirect(urls[, alt])
+### redirect(urls[, alt])
 
 * urls 需要跳转的url
 * alt 定义Referrer
@@ -220,14 +220,14 @@ this.redirect('/index');
 this.redirect('http://baidu.com');
 ```
 
-#### deny([code = 403])
+### deny([code = 403])
 返回403禁止访问。
 
 ```js
 return this.deny();
 ```
 
-#### cookie(name[, value, option])
+### cookie(name[, value, option])
 
 `依赖think_cookie中间件`
 
@@ -269,7 +269,7 @@ module.exports = {
 };
 ```
 
-#### session(name[, value, timeout])
+### session(name[, value, timeout])
 
 `依赖think_session中间件`
 
@@ -286,7 +286,7 @@ this.session('user', {'username': 'test'});
 this.session('user', {'username': 'test'}, 30);
 ```
 
-#### cache(name[, value, timeout])
+### cache(name[, value, timeout])
 
 `依赖think_cache中间件`
 
@@ -323,7 +323,7 @@ this.config('aa.bb'); // aa: {bb: 1}
 this.config('config.cache', 'middleware');
 ```
 
-#### write(data[, contentType, encoding])
+### write(data[, contentType, encoding])
 
 对ctx.body赋值进行功能封装。 注意控制器中的this.write方法和ctx.write最大的不同是输出内容后，会返回think.prevent()错误中断程序执行。
 
@@ -335,7 +335,7 @@ this.config('config.cache', 'middleware');
 return this.write('content', 'text/plain'); //页面输出 content
 ```
 
-#### json(data)
+### json(data)
 
 * data 输出的数据
 
@@ -345,7 +345,7 @@ response返回json格式数据。常用于API接口。
 return this.json({aa: 111, bb: 222}); //页面输出   {"aa": 111, "bb":222}
 ```
 
-#### jsonp(data)
+### jsonp(data)
 
 * data 输出的数据
 
@@ -356,7 +356,7 @@ response返回jsonp格式数据。用于回调前端函数。在jsonp返回值�
 return this.jsonp({dddddd: 1}); //页面输出 fun_name({"dddddd": 1})
 ```
 
-#### success(errmsg[, data, code = 200, options = {}])
+### success(errmsg[, data, code = 200, options = {}])
 
 * errmsg 输出的信息
 * data 输出的数据
@@ -369,11 +369,11 @@ return this.jsonp({dddddd: 1}); //页面输出 fun_name({"dddddd": 1})
 return this.success('操作成功'); //页面输出 {"status":1,"errno":200,"errmsg":"操作成功","data":{}}
 ```
 
-#### ok(errmsg[, data, code = 200, options = {}])
+### ok(errmsg[, data, code = 200, options = {}])
 
 功能同success.
 
-#### error(errmsg[, data, code = 500, options = {}])
+### error(errmsg[, data, code = 500, options = {}])
 
 * errmsg 输出的信息
 * data 输出的数据
@@ -386,11 +386,11 @@ return this.success('操作成功'); //页面输出 {"status":1,"errno":200,"err
 return this.error('操作失败'); //页面输出 {"status":0,"errno":500,"errmsg":"操作失败","data":{}}
 ```
 
-#### fail(errmsg[, data, code = 500, options = {}])
+### fail(errmsg[, data, code = 500, options = {}])
 
 功能同error.
 
-#### assign(name, value)
+### assign(name, value)
 
 `依赖think_view中间件`
 
@@ -407,13 +407,13 @@ this.assign(); //返回 {"user": "张三"}
 
 ```
 
-#### set(name, value)
+### set(name, value)
 
 `依赖think_view中间件`
 
 功能同assign.
 
-#### compile(templateFile, data)
+### compile(templateFile, data)
 
 `依赖think_view中间件`
 
@@ -428,7 +428,7 @@ this.assign(); //返回 {"user": "张三"}
 ```js
 let content = await this.compile('', {aa: 1});
 ```
-#### render(templateFile, charset, contentType)
+### render(templateFile, charset, contentType)
 
 `依赖think_view中间件`
 
@@ -445,7 +445,7 @@ let content = await this.compile('', {aa: 1});
 return this.render();
 ```
 
-#### display(templateFile, charset, contentType)
+### display(templateFile, charset, contentType)
 
 `依赖think_view中间件`
 
