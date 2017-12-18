@@ -101,10 +101,11 @@ app.isPrevent(new Errror()); // false
 * type 配置类型，默认为项目配置。分为 config,middleware ...
 
 ```js
+//获取项目配置 config/config.js
 app.config('aa');
-
 app.config('aa.bb'); // aa: {bb: 1}
 
+//获取中间件配置 config/middleware.js
 app.config('config.cache', 'middleware');
 ```
 

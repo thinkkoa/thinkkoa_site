@@ -10,7 +10,14 @@
 
 ## 更新日志
 
-### 2.1.0 (推荐)
+### 2.2.0 (推荐)
+
+* 控制器增加`config`、`cache`方法方便开发
+* 移除`think_session`中间件对`think_cookie`中间件的依赖，配置独立
+* 调整默认不再加载`think_cookie`中间件，因为koa自身支持cookie，如果需要方便配置cookie，请自行引入
+* 修复unhandledRejection监听未释放导致的轻微内存泄漏问题
+
+### 2.1.0
 
 * 完善框架jsdoc注释，方便使用`// @ts-check`等进行类型编译检查
 * 修复控制器`render`方法参数数量错误的bug

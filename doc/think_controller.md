@@ -229,6 +229,8 @@ return this.deny();
 
 #### cookie(name[, value, option])
 
+`依赖think_cookie中间件`
+
 获取或者设置cookie值。options包括项
 
 * signed sign cookie 值
@@ -269,6 +271,8 @@ module.exports = {
 
 #### session(name[, value, timeout])
 
+`依赖think_session中间件`
+
 获取或设置session。
 
 ```js
@@ -280,6 +284,43 @@ this.session('user', {'username': 'test'});
 
 //写入session，30s过期
 this.session('user', {'username': 'test'}, 30);
+```
+
+#### cache(name[, value, timeout])
+
+`依赖think_cache中间件`
+
+获取或设置缓存。
+
+```js
+//在控制器中获取缓存
+this.cache('user');
+//在中间件或服务类中获取缓存需要使用控制器的this.app对象
+app.cache('user');
+
+//写入缓存
+this.cache('user', {'username': 'test'});
+
+//写入缓存，30s过期
+this.cache('user', {'username': 'test'}, 30);
+```
+
+### config([name, type = 'config'])
+
+读取配置项。
+* name 配置项 key
+* type 配置类型，默认为项目配置。分为 config,middleware ...
+
+```js
+//在控制器中获取配置
+this.config('aa');
+//在中间件或服务类中获取配置需要使用控制器的this.app对象
+app.config('aa');
+//获取项目配置 config/config.js
+this.config('aa.bb'); // aa: {bb: 1}
+
+//获取中间件配置 config/middleware.js
+this.config('config.cache', 'middleware');
 ```
 
 #### write(data[, contentType, encoding])
@@ -351,6 +392,8 @@ return this.error('操作失败'); //页面输出 {"status":0,"errno":500,"errms
 
 #### assign(name, value)
 
+`依赖think_view中间件`
+
 * name 模板赋值key
 * value 模板赋值value
 
@@ -364,14 +407,15 @@ this.assign(); //返回 {"user": "张三"}
 
 ```
 
-
 #### set(name, value)
+
+`依赖think_view中间件`
 
 功能同assign.
 
 #### compile(templateFile, data)
 
-`依赖中间件think_view`
+`依赖think_view中间件`
 
 * templateFile 模板路径
         传递文件物理路径,可以直接定位渲染模板
@@ -386,7 +430,7 @@ let content = await this.compile('', {aa: 1});
 ```
 #### render(templateFile, charset, contentType)
 
-`依赖中间件think_view`
+`依赖think_view中间件`
 
 * templateFile 模板路径
         传递文件物理路径,可以直接定位渲染模板
@@ -402,5 +446,7 @@ return this.render();
 ```
 
 #### display(templateFile, charset, contentType)
+
+`依赖think_view中间件`
 
 功能与render相同。
