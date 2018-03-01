@@ -124,10 +124,11 @@ app/middleware/passport.js
 ```js
 const passport =  require('express-passport');
 module.exports = function (options, app) {
-    return app.useExp(passport);
+    return app.parseExp(passport);
 };
 
 ```
+
 *注意：*
 
 *express中间件数量众多，无法一一覆盖测试。而且大部分在koa内有对应的中间件。因此建议自行修改实现，尽量不要直接引用。*
