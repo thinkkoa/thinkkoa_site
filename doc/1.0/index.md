@@ -20,11 +20,11 @@ ThinkKoa基于著名的Node.js框架koa2进行了薄封装。扩展了Koa的功�
 
 * 支持Koa/Express中间件
 
-通过简单的引入机制，ThinkKoa可以很好的支持Koa中间件(包括Koa1及Koa2)。还提供了think.useExp()来使用Express的中间件。大大提升了框架的扩展性及开源模块利用率。
+通过简单的引入机制，ThinkKoa可以很好的支持Koa中间件(包括Koa1及Koa2)。还提供了useExp()来使用Express的中间件。大大提升了框架的扩展性及开源模块利用率。
 
 * 为敏捷开发而生
 
-ThinkKoa是在ThinkKoa团队3年的项目开发积累中酝酿诞生的，脱胎于ThinkNode，以提升团队开发效率、助力敏捷开发为目的。框架经过公司多个互联网产品上线、迭代以及大流量大并发的考验。
+ThinkKoa是在ThinkKoa团队3年的Node.js项目开发积累中酝酿诞生的，以提升团队开发效率、助力敏捷开发为目的。框架经过公司多个互联网产品上线、迭代以及大流量大并发的考验。
 
 * 支持多种项目结构和多种项目环境
 
@@ -35,45 +35,42 @@ ThinkKoa默认支持单模块模式，适合简单快速的项目。业务复杂
 ThinkKoa除默认的单模块模式(controller/action)及多模块模式(module/controller/action）路由规则以外，还支持用户定制路由。
 在项目中增加路由文件配置即可灵活的支持Restful等各种自定义路由。
 
+* 拥抱 Node.js 8 LTS, 使用 ES6/7 特性来开发项目
 
-* 使用 ES6/7 特性来开发项目
-
-借助 Babel 编译，可以在项目中使用 ES6/7 所有的特性，无需担心哪些特性当前版本不支持。尤其是使用 `async/await` 来解决异步回调的问题。
+Node.js 8支持99%的ES6新特性，并且相对6.0版本提升20%性能。现在使用 `async/await` 等一系列新特性，让Node.js开发变得赏心悦目。
 
 ```js
+const {controller, helper} = require('thinkkoa');
+const user = require('../model/user.js');
+
 //user controller, controller/user.js
-module.exports = class extends think.controller.base {
+module.exports = class extends controller {
     //login action
     async loginAction(){
-        //如果是get请求，直接显示登录页面
+        //If it is a get request, the login page is displayed directly
         if(this.isGet()){
-          return this.render();// or this.ctx.render
+          return this.render();
         }
-        //这里可以通过post方法获取数据
-        let name = this.post('username');// or this.ctx.post
-        //用户名去匹配数据库中对应的条目.think.model使用thinkorm模块以及think_model中间件
-        let result = await think.model('user', {}).where({name: name, phonenum: {"not": ""}}).find();
+        //Obtaining data by post method
+        let name = this.post('username');
+        if (helper.isEmpty(name)) {
+          return this.fail('username is required');
+        }
+        let userModel = new user(this.app.config('config.model', 'middleware'));
+        //Username matches the corresponding entries in the database.
+        let result = await userModel.where({name: name, phonenum: {"not": ""}}).find();
         if(!result){
-          //输出格式化的json数据 {"status":0,"errno":500,"errmsg":"login fail","data":{}}
           return this.fail('login fail'); 
-          // 或者这样写
-          //this.ctx.type = 'application/json';
-          //this.ctx.body = {"status":0,"errno":500,"errmsg":"login fail","data":{}};
-          //return;
         }
-        //获取到用户信息后，将用户信息写入session
+        //Written into session
         await this.session('userInfo', result);
-        //输出格式化的json数据 {"status":1,"errno":200,"errmsg":"login success","data":{}}
         return this.ok('login success'); 
-        // 或者这样写
-        //this.ctx.type = 'application/json';
-        //this.ctx.body = {"status":1,"errno":200,"errmsg":"login success","data":{}};
-        //return;
     }
 }
 ```
 
-上面的代码我们使用了 ES6 里的 `class`, `export`, `let` 以及 ES7 里的 `async/await` 等特性，虽然查询数据库和写入 `Session` 都是异步操作，但借助 `async/await`，代码都是同步书写的。最后使用 `Babel` 进行编译，就可以稳定运行在 Node.js 的环境中了。
+上面的代码我们使用了 ES6 里的 `class`, `let` 以及 ES7 里的 `async/await` 等特性，虽然查询数据库和写入 `Session` 都是异步操作，但借助 `async/await`，代码都是同步书写的。
+
 关于 ES6/7 特性可以参考下面的文档：
 
 * [JavaScript Promise迷你书](http://liubin.github.io/promises-book/#ch2-promise-all)
