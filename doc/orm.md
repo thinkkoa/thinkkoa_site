@@ -38,11 +38,7 @@ config: { //中间件配置
         db_charset: '', // 数据库编码默认采用utf8
         db_nums_per_page: 20, //查询分页每页显示的条数
         db_ext_config: { //数据库连接时候额外的参数
-            db_log_sql: true, //打印sql
-            read_write: false, //读写分离(mysql, postgresql)
             db_pool_size: 10, //连接池大小
-            db_replicaset: '', //mongodb replicaset
-            db_conn_url: '', //数据链接
         } 
     }
 }

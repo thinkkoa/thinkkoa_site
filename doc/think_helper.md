@@ -211,9 +211,6 @@ hasOwnProperty缩写
 ### getDefer()
 生成一个defer对象, {promise: new Promise()}
 
-### thinkrequire(file)
-require 的封装, 支持babel编译后的es6 module
-
 ### clone(source, deep)
 拷贝对象 source, deep 为true时深度拷贝
 
@@ -222,6 +219,3 @@ require 的封装, 支持babel编译后的es6 module
 
 ### define(obj, property, value, setter = false)
 Object.defineProperty的封装, 当 setter 为false时属性 property 为getter
-
-### toFastProperties(obj)
-将对象 obj 进行原型实例转换,以整理该对象存储的数据结构,在v8引擎下访问此对象会更快
