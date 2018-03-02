@@ -13,13 +13,13 @@
       "控制器": "controller"
     },
     "扩展功能": {
-      "服务": "service",
-      "缓存": "cache",
-      "视图": "view",
-      "模型": "orm",
-      "国际化": "i18n",
+      "服务类": "service",
       "Cookie": "cookie",
+      "Cache": "cache",
       "Session": "session",
+      "View": "view",
+      "ORM": "orm",
+      "i18n": "i18n",
       "Restful": "restful"
     },
     "常见问题": {
