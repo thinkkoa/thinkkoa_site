@@ -6,12 +6,9 @@ controller 是ThinkKoa中的控制器基类。所有的控制器都必须继承 
 const {controller} = require('thinkkoa');
 
 module.exports = class extends controller {
-    /**
-    * init method
-    * @return {} []
-    */
-    init(ctx, app){
-        super.init(ctx, app);
+    //构造方法init代替constructor
+    init(ctx, app) {
+
     }
 }
 

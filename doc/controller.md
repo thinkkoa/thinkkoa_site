@@ -36,11 +36,10 @@ think controller admin/index
 const {controller, helper} = require('thinkkoa');
 
 module.exports = class extends controller {
-    //构造方法
-    init(ctx) {
-        //调用父类构造方法
-        super.init(ctx);
-    }
+    //构造方法init代替constructor
+    // init(ctx, app) {
+
+    // }
     //所有该控制器(含子类)方法前置方法
     __before() {
         console.log('__before');
@@ -68,14 +67,12 @@ module.exports = class extends controller {
 
 ThinkKoa 使用`init()` 方法来替代`construct()` 构造方法(construct在使用super时有限制)。
 
-如果控制器里重载 `init` 方法，那么必须调用父类的 `init` 方法，如：
+控制器里可以重载 `init` 方法如：
 
 ```js
 //构造方法
 init(ctx){
-    //调用父类构造方法
-    super.init(ctx);
-    ....
+    this.data = {};
 }
 ```
 
@@ -170,9 +167,10 @@ ThinkKoa默认仅暴露带 `Action`后缀的控制器方法给URL访问，如果
 const {controller, helper}
 module.exports = class extends controller {
 
-    init(ctx) {
-        super.init(ctx);
-    }
+    //构造方法init代替constructor
+    // init(ctx, app) {
+
+    // }
 
     test() { //不包含后缀，无法被URL直接访问
         ...

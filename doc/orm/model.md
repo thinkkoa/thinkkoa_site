@@ -12,7 +12,6 @@ const thinkorm = require('thinkorm');
 module.exports = class extends thinkorm {
     // 构造方法
     init(name, config){
-        super.init(name, config);
         // 模型名称
         this.modelName = 'user';
         // 数据表名 可不用设置,默认为表前缀+模型名(小写,单词以下划线分隔)

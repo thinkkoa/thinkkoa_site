@@ -4,16 +4,6 @@ A lightweight, scalable for agile development Node.js web framework, based on ko
 
 ThinkKoa - 轻量级可扩展的敏捷开发Node.js框架,支持ES6/7全新特性,支持Koa、Express中间件,基于koa2。
 
-### 版本
-
-*ThinkKoa 1.x版本支持 Node.js >= 4.0.0*
-
-[1.x文档](/doc1.0/index.jhtml)
-
-
-*ThinkKoa 2.x版本支持 Node.js > 8.0.0*
-
-
 
 ### 特性
 

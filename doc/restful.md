@@ -13,11 +13,10 @@ think controller -r test
 const {controller, helper} = require('thinkkoa');
 
 module.exports = class extends controller.restful {
-    //构造方法
-    init(ctx){
-        //调用父类构造方法
-        super.init(ctx);
-    }
+    //构造方法init代替constructor
+    // init(ctx, app) {
+
+    // }
     //可以在前置方法内做权限判断等操作
     __before(){
         

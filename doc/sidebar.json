@@ -35,8 +35,7 @@
       "上传文件或图片": "upload",
       "修改默认中间件配置": "default_middleware",
       "禁止访问功能": "deny",
-      "开发中间件": "dev_middleware",
-      "升级指南": "update_guid"
+      "开发中间件": "dev_middleware"
     },
     "API": {
       "process.env": "process_env",

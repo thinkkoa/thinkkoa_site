@@ -128,7 +128,6 @@ think.controller.restful | controller.restful
 ```js
 
 init(ctx, app) {
-    super.init(ctx, app);
     ...
 }
 
@@ -169,7 +168,6 @@ module.exports = class extends base {
 ```js
 // app/model/user.js
 init(config) {
-    super.init(config);
     this.modelName = 'user';
 }
 ```
