@@ -7,26 +7,85 @@ ThinkORM支持表的一对一、一对多、多对多关联关系,标准的关�
 例如user.js类中申明的关联关系：
 
 ```js
-// 关联关系
+const {relModel, helper} = require('../index.js');
+const Profile = require('./.Profile.js');
+const Pet = require('./.Pet.js');
+const Group = require('./.Group.js');
+const UserGroup = require('./.UserGroup.js');
 
-this.relation = {
-    profile : {
-        type: 'hasone',//关联方式
-        field: ['test', 'id'],//关联表字段
-        fkey: 'profile', //主表外键 (子表主键)
-        rkey: 'id' //子表主键
-    },
-    pet: {
-        type: 'hasmany',
-        field: ['types','user', 'id'],
-        fkey: 'pet',//hasmany关联此值无用
-        rkey: 'user'//子表外键 (主表主键)
-    },
-    group: {
-        type: 'manytomany',
-        field: ['name', 'type', 'id'],
-        fkey: 'userid',//map外键(主表主键)
-        rkey: 'groupid'//map外键(子表主键)
+module.exports = class extends relModel {
+    init(){
+        // 模型名称
+        this.modelName = 'User';
+        // 是否开启迁移(migrate方法可用)
+        this.safe = false;
+        // 数据表字段信息
+        this.fields = {
+            id: {
+                type: 'integer',
+                primaryKey: true
+            },
+            name: {
+                type: 'string',
+                index: true,
+                defaultsTo: ''
+            },
+            profile: {
+                type: 'integer',
+                index: true,
+                defaultsTo: 0
+            },
+            num: {
+                type: 'integer',
+                index: true,
+                defaultsTo: 0
+            },
+            memo: {
+                type: 'text',
+                defaultsTo: ''
+            },
+            create_time: {
+                type: 'integer',
+                defaultsTo: 0
+            }
+        };
+        // 数据验证
+        this.validations = {
+            name: {
+                method: 'ALL', //ADD 新增时检查, UPDATE 更新时检查, ALL 新增和更新都检查,如果属性不存在则不检查
+                valid: ['required', 'length'],
+                length_args: 10,
+                msg: {
+                    required: '姓名必填',
+                    length: '姓名长度必须大于10'
+                }
+            }
+        };
+        // 关联关系
+        this.relations = {
+            Profile: {
+                type: 'hasone', //关联方式
+                model: Profile, //子表模型
+                //field: ['test', 'id'],//关联表字段
+                fkey: 'profile', //主表外键 (子表主键)
+                rkey: 'id' //子表主键
+            },
+            Pet: {
+                type: 'hasmany',
+                model: Pet, //子表模型
+                //field: ['types','user', 'id'],
+                fkey: '', //hasmany关联此值没用
+                rkey: 'user'//子表外键 (主表主键)
+            },
+            Group: {
+                type: 'manytomany',
+                model: Group, //子表模型
+                //field: ['name', 'type', 'id'],
+                fkey: 'userid', //map外键(主表主键)
+                rkey: 'groupid', //map外键(子表主键)
+                map: UserGroup//map模型
+            }
+        };
     }
 };
 
@@ -46,31 +105,6 @@ field申明了关联模型在查询的时候筛选的字段，例如上述的Pro
 #### fkey/rkey
 
 fkey/rkey主要定义了关联模型中的主键及外键名，具体含义见上述注释
-
-
-### 关联模型的实例化
-关联模型在查询或修改等操作前，必须要将关联定义所有模型类都加载到orm：
-
-```js
-const thinkorm = require('thinkorm');
-
-//数据源配置
-let config = {
-...
-};
-
-// 加载模型类到thinkorm
-let user = thinkorm.require(require.resolve('./user.js'));
-let profile = thinkorm.require(require.resolve('./profile.js'));
-let pet = thinkorm.require(require.resolvee('./pet.js'));
-let group = thinkorm.require(require.resolve('./group.js'));
-
-thinkorm.setCollection(user, config);
-thinkorm.setCollection(profile, config);
-thinkorm.setCollection(pet, config);
-thinkorm.setCollection(group, config);
-
-...
 
 
 ```
@@ -118,79 +152,3 @@ UserModel.rel('ppet').find();
 UserModel.rel('group').find();
 //{"id":1,"title":"test","group":[{"name": "aa", "type": 1, "id": 1}]}
 ```
-
-### 关联模型的新增
-
-关联模型可以在新增时直接同步新增关联表数据：
-
-```js
-//hasone关联新增
-UserModel.rel(true).add({
-    title: 'test',
-    profile: {
-        test: 'aa'
-    }
-});
-
-//hasmany关联新增
-UserModel.rel(true).add({
-    title: 'test',
-    pet: [
-        {types: 'dog'}
-    ]
-});
-
-//manytomany关联新增
-UserModel.rel(true).add({
-    title: 'test',
-    group: [
-        {name: 'bb', type: 4}
-    ]
-});
-```
-
-### 关联模型的更新
-
-关联模型可以在更新中直接同步更新关联表数据:
-
-```js
-//hasone关联更新
-UserModel.rel(true).where({id: 1}).update({
-    title: '1111',
-    profile: {
-        test: 'vv'
-    }
-});
-
-//hasmany关联更新
-UserModel.rel(true).where({id: 1}).update({
-    title: '1111',
-    pet: [
-        {
-            id: 7, //存在关联表主键值,表示更新关联表数据,如果子表id=7这条数据和主表不存在关联，则无效;如果不存在关联表主键值,则更新所有关联数据
-            types: 'dog'
-        }
-    ]
-});
-
-//manytomany关联更新
-UserModel.rel(true).where({id: 1}).update({
-    title: '1111',
-    group: [
-        {
-            id: 8, //存在关联表主键值,表示更新关联表数据,如果子表id=7这条数据和主表不存在关联，则无效;如果不存在关联表主键值,则更新所有关联数据
-            name: 'dsf'
-        }
-    ]
-});
-
-UserModel.rel(true).where({id: 1}).update({
-    title: '1111',
-    group: [
-        {
-            {userid: 1, groupid: 15} //存在关联定义的fkey及rkey，表示更新map表,如果map表数据不存在才会新增
-        }
-]});
-```
-
-

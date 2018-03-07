@@ -14,14 +14,13 @@ let info = await model.where({id: {'<>': 1, '>=': 0}, name: 'bb', or: [{name: 'a
 
 ## 特性
 
-
-1. 基于Knex.js实现,支持 Mysql, PostgresSql, MariaDB. (扩展adapter即可支持MSSQL, SQLite3, Oracle, MongoDB)
+1. 基于Knex.js实现,支持 Mysql, PostgresSql, MariaDB, SQLite3. (即将支持MSSQL, Oracle, MongoDB)
 
 2. 抽象的面向对象式SQL操作语言,保持各种数据库书写语法一致,方便开发和项目迁移
 
 3. 支持schema定义数据结构,支持严格的类型检查;支持数据结构迁移到数据库,通过migrate方法调用
 
-4. 支持hasone,hasmany,manytomany关联查询,关联新增,关联更新
+4. 支持hasone,hasmany,manytomany关联查询
 
 5. 支持left,right,inner join查询,支持count,sum,group查询
 
@@ -32,92 +31,3 @@ let info = await model.where({id: {'<>': 1, '>=': 0}, name: 'bb', or: [{name: 'a
 8. 支持数据自动验证以及自定义规则验证,且规则可扩展
 
 9. 支持前置、后置逻辑处理
-
-10. 支持数据库集群,支持读写分离(mysql, postgresql)
-
-
-## 扩展
-
-* [thinkorm_adapter_mysql](https://github.com/thinkkoa/thinkorm_adapter_mysql) (√已完成)
-
-Mysql adapter for thinkorm 2.x. 
-
-* [thinkorm_adapter_postgresql](https://github.com/thinkkoa/thinkorm_adapter_postgresql) (√已完成)
-
-PostgreSQL adapter for thinkorm 2.x.
-
-* [thinkorm_adapter_mongodb](https://github.com/thinkkoa/thinkorm_adapter_mongodb) (×未完成)
-
-MongoDB adapter for thinkorm 2.x.
-
-* [thinkorm_adapter_sqllite3](https://github.com/thinkkoa/thinkorm_adapter_sqllite3) (×未完成)
-
-SQLite3 adapter for thinkorm 2.x.
-
-* [thinkorm_adapter_oracle](https://github.com/thinkkoa/thinkorm_adapter_oracle) (×未完成)
-
-Oracle adapter for thinkorm 2.x.
-
-* [thinkorm_adapter_mssql](https://github.com/thinkkoa/thinkorm_adapter_mssql) (×未完成)
-
-MSSQL adapter for thinkorm 2.x.
-
-
-
-## 安装
-
-```bash
-npm install thinkorm --save
-npm install thinkorm_adapter_mysql --save
-```
-
-## 使用
-
-```js
-const thinkorm = require('thinkorm');
-
-const config = {
-    db_type: 'mysql', //support  postgresql,mysql...
-    db_host: '127.0.0.1',
-    db_port: 3306,
-    db_name: 'test',
-    db_user: 'root',
-    db_pwd: '',
-    db_prefix: 'think_',
-    db_charset: 'utf8'
-};
-
-//thinkorm.require 入参为文件绝对路径
-const User = thinkorm.require(require.resolve('../exmple/model/User'));
-//加载模型类
-thinkorm.setCollection(User, config);
-//实例化模型
-const model = new User(config);
-
-return model.where({id: {'<>': 1, '>=': 2, '>': 0,'<': 100, '<=': 10}}).alias('test').select().then(res => {
-    console.log(res);
-});
-```
-
-
-## 计划
-
-* SQLite3 Adapter
-* Oracle Adapter
-* MongoDB Adapter
-
-## 文档
-
-[http://www.thinkkoa.org/orm/](http://www.thinkkoa.org/orm/index.jhtml)
-
-## 贡献者
-
-* richenlin
-* richerdlee
-
-欢迎有MongoDB、Mongosee开发经验的同学加入,一起完善MongoDB的支持.
-
-## 协议
-
-
-MIT

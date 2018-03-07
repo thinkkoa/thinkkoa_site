@@ -1,20 +1,20 @@
 {
     "快速入门": {
       "介绍": "index",
-      "模型": "model",
-      "模型类属性": "model_property",
-      "模型类方法": "model_method"
+      "入门": "start",
+      "ORM": "model"
     },
     "进阶应用": {
       "查询语言": "query",
-      "关联模型": "relation",
       "数据验证": "validations",
       "事务": "transaction"
     },
     "扩展功能": {
+      "关联模型": "relation",
       "结构迁移": "migrate"
     },
-    "常见问题": {
-      
+    "API": {
+      "模型类属性": "model_property",
+      "模型类方法": "model_method"
     }
   }

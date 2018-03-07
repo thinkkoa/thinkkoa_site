@@ -5,11 +5,7 @@
 const {controller, helper, version} = require('thinkkoa');
 
 module.exports = class extends controller {
-    //构造方法
-    init(ctx, app) {
-        //调用父类构造方法
-        super.init(ctx, app);
-    }
+
     //所有该控制器(含子类)方法前置方法
     __before() {
         this.assign({

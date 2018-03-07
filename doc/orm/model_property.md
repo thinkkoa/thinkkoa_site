@@ -5,16 +5,16 @@
 ```js
 // 模型名称
 this.modelName = 'user';
+// 主键
+this.pk = 'id';
 // 数据表名 可不用设置,默认为表前缀+模型名(小写,单词以下划线分隔)
 this.tableName = 'think_user';
-// 是否开启迁移(执行migrate方法可用)
-this.safe = true;
 // 数据表字段信息
 this.fields = {};
 // 数据验证
 this.validations = {};
-// 关联关系
-this.relation = {};
+// 关联关系(仅继承relModel有效)
+this.relations = {};
 
 ```
 ### modelName 
@@ -33,40 +33,6 @@ user_profile => think_user_profile
 UserGroup => think_user_group
 
 ```
-
-### safe：
-
-定义是否开启迁移，默认为true。当值为false时，可以通过下面代码进行数据结构迁移：
-
-```js
-const thinkorm = require('thinkorm');
-
-//数据源配置
-let config = {
-...
-};
-
-
-// 加载模型类到thinkorm
-let user = thinkorm.require(require.resolve('./user.js'));
-thinkorm.setCollection(user, config);
-...
-
-
-thinkorm.migrage();
-
-```
-
-
-命令行工具ThinkKoa_cli进行快速结构迁移:
-
-```bash
-//bash命令
-cd project_path
-think migrate
-
-```
-
 
 ### fields:
 
@@ -94,9 +60,7 @@ unique | 数据字段值唯一 | true或false
 index | 是否索引 | true或false
 primaryKey | 是否主键 | true或false
 
-#### type:字段数据类型的值
-
-属性值 | 描述
+字段数据类型 | 描述
 ------------- | -------------
 string | 字符型
 text | 文本型
@@ -106,13 +70,9 @@ json | json格式
 array | 数组格式
 
 
-json、array类型的字段，在mysql等不支持此类格式存储的数据库中，在写入及读取时ThinkORM会自动转换成为JSON对象或字符串。
-
-
-
 ### validations:
 
-validations属性定义了模型类的验证规则。验证规则在调用模型类的新增方法add、addAll以及更新方法update的时候可以使用verify(true)手工开启验证，如果验证返回错误，会中断新增及更新操作。定义格式：
+validations属性定义了模型类的验证规则。如果验证返回错误，会中断新增及更新操作。定义格式：
 
 ```js
 

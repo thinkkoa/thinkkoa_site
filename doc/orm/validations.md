@@ -191,7 +191,7 @@ username: {
 async _beforeAdd(data, options){
     let num = await this.where({username: data.username}).count();
     if(num > 0){
-        return THINK.error('该用户名已被使用');
+        return Promise.reject('该用户名已被使用');
     }
 }
 
