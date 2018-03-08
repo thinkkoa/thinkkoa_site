@@ -6,7 +6,7 @@
 
 
 ```js
-const {model} = require('thinkorm');
+const {model, helper} = require('thinkorm');
 
 module.exports = class extends model {
     // 构造方法
@@ -37,7 +37,7 @@ module.exports = class extends model {
 const user = require("./user.js");
 //数据源配置
 let config = {
-    db_type: 'mysql', // 数据库类型,支持mysql,mongo,postgressql
+    db_type: 'mysql', // 数据库类型,支持mysql,postgressql,sqlite3
     db_host: '127.0.0.1', // 服务器地址
     db_port: 3306, // 端口
     db_name: 'test', // 数据库名

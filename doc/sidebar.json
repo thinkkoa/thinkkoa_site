@@ -14,9 +14,9 @@
     },
     "扩展功能": {
       "服务": "service",
-      "缓存": "cache",
-      "视图": "view",
       "模型": "orm",
+      "视图": "view",
+      "缓存": "cache",
       "国际化": "i18n",
       "Cookie": "cookie",
       "Session": "session",
