@@ -54,11 +54,11 @@ title: {
 ------------- | ------------- | -------------
 type | 数据字段类型 | 见下表
 size | 数据字段长度 | 值为整数
-defaultsTo | 数据字段默认值 | 根据字段类型取值，json默认值为{}或[]，array默认值为[]
+default | 数据字段默认值 | 根据字段类型取值，json默认值为{}或[]，array默认值为[]
 required | 数据字段是否必须有值 | true或false
 unique | 数据字段值唯一 | true或false
 index | 是否索引 | true或false
-primaryKey | 是否主键 | true或false
+pk | 是否主键 | true或false
 
 字段数据类型 | 描述
 ------------- | -------------
@@ -118,5 +118,6 @@ valid定义规则，支持多个规则匹配，msg则定义了不满足规则时
 
 详细说明见[数据验证](/orm/validations.jhtml)
 
+### relations
 
-
+定义了模型关联关系，仅当模型继承了relModel类才生效。详细用法请参照文档：[关联模型](/orm/relation.jhtml)
