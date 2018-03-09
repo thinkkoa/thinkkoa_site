@@ -48,19 +48,25 @@ module.exports = class extends model {
 
 #### 数据库配置
 
-在 app/config/config.js文件内增加：
+创建数据库配置文件 app/config/db.js文件：
 
 ```js
-...
-db_config: {
-    db_type: 'mysql', // 数据库类型,支持mysql,postgressql,sqlite3
-    db_host: '127.0.0.1', // 服务器地址
-    db_port: 3306, // 端口
-    db_name: 'test', // 数据库名
-    db_user: 'root', // 用户名
-    db_pwd: '', // 密码
-},
-...
+// app/config/db.js
+module.exports = {
+    mysql: {
+        db_type: 'mysql', // 数据库类型,支持mysql,postgressql,sqlite3
+        db_host: '127.0.0.1', // 服务器地址
+        db_port: 3306, // 端口
+        db_name: 'test', // 数据库名
+        db_user: 'root', // 用户名
+        db_pwd: '', // 密码
+    }
+}
+
+
+// 读取配置
+this.app.config('mysql', 'db');
+
 ```
 
 #### 实例化模型
@@ -68,7 +74,7 @@ db_config: {
 ```js
 const user = require("./user.js");
 //数据源配置
-let config = this.app.config('db_config');
+let config = this.app.config('mysql', 'db');
 
 //实例化
 let userModel = new user(config);

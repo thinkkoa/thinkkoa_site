@@ -2,6 +2,31 @@
 
     ThinkORM从2.x向3.x升级，请遵循以下步骤：
 
+### 依赖配置变更
+
+ThinkORM 2.x在项目中使用时，需要依赖于中间件 `think_model`。而 3.x不再依赖中间件，可以独立使用。
+
+因此升级时需要将项目中的 `think_model`中间件禁用或移除。将数据库配置放入独立的配置文件：
+
+```js
+// app/config/db.js
+module.exports = {
+    mysql: {
+        db_type: 'mysql', // 数据库类型,支持mysql,postgressql,sqlite3
+        db_host: '127.0.0.1', // 服务器地址
+        db_port: 3306, // 端口
+        db_name: 'test', // 数据库名
+        db_user: 'root', // 用户名
+        db_pwd: '', // 密码
+    }
+}
+
+
+// 读取配置
+this.app.config('mysql', 'db');
+
+```
+
 ### 父类继承变更
 
 修改继承为 `model`:
