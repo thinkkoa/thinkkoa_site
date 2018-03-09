@@ -33,13 +33,13 @@ module.exports = class extends model {
         this.fields = {
             id: {
                 type: 'integer',
-                primaryKey: true
+                pk: true
             },
             name: {
                 type: 'string',
                 size: 30,
                 index: true,
-                defaultsTo: ''
+                default: ''
             }
         };
     }

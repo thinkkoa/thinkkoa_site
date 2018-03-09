@@ -46,7 +46,7 @@ title: {
     size: 100,
     required: true,
     unique: true,
-    primaryKey: true
+    pk: true
 }
 
 ```

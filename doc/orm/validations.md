@@ -11,17 +11,17 @@
 this.fields = {
     id: {
         type: 'integer',
-        primaryKey: true
+        pk: true
     },
     name: {
         type: 'string',
         index: true,
-        defaultsTo: ''
+        default: ''
     },
     profile: {
         type: 'integer',
         index: true,
-        defaultsTo: 0
+        default: 0
     }
 };
 ```

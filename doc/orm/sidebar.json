@@ -11,7 +11,8 @@
     },
     "扩展功能": {
       "关联模型": "relation",
-      "结构迁移": "migrate"
+      "结构迁移": "migrate",
+      "升级指南": "update"
     },
     "API": {
       "模型类属性": "model_property",
