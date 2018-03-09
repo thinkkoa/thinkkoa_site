@@ -7,7 +7,7 @@ ThinkORM支持表的一对一、一对多、多对多关联关系,标准的关�
 例如user.js类中申明的关联关系：
 
 ```js
-const {relModel, helper} = require('../index.js');
+const {relModel, helper} = require('thinkorm');
 const Profile = require('./.Profile.js');
 const Pet = require('./.Pet.js');
 const Group = require('./.Group.js');
@@ -28,25 +28,25 @@ module.exports = class extends relModel {
             name: {
                 type: 'string',
                 index: true,
-                default: ''
+                defaults: ''
             },
             profile: {
                 type: 'integer',
                 index: true,
-                default: 0
+                defaults: 0
             },
             num: {
                 type: 'integer',
                 index: true,
-                default: 0
+                defaults: 0
             },
             memo: {
                 type: 'text',
-                default: ''
+                defaults: ''
             },
             create_time: {
                 type: 'integer',
-                default: 0
+                defaults: 0
             }
         };
         // 数据验证

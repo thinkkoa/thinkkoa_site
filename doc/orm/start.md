@@ -23,7 +23,7 @@ module.exports = class extends model {
                 type: 'string',
                 size: 30,
                 index: true,
-                default: ''
+                defaults: ''
             }
         };
     }

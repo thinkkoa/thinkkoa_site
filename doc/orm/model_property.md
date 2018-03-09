@@ -54,7 +54,7 @@ title: {
 ------------- | ------------- | -------------
 type | 数据字段类型 | 见下表
 size | 数据字段长度 | 值为整数
-default | 数据字段默认值 | 根据字段类型取值，json默认值为{}或[]，array默认值为[]
+defaults | 数据字段默认值 | 根据字段类型取值，json默认值为{}或[]，array默认值为[]
 required | 数据字段是否必须有值 | true或false
 unique | 数据字段值唯一 | true或false
 index | 是否索引 | true或false

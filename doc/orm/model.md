@@ -20,7 +20,7 @@ this.fields = {
         type: 'string',
         index: true,
         size: 100,
-        default: ''
+        defaults: ''
     }
 }
 

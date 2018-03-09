@@ -16,12 +16,12 @@ this.fields = {
     name: {
         type: 'string',
         index: true,
-        default: ''
+        defaults: ''
     },
     profile: {
         type: 'integer',
         index: true,
-        default: 0
+        defaults: 0
     }
 };
 ```
