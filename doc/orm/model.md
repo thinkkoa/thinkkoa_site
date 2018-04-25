@@ -26,7 +26,7 @@ this.fields = {
 
 ```
 
-表示think\_user表中包含一个名为title的字段，字段类型为string（根据数据库数据类型定义的差异，在不同的数据库中表示不同的字段类型，例如在mysql中代表varchar，在mongo中代表string），index值为true表示需要索引，size代表字段的长度为100, defaultsTo表示字段默认值
+表示think\_user表中包含一个名为title的字段，字段类型为string（根据数据库数据类型定义的差异，在不同的数据库中表示不同的字段类型，例如在mysql中代表varchar，在mongo中代表string），index值为true表示需要索引，size代表字段的长度为100, defaults表示字段默认值
 
 
 

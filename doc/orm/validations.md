@@ -53,9 +53,9 @@ UserModel.add({name: 'aa'});//会自动检查name、profile的值是否符合类
 UserModel.where({id:1}).update({profile: 1});//仅自动检查profile的值
 ```
 
-**defaultsTo属性的影响**
+**defaults属性的影响**
 
-如果字段设置了defaultsTo属性，且该属性的值不为 undefined 和 null。那么在新增时，如果字段不存在(主键除外)，会自动匹配默认值。在更新时，如果字段的值为空（'',0,null,undefined,仅含空格、换行等占位符的字符串）,也会自动赋值默认值。
+如果字段设置了defaults属性，且该属性的值不为 undefined 和 null。那么在新增时，如果字段不存在(主键除外)，会自动匹配默认值。在更新时，如果字段的值为空（'',0,null,undefined,仅含空格、换行等占位符的字符串）,也会自动赋值默认值。
 
 ```js
 //新增时
