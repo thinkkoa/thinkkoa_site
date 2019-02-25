@@ -8,8 +8,4 @@ ThinkORM支持将项目中定义的模型类迁移到目标数据库，支持自
 
 ### 迁移方法
 
-```js
-// createTableIfNotExists
-userModel.migrate();
-
-```
+ Come soon!!
