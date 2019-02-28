@@ -46,7 +46,9 @@ title: {
     size: 100,
     required: true,
     unique: true,
-    pk: true
+    pk: true,
+    auto: true,
+    comment: '字段说明'
 }
 
 ```
@@ -55,10 +57,12 @@ title: {
 type | 数据字段类型 | 见下表
 size | 数据字段长度 | 值为整数
 defaults | 数据字段默认值 | 根据字段类型取值，json默认值为{}或[]，array默认值为[]
-required | 数据字段是否必须有值 | true或false
+required | 数据字段是否允许空值,true不允许。如果该字段设置索引index=true,则默认不允许空值 | true或false
 unique | 数据字段值唯一 | true或false
 index | 是否索引 | true或false
 pk | 是否主键 | true或false
+auto | 是否自增属性。注意设置为true的时候，该字段自动变更为主键，跟多字段联合主键冲突。 | true或false
+comment | 字段说明 | 
 
 字段数据类型 | 描述
 ------------- | -------------
