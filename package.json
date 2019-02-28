@@ -15,7 +15,7 @@
     "minimatch": "3.0.2",
     "think_cache": "^2.x.x",
     "think_view": "^2.x.x",
-    "thinkkoa": "2.4.10"
+    "thinkkoa": "2.4.12"
   },
   "devDependencies": {
     "eslint": "^4.11.0",

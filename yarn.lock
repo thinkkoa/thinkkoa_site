@@ -1913,10 +1913,10 @@ think_view@^2.x.x:
     ejs "^2.5.6"
     think_lib "^2.x.x"
 
-thinkkoa@2.4.10:
-  version "2.4.10"
-  resolved "https://registry.yarnpkg.com/thinkkoa/-/thinkkoa-2.4.10.tgz#4fdc914f33543033341dd89bd3edc9fe878af983"
-  integrity sha512-NHgA0lt9ks5MzLxpvj07t2qyh0yzSpCNG+nTZgyoQ5ts4JqsCCwg/9QjWhQei395Bajs+rSmWM7RGs3KfZugqg==
+thinkkoa@2.4.12:
+  version "2.4.12"
+  resolved "https://registry.yarnpkg.com/thinkkoa/-/thinkkoa-2.4.12.tgz#f4973d4ca27ce6d18b69b56b5ed2d6ddad8a11ff"
+  integrity sha512-5M3biy6qX6C3DuLdYAUmEqCGwvy1eHGmtlGoRMzOO9ZnP4r5XTMEQRliUuBjEuC8pF06SKxpE1NFxcMxHuGXrA==
   dependencies:
     koa "^2.7.0"
     think_controller "^2.x.x"
