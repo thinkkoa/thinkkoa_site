@@ -16,11 +16,5 @@
     "think_cache": "^2.x.x",
     "think_view": "^2.x.x",
     "thinkkoa": "2.4.14"
-  },
-  "devDependencies": {
-    "eslint": "^6.7.2",
-    "mocha": "^6.2.2",
-    "supertest": "^4.0.2",
-    "supervisor": "^0.12.0"
   }
 }
