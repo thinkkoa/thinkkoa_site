@@ -8,20 +8,19 @@
     "eslint": "eslint app"
   },
   "dependencies": {
-    "graceful-fs": "^4.0.0",
-    "highlight.js": "^8.8.0",
-    "marked": "^0.3.6",
+    "graceful-fs": "^4.2.3",
+    "highlight.js": "^9.16.2",
+    "marked": "^0.7.0",
     "marked-toc": "^0.3.0",
-    "minimatch": "3.0.2",
+    "minimatch": "3.0.4",
     "think_cache": "^2.x.x",
     "think_view": "^2.x.x",
-    "thinkkoa": "2.4.12"
+    "thinkkoa": "2.4.14"
   },
   "devDependencies": {
-    "eslint": "^4.11.0",
-    "istanbul": "^1.1.0-alpha.1",
-    "mocha": "^4.0.1",
-    "supertest": "^3.0.0",
+    "eslint": "^6.7.2",
+    "mocha": "^6.2.2",
+    "supertest": "^4.0.2",
     "supervisor": "^0.12.0"
   }
 }
