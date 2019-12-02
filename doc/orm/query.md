@@ -56,6 +56,31 @@ userModel.where({
 }).find();
 ```
 
+### is null
+
+```js
+userModel.where({
+    name: null }
+}).find();
+
+```
+### is not null
+
+```js
+userModel.where({
+    not: {name: null} }
+}).find();
+
+userModel.where({
+    name: {"!=": null} }
+}).find();
+
+
+userModel.where({
+    name: {"<>": null} }
+}).find();
+
+```
 
 
 ### less than
@@ -86,6 +111,8 @@ userModel.where({ age: { '>=': 30 }}).find();
 
 ```js
 userModel.where({ age: { '<>': 30 }}).find();
+
+userModel.where({ age: { '!=': 30 }}).find();
 ```
 
 ### not
